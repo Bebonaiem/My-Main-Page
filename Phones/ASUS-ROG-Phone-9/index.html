@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnFun.me - مراجعة ASUS ROG Phone 9</title>
+    <meta name="description" content="مراجعة شاملة لـ ASUS ROG Phone 9 - تعرف على نظام التبريد المتقدم، شاشة AMOLED 165Hz، أداء Snapdragon 8 Gen 3، وميزات الألعاب المتطورة. كل ما تحتاج معرفته قبل الشراء.">
+    <meta name="keywords" content="ASUS ROG Phone 9, اسوس روغ فون 9, مراجعة روغ فون, مواصفات روغ فون, سعر روغ فون, ROG Phone review, ROG Phone specs, ROG Phone price">
+    <link rel="alternate" hreflang="ar" href="https://learnfun.me/ar/phones/asus-rog-phone-9">
+    <link rel="alternate" hreflang="en" href="https://learnfun.me/en/phones/asus-rog-phone-9">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../img/logo-title.ico" sizes="32x32" type="image/x-icon">
+    <link rel="icon" href="../img/logo-title.png" sizes="16x16" type="image/x-icon">
+    <link rel="stylesheet" href="../../style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7696225868255842"crossorigin="anonymous"></script>
+    <style>
+        .page-body { background: #1a1a1a; color: #fff; }
+        .header { background-color: rgba(26,26,26,0.7); }
+        .logo, .nav-links a, .menu-toggle span { color: #fff; }
+        .nav-links a:hover, .nav-links a.active { color: #00bfff; } /* ROG Blue */
+        .nav-links a::after { background-color: #00bfff; }
+        
+        .hero-rog {
+            text-align: center;
+            padding: 4rem 0;
+            background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-rog::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, #1a1a1a 10%, rgba(26,26,26,0.5));
+        }
+        .hero-rog .container { position: relative; z-index: 1; }
+        .hero-rog h1 { font-size: 3.5rem; color: #fff; text-shadow: 0 0 15px #00bfff; }
+        .hero-rog p { font-size: 1.4rem; color: #ccc; }
+        .hero-rog img { max-width: 450px; margin: 1rem auto 0; }
+        
+        .features-grid { 
+            padding: 4rem 0; 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 2rem; 
+            max-width: 900px; 
+            margin: auto; 
+        }
+        .feature-card {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: var(--border-radius-md);
+            border-left: 4px solid #00bfff;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .rtl-layout .feature-card { border-left: none; border-right: 4px solid #00bfff; }
+        .feature-card h2 { font-size: 2rem; color: #00bfff; margin-bottom: 1rem;}
+        .feature-card p { color: #ccc; line-height: 1.7; }
+
+        .pros-cons-container { 
+            background: #2a2a2a; 
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .pros-cons-container h4 { 
+            color: #fff; 
+            font-size: 1.5rem; 
+            margin-bottom: 1rem;
+        }
+        .pros-cons-container ul { 
+            color: #fff; 
+            padding-left: 1.5rem;
+        }
+        .pros-cons-container li { 
+            margin-bottom: 0.8rem; 
+            line-height: 1.5;
+        }
+        
+        .verdict-box {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 3rem;
+            background: #2a2a2a;
+            border-top: 1px solid #444;
+            border-radius: var(--border-radius-md);
+        }
+        .verdict-box h3 { font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem; }
+        .verdict-box p { color: #ccc; line-height: 1.8; font-size: 1.1rem; }
+        
+        /* Menu Toggle Button Styles */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1000;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .hero-rog {
+                padding: 2rem 0;
+            }
+            .hero-rog h1 {
+                font-size: 2.5rem;
+                padding: 0 1rem;
+            }
+            .hero-rog p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+            .hero-rog img {
+                max-width: 300px;
+                margin: 1rem auto;
+            }
+            
+            .features-grid { 
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+                gap: 1.5rem;
+            }
+            .feature-card {
+                padding: 1.5rem;
+            }
+            .feature-card h2 {
+                font-size: 1.8rem;
+            }
+            
+            .pros-cons-container {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            
+            .verdict-box {
+                margin: 2rem 1rem;
+                padding: 2rem 1rem;
+            }
+            .verdict-box h3 {
+                font-size: 2rem;
+            }
+            .verdict-box p {
+                font-size: 1rem;
+            }
+            
+            /* Navigation improvements for mobile */
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(26,26,26,0.95);
+                padding-top: 60px;
+            }
+            .nav-links.active {
+                display: block;
+            }
+            .nav-links ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-links li {
+                margin: 15px 0;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .hero-rog h1 {
+                font-size: 2rem;
+            }
+            .hero-rog p {
+                font-size: 1rem;
+            }
+            .hero-rog img {
+                max-width: 250px;
+            }
+            
+            .feature-card h2 {
+                font-size: 1.5rem;
+            }
+            
+            .verdict-box h3 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body data-page-key="techDetailAsus" class="page-body">
+    <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
+    <header class="header"></header>
+    <main>
+        <section class="hero-rog">
+            <div class="container">
+                <h1 data-translate-key="asusTitle"></h1>
+                <p data-translate-key="asusTagline"></p>
+                <img src="../../img/phones/ASUS-ROG-Phone-9.webp" data-translate-alt="asusPhoneImageAlt" alt="صورة لهاتف ASUS ROG Phone 9">
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h2 data-translate-key="reviewGamingKingTitle"></h2>
+                    <p data-translate-key="reviewGamingKingP1"></p>
+                </div>
+                <div class="feature-card">
+                    <h2 data-translate-key="reviewCoolingTitle"></h2>
+                    <p data-translate-key="reviewCoolingP1"></p>
+                </div>
+                <div class="feature-card">
+                    <h2 data-translate-key="reviewControlsTitle"></h2>
+                    <p data-translate-key="reviewControlsP1"></p>
+                </div>
+                <div class="feature-card">
+                    <h2 data-translate-key="reviewBatteryTitle"></h2>
+                    <p data-translate-key="reviewBatteryP1"></p>
+                </div>
+            </div>
+
+            <h2 style="text-align:center; font-size: 2.5rem; margin: 3rem 0 2rem; color: #fff;" data-translate-key="prosConsTitle"></h2>
+            <div class="pros-cons-container">
+                <div>
+                    <h4 data-translate-key="prosTitle"></h4>
+                    <ul class="pros-list">
+                        <li data-translate-key="prosItem1"></li><li data-translate-key="prosItem2"></li><li data-translate-key="prosItem3"></li><li data-translate-key="prosItem4"></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-translate-key="consTitle"></h4>
+                    <ul class="cons-list">
+                        <li data-translate-key="consItem1"></li><li data-translate-key="consItem2"></li><li data-translate-key="consItem3"></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="verdict-box">
+                <h3 data-translate-key="reviewVerdictTitle"></h3>
+                <p data-translate-key="reviewVerdictP1"></p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const translations = {
+                siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
+                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
+                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
+                footerAboutTitle: { ar: 'حول LearnFun.me', en: 'About LearnFun.me' },
+                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
+                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
+                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
+                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
+                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
+                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
+                techDetailAsusPageTitle: { ar: 'مراجعة هاتف ASUS ROG Phone 9 - LearnFun.me', en: 'ASUS ROG Phone 9 Review - LearnFun.me' },
+                techDetailAsusMetaDescription: { ar: 'مراجعة تفصيلية لهاتف الألعاب ASUS ROG Phone 9: أداء لا يرحم، نظام تبريد متقدم، وتجربة لعب لا مثيل لها.', en: 'Detailed review of the ASUS ROG Phone 9 gaming phone: Merciless performance, advanced cooling, and an unparalleled gaming experience.' },
+                asusPhoneImageAlt: { ar: 'صورة لهاتف ASUS ROG Phone 9', en: 'Image of the ASUS ROG Phone 9 phone' },
+                asusTitle: { ar: 'هاتف ASUS ROG Phone 9', en: 'ASUS ROG Phone 9' },
+                asusTagline: { ar: 'صُنع للفوز. الهاتف الذي لا يقبل بأقل من الأداء الأقصى والسيطرة الكاملة.', en: 'Built to win. The phone that accepts nothing less than maximum performance and total control.' },
+                reviewGamingKingTitle: { ar: 'ملك الأداء بلا منازع', en: 'The Undisputed King of Performance' },
+                reviewGamingKingP1: { ar: 'هاتف ROG Phone 9 ليس مجرد هاتف سريع، بل هو جهاز مصمم خصيصاً ليمنحك الأفضلية في الألعاب. يستخدم الهاتف نسخة معدلة من معالج Snapdragon لتقديم أداء أعلى، مع ذاكرة وصول عشوائي فائقة السرعة تضمن عدم وجود أي تباطؤ.', en: 'The ROG Phone 9 isn\'t just a fast phone; it\'s a device specifically engineered to give you a competitive edge in gaming. It uses an overclocked version of the Snapdragon processor to deliver higher performance, with ultra-fast RAM to ensure there is zero lag.' },
+                reviewCoolingTitle: { ar: 'تبريد من عالم آخر', en: 'Cooling from Another World' },
+                reviewCoolingP1: { ar: 'الأداء العالي يولد حرارة، وهنا يأتي دور نظام التبريد GameCool 9. تم إعادة تصميم غرفة البخار والمكونات الحرارية بالكامل لتبديد الحرارة بكفاءة أكبر. وعندما تريد أداءً متواصلاً، يمكنك توصيل مروحة AeroActive Cooler 9 الخارجية.', en: 'High performance generates heat, and that\'s where the GameCool 9 system comes in. The vapor chamber and thermal components have been completely redesigned to dissipate heat more efficiently. For sustained performance, you can attach the external AeroActive Cooler 9.' },
+                reviewControlsTitle: { ar: 'السيطرة الكاملة في يديك', en: 'Total Control in Your Hands' },
+                reviewControlsP1: { ar: 'أزرار AirTriggers فوق الصوتية هي الميزة التي تغير قواعد اللعبة. تعمل هذه الأزرار المدمجة كأزرار كتف في وحدات التحكم، ويمكن تخصيصها للقيام بأي وظيفة داخل اللعبة. هذا يحرر أصابعك من الشاشة ويمنحك تحكماً أسرع وأكثر دقة.', en: 'The ultrasonic AirTriggers are a game-changing feature. These built-in buttons act like shoulder buttons on a controller and can be customized for any in-game function. This frees your thumbs from the screen and gives you faster, more precise control.' },
+                reviewBatteryTitle: { ar: 'بطارية تصمد في المعركة', en: 'A Battery That Lasts the Battle' },
+                reviewBatteryP1: { ar: 'مع بطارية ضخمة بسعة 6000mAh، تم تصميم ROG Phone 9 ليصمد خلال أطول جلسات اللعب. بالإضافة إلى ذلك، يتميز بميزات ذكية للحفاظ على صحة البطارية، مثل الشحن الجانبي الذي يزود الهاتف بالطاقة مباشرة دون شحن البطارية أثناء اللعب.', en: 'With a massive 6000mAh battery, the ROG Phone 9 is built to endure the longest gaming sessions. It also features smart battery-care features like bypass charging, which powers the phone directly without charging the battery during gameplay to reduce heat.' },
+                prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
+                prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
+                prosItem1: { ar: 'أداء ألعاب لا يمكن التغلب عليه', en: 'Unbeatable gaming performance' },
+                prosItem2: { ar: 'أفضل نظام تبريد في هاتف ذكي', en: 'The best cooling system in a smartphone' },
+                prosItem3: { ar: 'عمر بطارية استثنائي', en: 'Exceptional battery life' },
+                prosItem4: { ar: 'ميزات تحكم مبتكرة مع AirTriggers', en: 'Innovative control features with AirTriggers' },
+                consTitle: { ar: 'السلبيات', en: 'Cons' },
+                consItem1: { ar: 'تصميم كبير وثقيل موجه للألعاب', en: 'Large, heavy, and gaming-focused design' },
+                consItem2: { ar: 'الكاميرا جيدة، ولكنها ليست على مستوى الهواتف الرائدة الأخرى', en: 'The camera is good, but not on par with other flagships' },
+                consItem3: { ar: 'السعر مرتفع بالنسبة لهاتف متخصص', en: 'High price for a niche phone' },
+                reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
+                reviewVerdictP1: { ar: 'إذا كنت لاعباً جاداً وتريد هاتفاً يمنحك كل ميزة ممكنة للفوز، فإن ASUS ROG Phone 9 هو خيارك الوحيد. إنه لا يحاول أن يكون هاتفاً للجميع؛ بل يركز بشكل كامل على تقديم أفضل تجربة لعب ممكنة على الإطلاق.', en: 'If you are a serious gamer and want a phone that gives you every possible advantage to win, the ASUS ROG Phone 9 is your only choice. It doesn\'t try to be a phone for everyone; it focuses entirely on delivering the absolute best gaming experience possible.' },
+            };
+            // Paste the generic JS loader script here
+            const headerElement = document.querySelector('.header');
+            const footerElement = document.querySelector('.footer');
+            const pathPrefix = '../'; 
+
+            const headerHTML = `<div class=\"container\"><a href=\"${pathPrefix}../\" class=\"logo\">learnfun.me</a><nav class=\"nav-links\"><ul><li><a href=\"${pathPrefix}../\" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href=\"${pathPrefix}../tech/\" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href=\"${pathPrefix}../contact/\" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class=\"menu-toggle\" id=\"menu-toggle\" aria-label=\"Toggle navigation menu\"><span data-translate-aria="menuAriaLabel"></span><span></span><span></span></button></div>`;
+            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
+                
+            if(headerElement) headerElement.innerHTML = headerHTML;
+            if(footerElement) footerElement.innerHTML = footerHTML;
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            }
+
+            const langSwitcher = document.getElementById('lang-switcher');
+            const setLanguage = (lang) => {
+                localStorage.setItem('siteLanguage', lang);
+                document.documentElement.lang = lang;
+                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+                document.body.className = `page-body ${lang}-layout`;
+
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.dataset.translateKey;
+                    if (translations[key] && translations[key][lang]) {
+                        el.innerHTML = translations[key][lang];
+                    }
+                });
+                
+                const pageKey = document.body.dataset.pageKey;
+                if (pageKey) {
+                    const titleKey = `${pageKey}PageTitle`;
+                    const metaDescKey = `${pageKey}MetaDescription`;
+                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
+                    const metaDescEl = document.querySelector('meta[name="description"]');
+                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
+                }
+
+                document.querySelectorAll('[data-translate-alt]').forEach(el => {
+                    const key = el.dataset.translateAlt;
+                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
+                });
+
+                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
+            };
+
+            if (langSwitcher) {
+                langSwitcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetLink = e.target.closest('a');
+                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
+                });
+            }
+
+            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
+            setLanguage(initialLang);
+        });
+    </script>
+</body>
+</html>
