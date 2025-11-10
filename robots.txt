@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: http://learnfun.me/sitemap.xml
+Sitemap: https://learnfun.me/sitemap.xml

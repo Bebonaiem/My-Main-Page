@@ -49,6 +49,7 @@ body {
     -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale; 
     overflow-x: hidden;
+    contain: layout style;
 }
 
 body.rtl-layout { 
@@ -110,6 +111,8 @@ img {
     font-size: 1rem; 
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .btn::before {
@@ -137,6 +140,7 @@ img {
     color: #fff; 
     transform: translateY(-3px); 
     box-shadow: 0 7px 20px -5px var(--primary-color); 
+    will-change: transform;
 }
 
 .btn-secondary { 
@@ -149,6 +153,7 @@ img {
     color: #fff; 
     transform: translateY(-3px); 
     box-shadow: 0 7px 20px -5px var(--accent-color); 
+    will-change: transform;
 }
 
 #lang-switcher { 
@@ -867,12 +872,15 @@ img {
     border-radius: var(--border-radius-lg);
     transition: all var(--transition-medium);
     box-shadow: var(--shadow);
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .info-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
+    will-change: transform;
 }
 
 .info-icon {
