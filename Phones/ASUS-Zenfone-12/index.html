@@ -56,15 +56,12 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
     <link rel="icon" href="https://learnfun.me/img/logo-title.ico" sizes="32x32" type="image/x-icon">
     <link rel="icon" href="https://learnfun.me/img/logo-title.png" sizes="16x16" type="image/x-icon">
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google AdSense script retained for monetization -->
+    <!-- Consent Management Platform scripts removed for performance -->
+    <!-- Ezoic script removed for performance -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7696225868255842" crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-7696225868255842">
-    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>
-        window.ezstandalone = window.ezstandalone || {};
-        ezstandalone.cmd = ezstandalone.cmd || [];
-    </script>
     <style>
         /* ================================================= */
         /*          NEW GUI FOR ZENFONE 12 PAGE            */
@@ -374,121 +371,7 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
         
     </main>
     <footer class="footer"></footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول LearnFun.me', en: 'About LearnFun.me' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-                
-                techDetailZenfonePageTitle: { ar: 'مراجعة هاتف ASUS Zenfone 12 - LearnFun.me', en: 'ASUS Zenfone 12 Review - LearnFun.me' },
-                techDetailZenfoneMetaDescription: { ar: 'مراجعة تفصيلية لهاتف ASUS Zenfone 12: هاتف رائد مدمج لا يتنازل عن الأداء، مع كاميرا جيمبال فريدة.', en: 'Detailed review of the ASUS Zenfone 12: A compact flagship that doesn\'t compromise on performance, with a unique gimbal camera.' },
-                zenfonePhoneImageAlt: { ar: 'صورة لهاتف ASUS Zenfone 12', en: 'Image of the ASUS Zenfone 12 phone' },
-                
-                zenfoneV2Title: { ar: 'قوة <span class="accent">هائلة</span>. حجم مثالي.', en: 'Mighty <span class="accent">Power</span>. Perfect Size.' },
-                zenfoneTagline: { ar: 'الهاتف الرائد الذي يمكنك استخدامه بيد واحدة.', en: 'The flagship phone you can use with one hand.' },
-                keyFeaturesTitle: { ar: 'مصمم ليناسب حياتك', en: 'Engineered for Your Life' },
-                highlightZenfoneCompact: { ar: 'تصميم مدمج', en: 'Compact Design' },
-                highlightZenfonePerf: { ar: 'أداء رائد', en: 'Flagship Performance' },
-                highlightZenfoneGimbal: { ar: 'مثبت جيمبال', en: 'Gimbal Stabilizer' },
-                highlightZenfoneUI: { ar: 'واجهة نظيفة', en: 'Clean UI' },
-                highlightCompactDesc: { ar: 'مثالي للاستخدام بيد واحدة دون التضحية بالميزات.', en: 'Perfect for one-handed use without sacrificing features.'},
-                highlightPerfDesc: { ar: 'أحدث معالج Snapdragon لأداء فائق السرعة.', en: 'The latest Snapdragon processor for blazing-fast performance.'},
-                highlightGimbalDesc: { ar: 'فيديوهات سلسة وخالية من الاهتزاز بفضل المثبت سداسي المحاور.', en: 'Smooth, shake-free videos thanks to the 6-axis stabilizer.'},
-                highlightUIDesc: { ar: 'تجربة أندرويد نقية وسريعة مع إضافات مفيدة.', en: 'A pure and fast Android experience with helpful additions.'},
-
-                reviewCompactTitle: { ar: 'قوة لا تحتاج لجيوب كبيرة', en: 'Power That Doesn\'t Need Big Pockets' },
-                reviewCompactP1: { ar: 'في عالم تسيطر عليه الهواتف العملاقة، يثبت Zenfone 12 أن الحجم الصغير يمكن أن يكون قوياً. تصميمه المريح للاستخدام بيد واحدة يجعله متعة للحمل، لكنه لا يتنازل عن الأداء بفضل أحدث معالج Snapdragon.', en: 'In a world dominated by giant phones, the Zenfone 12 proves that small size can be powerful. Its one-hand-friendly design makes it a joy to hold, but it doesn\'t compromise on performance thanks to the latest Snapdragon processor.' },
-                reviewGimbalTitle: { ar: 'فيديوهات ثابتة كالصخرة', en: 'Rock-Steady Videos' },
-                reviewGimbalP1: { ar: 'الميزة الأبرز في كاميرا Zenfone هي مثبت الجيمبال الهجين سداسي المحاور. هذه التقنية تتجاوز التثبيت البصري العادي، مما ينتج فيديوهات سلسة وخالية من الاهتزاز بشكل مذهل، حتى أثناء المشي أو الحركة السريعة. إنه حلم مصوري الفيديو.', en: 'The standout feature of the Zenfone camera is the 6-Axis Hybrid Gimbal Stabilizer. This technology goes beyond standard optical stabilization, producing incredibly smooth, shake-free videos, even while walking or moving quickly. It\'s a videographer\'s dream.' },
-                
-                prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
-                prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
-                prosItem1: { ar: 'تصميم مدمج ومريح للاستخدام بيد واحدة', en: 'Compact and comfortable one-handed design' },
-                prosItem2: { ar: 'أداء رائد لا يتنازل عن القوة', en: 'Flagship performance with no compromises on power' },
-                prosItem3: { ar: 'نظام تثبيت جيمبال فريد وممتاز للفيديو', en: 'Unique and excellent gimbal stabilization system for video' },
-                prosItem4: { ar: 'واجهة أندرويد نظيفة وسريعة', en: 'Clean and fast Android interface' },
-                consTitle: { ar: 'السلبيات', en: 'Cons' },
-                consItem1: { ar: 'عمر البطارية جيد، ولكنه ليس الأطول بسبب الحجم المدمج', en: 'Battery life is good, but not the longest due to its compact size' },
-                consItem2: { ar: 'نظام الكاميرا أقل تنوعاً من الهواتف الأكبر حجماً (لا يوجد تقريب بصري بعيد المدى)', en: 'The camera system is less versatile than larger phones (no long-range optical zoom)' },
-                
-                reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
-                reviewVerdictP1: { ar: 'هاتف ASUS Zenfone 12 هو الخيار المثالي لمن سئم من الهواتف الضخمة ويريد جهازاً قوياً ومريحاً. إنه يقدم حزمة فريدة تجمع بين الأداء العالي، الحجم المثالي، وقدرات فيديو استثنائية. إذا كنت تقدر هذه الصفات، فإن Zenfone 12 هو أحد أفضل الخيارات المتاحة لك.', en: 'The ASUS Zenfone 12 is the perfect choice for anyone tired of huge phones who wants a powerful yet comfortable device. It offers a unique package combining high performance, perfect size, and exceptional video capabilities. If you value these qualities, the Zenfone 12 is one of the best options available.' },
-            };
-            
-            // Generic script for all detail pages
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../'; 
-
-            const headerHTML = `<div class=\"container\"><a href=\"${pathPrefix}..\" class=\"logo\">learnfun.me</a><nav class=\"nav-links\"><ul><li><a href=\"${pathPrefix}../\" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href=\"${pathPrefix}../tech/\" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href=\"${pathPrefix}../contact/\" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class=\"menu-toggle\" id=\"menu-toggle\" aria-label=\"Toggle navigation menu\"><span data-translate-aria="menuAriaLabel"></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li><li><a href=\"${pathPrefix}../terms-of-service/\" data-translate-key=\"footerTermsLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.body.className = `page-body ${lang}-layout`;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => link.classList.toggle('active', link.dataset.navKey === currentNavKey));
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
-    </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>

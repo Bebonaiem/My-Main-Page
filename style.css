@@ -314,7 +314,7 @@ img {
 /* ================== Footer ================== */
 .footer { 
     background: linear-gradient(135deg, #111827 0%, #1e293b 100%); 
-    color: #9CA3AF; 
+    color: #E5E7EB; 
     padding: 6rem 0 2.5rem; 
     margin-top: 5rem; 
     position: relative;
@@ -371,7 +371,7 @@ img {
 }
 
 .footer-section a { 
-    color: #9CA3AF; 
+    color: #E5E7EB; 
     transition: all var(--transition-fast); 
     position: relative;
     padding-left: 15px;
@@ -903,7 +903,7 @@ img {
 }
 
 .info-card p {
-    color: var(--text-color-light);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
