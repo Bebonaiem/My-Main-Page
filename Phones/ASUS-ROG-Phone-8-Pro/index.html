@@ -19,12 +19,15 @@
     <link rel="icon" href="https://learnfun.me/img/logo-title.ico" sizes="32x32" type="image/x-icon">
     <link rel="icon" href="https://learnfun.me/img/logo-title.png" sizes="16x16" type="image/x-icon">
     <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google AdSense script retained for monetization -->
-    <!-- Consent Management Platform scripts removed for performance -->
-    <!-- Ezoic script removed for performance -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7696225868255842"crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-7696225868255842">
+    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
+    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
     <style>
         /* --- Base Styles (Mostly Unchanged) --- */
         .page-body { background-color: #f8f9fa; }
@@ -391,7 +394,158 @@
         </div>
     </main>
     <footer class="footer"></footer>
-    
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const translations = {
+                siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
+                navHome: { ar: 'الرئيسية', en: 'Home' },
+                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
+                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
+                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
+                footerAboutTitle: { ar: 'حول LearnFun.me', en: 'About LearnFun.me' },
+                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
+                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
+                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
+                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
+                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
+                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
+                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
+                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
+                techDetailROGPhone8ProPageTitle: { ar: 'مراجعة هاتف ASUS ROG Phone 8 Pro - LearnFun.me', en: 'ASUS ROG Phone 8 Pro Review - LearnFun.me' },
+                techDetailROGPhone8ProMetaDescription: { ar: 'مراجعة تفصيلية لهاتف ASUS ROG Phone 8 Pro: المواصفات، الكاميرا، الأداء، والتصميم. كل ما تريد معرفته قبل الشراء.', en: 'Detailed review of the ASUS ROG Phone 8 Pro: specs, camera, performance, and design. Everything you need to know before you buy.' },
+                rogPhone8ProPhoneImageAlt: { ar: 'صورة لهاتف ASUS ROG Phone 8 Pro', en: 'Image of the ASUS ROG Phone 8 Pro phone' },
+                rogPhone8ProTitle: { ar: 'هاتف ASUS ROG Phone 8 Pro', en: 'ASUS ROG Phone 8 Pro' },
+                rogPhone8ProTagline: { ar: 'ملك الألعاب في هاتف ذكي.', en: 'The king of gaming in a smartphone.' },
+                highlightROGPhone8ProGaming: { ar: 'أداء ألعاب فائق', en: 'Ultra Gaming Performance' },
+                highlightROGPhone8ProChip: { ar: 'معالج Snapdragon 8 Gen 3', en: 'Snapdragon 8 Gen 3 Chip' },
+                highlightROGPhone8ProCooling: { ar: 'نظام تبريد متقدم', en: 'Advanced Cooling System' },
+                highlightROGPhone8ProDisplay: { ar: 'شاشة 165Hz AMOLED', en: '165Hz AMOLED Display' },
+                highlightROGPhone8ProBattery: { ar: 'بطارية 6000mAh', en: '6000mAh Battery' },
+                reviewROGPhone8ProGamingTitle: { ar: 'أداء الألعاب', en: 'Gaming Performance' },
+                reviewROGPhone8ProGamingP1: { ar: 'ASUS ROG Phone 8 Pro مصمم خصيصاً لمحبي الألعاب. مع معالج Snapdragon 8 Gen 3 وذاكرة 16GB RAM، يوفر أداءً فائقاً في جميع الألعاب الحديثة بدقة 4K وسرعة إطارات عالية.', en: 'The ASUS ROG Phone 8 Pro is specifically designed for gaming enthusiasts. With the Snapdragon 8 Gen 3 processor and 16GB RAM, it provides exceptional performance in all modern games at 4K resolution and high frame rates.' },
+                reviewROGPhone8ProCoolingTitle: { ar: 'نظام التبريد', en: 'Cooling System' },
+                reviewROGPhone8ProCoolingP1: { ar: 'نظام التبريد المتقدم يحافظ على درجة حرارة الهاتف منخفضة حتى أثناء الجلسات الطويلة من اللعب. هذا يضمن أداءً مستمراً دون انخفاض في السرعة أو انقطاع في التشغيل.', en: 'The advanced cooling system keeps the phone temperature low even during long gaming sessions. This ensures consistent performance without speed drops or operational interruptions.' },
+                prosConsROGPhone8ProTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
+                prosROGPhone8ProTitle: { ar: 'الإيجابيات', en: 'Pros' },
+                prosROGPhone8ProItem1: { ar: 'أفضل أداء ألعاب في الهواتف الذكية', en: 'Best gaming performance in smartphones' },
+                prosROGPhone8ProItem2: { ar: 'شاشة 165Hz سلسة للغاية', en: 'Very smooth 165Hz display' },
+                prosROGPhone8ProItem3: { ar: 'بطارية 6000mAh تدوم طويلاً', en: '6000mAh battery that lasts long' },
+                prosROGPhone8ProItem4: { ar: 'نظام تبريد متقدم يحافظ على الأداء', en: 'Advanced cooling system maintains performance' },
+                consROGPhone8ProTitle: { ar: 'السلبيات', en: 'Cons' },
+                consROGPhone8ProItem1: { ar: 'سعر مرتفع جداً', en: 'Very high price' },
+                consROGPhone8ProItem2: { ar: 'تصميم كبير وثقيل', en: 'Large and heavy design' },
+                consROGPhone8ProItem3: { ar: 'استخدام البطارية سريعاً في الألعاب', en: 'Fast battery drain in gaming' },
+                reviewROGPhone8ProVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
+                reviewROGPhone8ProVerdictP1: { ar: 'ASUS ROG Phone 8 Pro هو الهاتف الأفضل لمحبي الألعاب. رغم ارتفاع سعره وحجمه الكبير، إلا أنه يقدم تجربة ألعاب لا مثيل لها في أي هاتف آخر.', en: 'The ASUS ROG Phone 8 Pro is the best phone for gaming enthusiasts. Despite its high price and large size, it offers an unparalleled gaming experience in any other phone.' },
+                
+                // New translations for specifications section
+                specsROGPhone8ProTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
+                specsROGPhone8ProDisplayTitle: { ar: 'الشاشة', en: 'Display' },
+                specsROGPhone8ProDisplaySize: { ar: 'حجم الشاشة', en: 'Screen Size' },
+                specsROGPhone8ProDisplayType: { ar: 'نوع الشاشة', en: 'Display Type' },
+                specsROGPhone8ProDisplayRes: { ar: 'دقة الشاشة', en: 'Resolution' },
+                specsROGPhone8ProDisplayRefresh: { ar: 'معدل التحديث', en: 'Refresh Rate' },
+                specsROGPhone8ProPerformanceTitle: { ar: 'الأداء', en: 'Performance' },
+                specsROGPhone8ProChip: { ar: 'المعالج', en: 'Chip' },
+                specsROGPhone8ProRAM: { ar: 'الذاكرة العشوائية', en: 'RAM' },
+                specsROGPhone8ProStorage: { ar: 'التخزين', en: 'Storage' },
+                specsROGPhone8ProOS: { ar: 'نظام التشغيل', en: 'Operating System' },
+                specsROGPhone8ProCameraTitle: { ar: 'الكاميرا', en: 'Camera' },
+                specsROGPhone8ProMainCam: { ar: 'الكاميرا الرئيسية', en: 'Main Camera' },
+                specsROGPhone8ProUltraWide: { ar: 'الكاميرا فائقة الاتساع', en: 'Ultra Wide' },
+                specsROGPhone8ProMacro: { ar: 'الكاميرا الماكرو', en: 'Macro' },
+                specsROGPhone8ProFrontCam: { ar: 'الكاميرا الأمامية', en: 'Front Camera' },
+                specsROGPhone8ProBatteryTitle: { ar: 'البطارية', en: 'Battery' },
+                specsROGPhone8ProBatteryCapacity: { ar: 'سعة البطارية', en: 'Battery Capacity' },
+                specsROGPhone8ProCharging: { ar: 'الشحن السريع', en: 'Fast Charging' },
+                specsROGPhone8ProCooling: { ar: 'نظام التبريد', en: 'Cooling System' },
+                specsROGPhone8ProAudio: { ar: 'نظام الصوت', en: 'Audio System' },
+
+                // New translations for benchmark section
+                benchmarkROGPhone8ProTitle: { ar: 'نتائج الاختبارات', en: 'Benchmark Results' },
+                benchmarkROGPhone8ProCPU: { ar: 'أداء المعالج', en: 'CPU Performance' },
+                benchmarkROGPhone8ProCPUScore: { ar: 'أعلى درجة في اختبارات المعالج', en: 'Highest CPU benchmark score' },
+                benchmarkROGPhone8ProGPU: { ar: 'أداء الرسومات', en: 'GPU Performance' },
+                benchmarkROGPhone8ProGPUScore: { ar: 'أعلى درجة في اختبارات الرسومات', en: 'Highest GPU benchmark score' },
+                benchmarkROGPhone8ProBattery: { ar: 'عمر البطارية', en: 'Battery Life' },
+                benchmarkROGPhone8ProBatteryScore: { ar: 'أطول عمر بطارية في الاستخدام المكثف', en: 'Longest battery life under heavy use' },
+                benchmarkROGPhone8ProGaming: { ar: 'أداء الألعاب', en: 'Gaming Performance' },
+                benchmarkROGPhone8ProGamingScore: { ar: 'أعلى درجة في اختبارات الألعاب', en: 'Highest gaming benchmark score' },
+
+                // New translations for comparison section
+                comparisonROGPhone8ProTitle: { ar: 'مقارنة مع الطرازات السابقة', en: 'Comparison with Previous Models' },
+                comparisonFeature: { ar: 'الميزة', en: 'Feature' },
+                comparisonROGPhone8Pro: { ar: 'ROG Phone 8 Pro', en: 'ROG Phone 8 Pro' },
+                comparisonROGPhone7Pro: { ar: 'ROG Phone 7 Pro', en: 'ROG Phone 7 Pro' },
+                comparisonGalaxyS24Ultra: { ar: 'Galaxy S24 Ultra', en: 'Galaxy S24 Ultra' },
+                comparisonChip: { ar: 'المعالج', en: 'Chip' },
+                comparisonDisplay: { ar: 'الشاشة', en: 'Display' },
+                comparisonBattery: { ar: 'سعة البطارية', en: 'Battery Capacity' },
+                comparisonCamera: { ar: 'الكاميرا الرئيسية', en: 'Main Camera' },
+            };
+            const headerElement = document.querySelector('.header');
+            const footerElement = document.querySelector('.footer');
+            const pathPrefix = '../../'; 
+
+            const headerHTML = `<div class=\"container\"><a href=\"${pathPrefix}../\" class=\"logo\">learnfun.me</a><nav class=\"nav-links\"><ul><li><a href=\"${pathPrefix}../\" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href=\"${pathPrefix}../tech/\" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href=\"${pathPrefix}../contact/\" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class=\"menu-toggle\" id=\"menu-toggle\" aria-label=\"Toggle navigation menu\"><span data-translate-aria="menuAriaLabel"></span><span></span><span></span></button></div>`;
+            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
+                
+            if(headerElement) headerElement.innerHTML = headerHTML;
+            if(footerElement) footerElement.innerHTML = footerHTML;
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            }
+
+            const langSwitcher = document.getElementById('lang-switcher');
+            const setLanguage = (lang) => {
+                localStorage.setItem('siteLanguage', lang);
+                document.documentElement.lang = lang;
+                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+                document.body.className = `page-body ${lang}-layout`;
+
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.dataset.translateKey;
+                    if (translations[key] && translations[key][lang]) {
+                        el.innerHTML = translations[key][lang];
+                    }
+                });
+                
+                const pageKey = document.body.dataset.pageKey;
+                if (pageKey) {
+                    const titleKey = `${pageKey}PageTitle`;
+                    const metaDescKey = `${pageKey}MetaDescription`;
+                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
+                    const metaDescEl = document.querySelector('meta[name="description"]');
+                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
+                }
+
+                document.querySelectorAll('[data-translate-alt]').forEach(el => {
+                    const key = el.dataset.translateAlt;
+                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
+                });
+
+                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
+                
+                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
+                });
+            };
+
+            if (langSwitcher) {
+                langSwitcher.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetLink = e.target.closest('a');
+                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
+                });
+            }
+
+            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
+            setLanguage(initialLang);
+        });
+    </script>
 </body>
 </html>
