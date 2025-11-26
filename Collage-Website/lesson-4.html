@@ -2,45 +2,79 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>الدرس الرابع: البيانات والذكاء الاصطناعي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدرس الرابع: البيانات و AI</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     <div class="accessibility-toolbar">
-        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button onclick="window.location.href='index.html'">🏠 الرئيسية</button>
         <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
-        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+        <button onclick="speakText('content')">🔊 قراءة</button>
     </div>
-    <header><h1>الدرس الرابع: البيانات و AI</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
 
     <main id="content">
-        <img src="img/lesson-4-hero.jpg" alt="تحليل البيانات" class="hero-image">
-
-        <section class="lesson-card">
-            <h2>مراحل معالجة البيانات</h2>
-            <div class="info-box">
-                <ol>
-                    <li><strong>الجمع:</strong> تجميع البيانات من مصادر مختلفة.</li>
-                    <li><strong>التخزين:</strong> حفظها في قواعد بيانات.</li>
-                    <li><strong>التنظيف:</strong> إزالة الأخطاء.</li>
-                    <li><strong>التحليل:</strong> استخراج المعلومات المفيدة.</li>
-                </ol>
+        <section class="lesson-hero">
+            <img src="img/lesson-4-hero.jpg" alt="تحليل البيانات">
+            <div class="hero-overlay">
+                <span class="breadcrumb">الوحدة الأولى / الدرس 4</span>
+                <h1>البيانات الضخمة وعلاقتها بالذكاء الاصطناعي</h1>
             </div>
         </section>
 
         <section class="lesson-card">
-            <h2>تطبيقات الذكاء الاصطناعي</h2>
-            <ul>
-                <li><strong>تعلم الآلة (Machine Learning):</strong> الكمبيوتر يتعلم من البيانات.</li>
-                <li><strong>معالجة اللغة (NLP):</strong> فهم لغة البشر (مثل ChatGPT).</li>
-                <li><strong>الرؤية الحاسوبية:</strong> التعرف على الوجوه.</li>
+            <h2>⚙️ مراحل معالجة البيانات الضخمة</h2>
+            <p>لكي يستفيد الذكاء الاصطناعي من البيانات، تمر بـ 5 مراحل:</p>
+            <ul class="fancy-list">
+                <li><strong>1. تجميع البيانات:</strong> جمع كميات ضخمة من مصادر مختلفة.</li>
+                <li><strong>2. تخزين البيانات:</strong> حفظها في خوادم ضخمة أو أنظمة سحابية.</li>
+                <li><strong>3. تنظيف البيانات:</strong> إزالة الأخطاء، التكرار، والبيانات غير الصحيحة.</li>
+                <li><strong>4. تحليل البيانات:</strong> استخدام أدوات وتقنيات لاستخراج الأنماط.</li>
+                <li><strong>5. استخلاص المعلومات:</strong> تحويل التحليلات إلى قرارات استراتيجية مفيدة.</li>
             </ul>
         </section>
 
-        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-            <a href="lesson-3.html" class="btn" style="background: #333; color:#fff">السابق</a>
-            <a href="lesson-5.html" class="btn">الانتقال للوحدة الثانية ⬅️</a>
+        <section class="lesson-card">
+            <h2>🧠 دور البيانات في الذكاء الاصطناعي</h2>
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3>تحسين الدقة</h3>
+                    <p>كلما زادت البيانات، زادت دقة الـ AI وقلت مشكلة "التجهيز الزائد" (Overfitting).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>معالجة اللغة (NLP)</h3>
+                    <p>تتطلب نماذج لغوية ضخمة (مثل GPT) تدربت على مليارات النصوص لفهم لغة البشر.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>الرؤية الحاسوبية</h3>
+                    <p>تحتاج لمجموعات ضخمة من الصور لتدريب الآلة على التعرف على الوجوه والأشياء.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>التحليلات التنبؤية</h3>
+                    <p>استخدام البيانات التاريخية لتوقع الأحداث المستقبلية (مثل اتجاهات السوق).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-card">
+            <h2>⚖️ التعلم والتكيف المستمر</h2>
+            <p>تسمح تدفقات البيانات الضخمة للذكاء الاصطناعي بالتطور المستمر، وتحسين أدائه بمرور الوقت بناءً على المعلومات الجديدة الواردة.</p>
+        </section>
+
+        <section class="lesson-card quiz-box">
+            <h2>🎮 اختبر معلوماتك</h2>
+            <p>العملية التي يتم فيها إزالة البيانات المكررة والأخطاء تسمى؟</p>
+            <div class="quiz-options">
+                <button class="quiz-btn" onclick="checkAnswer(true, 'f4')">تنظيف البيانات</button>
+                <button class="quiz-btn" onclick="checkAnswer(false, 'f4')">تحليل البيانات</button>
+            </div>
+            <p id="f4" style="margin-top: 15px; font-weight: bold;"></p>
+        </section>
+
+        <div style="display:flex; justify-content:space-between; margin-top:30px;">
+            <a href="lesson-3.html" class="nav-btn">⬅️ السابق</a>
+            <a href="lesson-5.html" class="nav-btn" style="background:var(--accent-color); color:#fff;">الوحدة الثانية ➡️</a>
         </div>
     </main>
     <script src="js/main.js"></script>

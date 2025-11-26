@@ -2,53 +2,83 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الدرس الثاني: لغة CSS</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     <div class="accessibility-toolbar">
-        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button onclick="window.location.href='index.html'">🏠 الرئيسية</button>
         <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
-        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+        <button onclick="speakText('content')">🔊 قراءة</button>
     </div>
-    <header><h1>الدرس الثاني: تنسيق الصفحات (CSS)</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
 
     <main id="content">
-        <img src="img/lesson-6-hero.jpg" alt="كود CSS" class="hero-image">
-
-        <section class="lesson-card">
-            <h2>ما هي CSS؟</h2>
-            <p>هي لغة مسؤولة عن تجميل وتنسيق صفحات HTML (الألوان، الخطوط، المسافات).</p>
+        <section class="lesson-hero">
+            <img src="img/lesson-6-hero.jpg" alt="لغة CSS">
+            <div class="hero-overlay">
+                <span class="breadcrumb">الوحدة الثانية / الدرس 2</span>
+                <h1>تنسيق الصفحات (CSS)</h1>
+            </div>
         </section>
 
         <section class="lesson-card">
-            <h2>طريقة الكتابة (Syntax)</h2>
-            <div style="background:#222; color:#0f0; padding:15px; border-radius:8px; font-family:monospace; direction:ltr; text-align:left;">
-                p { <br>
-                &nbsp;&nbsp; color: red; <br>
-                &nbsp;&nbsp; font-size: 20px; <br>
-                }
+            <h2>🤔 ما فائدة CSS؟</h2>
+            <p>تستخدم لتنسيق مظهر صفحات الويب (مثل لون الخط، حجم الخط، لون الخلفية). هي توفر الكثير من الجهد وتمكنك من التحكم في تصميم صفحات متعددة في آن واحد.</p>
+        </section>
+
+        <section class="lesson-card">
+            <h2>📝 البنية الأساسية لكود CSS</h2>
+            <div style="background:#1e1e1e; color:#a6e22e; padding:20px; border-radius:12px; font-family:monospace; direction:ltr; text-align:left; border:1px solid #333; margin-bottom:20px;">
+                Selector { Property: Value; }
             </div>
-            <p>في المثال السابق:</p>
-            <ul>
-                <li><strong>p:</strong> هو العنصر (Selector).</li>
-                <li><strong>color:</strong> هي الخاصية (Property).</li>
-                <li><strong>red:</strong> هي القيمة (Value).</li>
+            <ul class="fancy-list">
+                <li><strong>Selector (المحدد):</strong> العنصر الذي نريد تنسيقه (مثل <code>body</code> أو <code>h1</code>).</li>
+                <li><strong>Property (الخاصية):</strong> ما نريد تغييره (مثل <code>color</code>).</li>
+                <li><strong>Value (القيمة):</strong> القيمة الجديدة (مثل <code>red</code>).</li>
             </ul>
         </section>
 
-        <section class="lesson-card" style="border-color: var(--accent-color);">
-            <h2>🎮 نشاط تفاعلي</h2>
-            <p><strong>سؤال:</strong> لتغيير لون النص نستخدم الخاصية؟</p>
-            <button class="btn" onclick="checkAnswer(true, 'f6')">color</button>
-            <button class="btn" onclick="checkAnswer(false, 'f6')">font-size</button>
-            <p id="f6" style="margin-top: 15px;"></p>
+        <section class="lesson-card">
+            <h2>🔗 طرق إدراج CSS (هام جداً)</h2>
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3>1. مضمنة (Inline CSS)</h3>
+                    <p>تكتب داخل وسم HTML مباشرة. (تستخدم لتنسيق عنصر واحد فقط).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>2. داخلية (Internal CSS)</h3>
+                    <p>تكتب داخل وسم <code>&lt;style&gt;</code> في جزء <code>&lt;head&gt;</code> للصفحة.</p>
+                </div>
+                <div class="concept-card" style="border-right-color: var(--accent-color);">
+                    <h3>3. خارجية (External CSS)</h3>
+                    <p>الأفضل والاكثر احترافية. نكتب الكود في ملف منفصل بامتداد <code>.css</code> ونربطه بالصفحة.</p>
+                </div>
+            </div>
         </section>
 
-        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-            <a href="lesson-5.html" class="btn" style="background: #333; color:#fff">السابق</a>
-            <a href="lesson-7.html" class="btn">الدرس التالي ⬅️</a>
+        <section class="lesson-card">
+            <h2>💻 كود الربط (Link Tag)</h2>
+            <p>لربط ملف CSS خارجي، نكتب هذا الكود داخل منطقة <code>&lt;head&gt;</code>:</p>
+            <div style="background:#222; color:#fff; padding:15px; direction:ltr; border-radius:8px;">
+                &lt;link rel="stylesheet" href="style.css"&gt;
+            </div>
+        </section>
+
+        <section class="lesson-card quiz-box">
+            <h2>🎮 اختبر معلوماتك</h2>
+            <p>الطريقة الأفضل لتنسيق موقع كبير يحتوي على صفحات كثيرة هي؟</p>
+            <div class="quiz-options">
+                <button class="quiz-btn" onclick="checkAnswer(true, 'f6')">CSS الخارجية (External)</button>
+                <button class="quiz-btn" onclick="checkAnswer(false, 'f6')">CSS المضمنة (Inline)</button>
+            </div>
+            <p id="f6" style="margin-top: 15px; font-weight: bold;"></p>
+        </section>
+
+        <div style="display:flex; justify-content:space-between; margin-top:30px;">
+            <a href="lesson-5.html" class="nav-btn">⬅️ السابق</a>
+            <a href="lesson-7.html" class="nav-btn" style="background:var(--primary-color); color:#000;">الدرس التالي ➡️</a>
         </div>
     </main>
     <script src="js/main.js"></script>

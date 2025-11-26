@@ -2,48 +2,80 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الدرس الثالث: البيانات الضخمة</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     <div class="accessibility-toolbar">
-        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button onclick="window.location.href='index.html'">🏠 الرئيسية</button>
         <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
-        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+        <button onclick="speakText('content')">🔊 قراءة</button>
     </div>
-    <header><h1>الدرس الثالث: البيانات الضخمة</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
 
     <main id="content">
-        <img src="img/lesson-3-hero.jpg" alt="البيانات الضخمة" class="hero-image">
-
-        <section class="lesson-card">
-            <h2>ما هي البيانات الضخمة؟</h2>
-            <p>هي كميات هائلة من البيانات لا يمكن تخزينها بالأدوات التقليدية.</p>
+        <section class="lesson-hero">
+            <img src="img/lesson-3-hero.jpg" alt="البيانات الضخمة">
+            <div class="hero-overlay">
+                <span class="breadcrumb">الوحدة الأولى / الدرس 3</span>
+                <h1>البيانات الضخمة (Big Data)</h1>
+            </div>
         </section>
 
         <section class="lesson-card">
-            <h2>خصائص البيانات الضخمة (The 5 Vs)</h2>
-            <ol>
-                <li><strong>الحجم (Volume):</strong> كمية البيانات ضخمة جداً.</li>
-                <li><strong>السرعة (Velocity):</strong> البيانات تتولد بسرعة كبيرة.</li>
-                <li><strong>التنوع (Variety):</strong> تشمل نصوص، صور، فيديو.</li>
-                <li><strong>الدقة (Veracity):</strong> مدى صحة البيانات.</li>
-                <li><strong>القيمة (Value):</strong> الفائدة منها.</li>
-            </ol>
+            <h2>🌍 مصادر البيانات الضخمة</h2>
+            <ul class="fancy-list">
+                <li><strong>وسائل التواصل الاجتماعي:</strong> التعليقات، الصور، الفيديوهات، والإعجابات.</li>
+                <li><strong>البيانات المالية:</strong> المعاملات البنكية وعمليات الشراء عبر الإنترنت.</li>
+                <li><strong>الأجهزة الذكية (IoT):</strong> الهواتف، الكاميرات، الساعات الذكية.</li>
+                <li><strong>البيانات الحكومية:</strong> الإحصاءات السكانية، الضرائب، والسجلات الصحية.</li>
+                <li><strong>GPS:</strong> بيانات المواقع الجغرافية وحركة المرور (مثل خرائط جوجل).</li>
+            </ul>
         </section>
 
-        <section class="lesson-card" style="border-color: var(--accent-color);">
-            <h2>🎮 نشاط تفاعلي</h2>
-            <p><strong>سؤال:</strong> خاصية "التنوع" تعني وجود أنواع مختلفة من البيانات؟</p>
-            <button class="btn" onclick="checkAnswer(true, 'f3')">صواب ✅</button>
-            <button class="btn" onclick="checkAnswer(false, 'f3')">خطأ ❌</button>
-            <p id="f3" style="margin-top: 15px;"></p>
+        <section class="lesson-card">
+            <h2>📊 خصائص البيانات الخمسة (5Vs)</h2>
+            <div class="concepts-grid">
+                <div class="concept-card"><h3>1. الحجم (Volume)</h3><p>الكمية الهائلة من البيانات.</p></div>
+                <div class="concept-card"><h3>2. السرعة (Velocity)</h3><p>سرعة إنتاج وتدفق البيانات.</p></div>
+                <div class="concept-card"><h3>3. التنوع (Variety)</h3><p>اختلاف أشكالها (نصوص، صور، فيديو).</p></div>
+                <div class="concept-card"><h3>4. الدقة (Veracity)</h3><p>موثوقية البيانات وخلوها من الأخطاء.</p></div>
+                <div class="concept-card"><h3>5. القيمة (Value)</h3><p>الفائدة الحقيقية المستخلصة بعد التحليل.</p></div>
+            </div>
         </section>
 
-        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-            <a href="lesson-2.html" class="btn" style="background: #333; color:#fff">السابق</a>
-            <a href="lesson-4.html" class="btn">الدرس التالي ⬅️</a>
+        <section class="lesson-card">
+            <h2>📂 أنواع البيانات (Data Types)</h2>
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3>1. بيانات مهيكلة (Structured)</h3>
+                    <p>منظمة في جداول (صفوف وأعمدة) مثل قواعد البيانات، وسهل البحث فيها.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>2. بيانات غير مهيكلة (Unstructured)</h3>
+                    <p>ليس لها تنظيم محدد، مثل النصوص، الصور، والفيديوهات. صعب البحث فيها.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>3. شبه مهيكلة (Semi-Structured)</h3>
+                    <p>خليط بين الاثنين، مثل رسائل البريد الإلكتروني (تحتوي نصاً منظماً كالعنوان، ونصاً حراً كالمحتوى).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-card quiz-box">
+            <h2>🎮 اختبر معلوماتك</h2>
+            <p>صورك وفيديوهاتك على فيسبوك تعتبر من نوع البيانات...؟</p>
+            <div class="quiz-options">
+                <button class="quiz-btn" onclick="checkAnswer(true, 'f3')">غير المهيكلة (Unstructured)</button>
+                <button class="quiz-btn" onclick="checkAnswer(false, 'f3')">المهيكلة (Structured)</button>
+            </div>
+            <p id="f3" style="margin-top: 15px; font-weight: bold;"></p>
+        </section>
+
+        <div style="display:flex; justify-content:space-between; margin-top:30px;">
+            <a href="lesson-2.html" class="nav-btn">⬅️ السابق</a>
+            <a href="lesson-4.html" class="nav-btn" style="background:var(--primary-color); color:#000;">الدرس التالي ➡️</a>
         </div>
     </main>
     <script src="js/main.js"></script>

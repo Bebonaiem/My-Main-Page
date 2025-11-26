@@ -2,45 +2,75 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الدرس الرابع: موقع باستخدام AI</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     <div class="accessibility-toolbar">
-        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button onclick="window.location.href='index.html'">🏠 الرئيسية</button>
         <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
-        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+        <button onclick="speakText('content')">🔊 قراءة</button>
     </div>
-    <header><h1>الدرس الرابع: موقع باستخدام AI</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
 
     <main id="content">
-        <img src="img/lesson-8-hero.jpg" alt="إنشاء موقع بالـ AI" class="hero-image">
-
-        <section class="lesson-card">
-            <h2>أدوات الـ AI للمواقع</h2>
-            <p>يمكنك إنشاء موقع كامل في ثوانٍ باستخدام أدوات مثل Wegic و Jimdo.</p>
-        </section>
-
-        <section class="lesson-card">
-            <h2>كيفية الاستخدام (Prompts)</h2>
-            <div class="info-box">
-                <p>تعتمد هذه الأدوات على الأوامر النصية. مثال:</p>
-                <p><em>"أنشئ موقعاً لمدرسة إعدادية يحتوي على صور للطلاب وجدول الحصص بألوان زرقاء."</em></p>
+        <section class="lesson-hero">
+            <img src="img/lesson-8-hero.jpg" alt="بناء موقع بالذكاء الاصطناعي">
+            <div class="hero-overlay">
+                <span class="breadcrumb">الوحدة الثانية / الدرس 4</span>
+                <h1>إنشاء موقع بمساعدة الذكاء الاصطناعي</h1>
             </div>
         </section>
 
-        <section class="lesson-card" style="border-color: var(--accent-color);">
-            <h2>🎮 نشاط تفاعلي</h2>
-            <p><strong>سؤال:</strong> الأمر الذي نكتبه للذكاء الاصطناعي يسمى؟</p>
-            <button class="btn" onclick="checkAnswer(true, 'f8')">Prompt</button>
-            <button class="btn" onclick="checkAnswer(false, 'f8')">Tag</button>
-            <p id="f8" style="margin-top: 15px;"></p>
+        <section class="lesson-card">
+            <h2>🤖 أدوات الذكاء الاصطناعي</h2>
+            <p>في عالمنا الرقمي، يمكنك إنشاء موقع كامل في دقائق باستخدام أدوات مثل:</p>
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3>Wegic</h3>
+                    <p>منصة تفاعلية تعتمد على الدردشة (Chat) لبناء الموقع وتعديله.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Jimdo Dolphin</h3>
+                    <p>يسألك أسئلة بسيطة ثم يبني الموقع تلقائياً بناءً على إجاباتك.</p>
+                </div>
+            </div>
         </section>
 
-        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-            <a href="lesson-7.html" class="btn" style="background: #333; color:#fff">السابق</a>
-            <a href="index.html" class="btn">العودة للرئيسية 🏠</a>
+        <section class="lesson-card">
+            <h2>💬 الأوامر النصية (Prompts)</h2>
+            <p>هي الجمل التي تكتبها للـ AI ليقوم بتنفيذ المهمة. كلما كان الوصف دقيقاً، كانت النتيجة أفضل.</p>
+            <div class="info-box">
+                <strong>مثال لأمر ممتاز:</strong><br>
+                "قم بإنشاء موقع إلكتروني لنادي القراءة في المدرسة. استخدم الألوان الزرقاء والبيضاء. أريد صفحة رئيسية، وصفحة 'من نحن'، وقسم لصور الأنشطة، ونموذج للتواصل."
+            </div>
+        </section>
+
+        <section class="lesson-card">
+            <h2>✏️ تخصيص وتعديل الموقع</h2>
+            <p>بعد أن ينشئ الـ AI الموقع، يمكنك تعديله:</p>
+            <ul class="fancy-list">
+                <li><strong>تعديل النصوص:</strong> انقر على أي نص لتغييره وإضافة معلومات مدرستك الحقيقية.</li>
+                <li><strong>تغيير الألوان:</strong> اطلب من الـ AI "اجعل الخلفية زرقاء فاتحة" وسينفذ فوراً.</li>
+                <li><strong>إضافة الصور:</strong> استبدل الصور الافتراضية بصور حقيقية من مدرستك.</li>
+                <li><strong>إضافة أقسام:</strong> يمكنك طلب "أضف قسماً لجدول الامتحانات".</li>
+            </ul>
+        </section>
+
+        <section class="lesson-card quiz-box">
+            <h2>🎮 اختبر معلوماتك</h2>
+            <p>ماذا نسمي الجملة التي نكتبها للذكاء الاصطناعي لينشئ الموقع؟</p>
+            <div class="quiz-options">
+                <button class="quiz-btn" onclick="checkAnswer(true, 'f8')">Prompt (موجه)</button>
+                <button class="quiz-btn" onclick="checkAnswer(false, 'f8')">Virus (فيروس)</button>
+            </div>
+            <p id="f8" style="margin-top: 15px; font-weight: bold;"></p>
+        </section>
+
+        <div style="display:flex; justify-content:space-between; margin-top:30px;">
+            <a href="lesson-7.html" class="nav-btn">⬅️ السابق</a>
+            <a href="index.html" class="nav-btn" style="background:var(--accent-color); color:#fff;">العودة للرئيسية 🏠</a>
         </div>
     </main>
     <script src="js/main.js"></script>

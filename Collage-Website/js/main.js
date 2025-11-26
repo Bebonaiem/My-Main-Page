@@ -1,19 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     loadSettings();
-    
-    // حركة ظهور البطاقات
-    const cards = document.querySelectorAll('.lesson-card');
-    cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease';
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, index * 100);
-    });
 });
 
+// Scroll Progress Bar
+window.onscroll = function() { updateProgressBar() };
+function updateProgressBar() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    const bar = document.getElementById("myBar");
+    if(bar) bar.style.width = scrolled + "%";
+}
+
+// Font Size
 function setFontSize(size) {
     document.body.classList.remove('large-font', 'extra-large-font');
     if (size === 'large') document.body.classList.add('large-font');
@@ -21,73 +20,51 @@ function setFontSize(size) {
     localStorage.setItem('fontSize', size);
 }
 
-// دالة تبديل الثيم
+// Theme Toggle
 function toggleTheme() {
-    // التبديل بإضافة/إزالة كلاس الوضع المضيء
     document.body.classList.toggle('light-mode');
-    document.body.classList.remove('high-contrast'); // إيقاف التباين العالي
-    
+    document.body.classList.remove('high-contrast');
     const isLight = document.body.classList.contains('light-mode');
-    
-    // حفظ الحالة
     localStorage.setItem('lightMode', isLight);
     localStorage.setItem('highContrast', 'false');
-    
-    updateThemeButtonText(isLight);
+    updateThemeBtn(isLight);
 }
 
-function updateThemeButtonText(isLight) {
+function updateThemeBtn(isLight) {
     const btn = document.getElementById('theme-btn');
-    if(btn) {
-        if (isLight) {
-            btn.innerText = '🌙 الوضع المظلم'; // إذا كنا في المضيء، نعرض زر للتحويل للمظلم
-        } else {
-            btn.innerText = '☀️ الوضع المضيء'; // إذا كنا في المظلم، نعرض زر للتحويل للمضيء
-        }
-    }
+    if(btn) btn.innerText = isLight ? '🌙 وضع الليل' : '☀️ وضع النهار';
 }
 
 function toggleContrast() {
     document.body.classList.toggle('high-contrast');
     document.body.classList.remove('light-mode');
-    
-    const isHighContrast = document.body.classList.contains('high-contrast');
-    localStorage.setItem('highContrast', isHighContrast);
+    const isHigh = document.body.classList.contains('high-contrast');
+    localStorage.setItem('highContrast', isHigh);
     localStorage.setItem('lightMode', 'false');
 }
 
 function loadSettings() {
-    const fontSize = localStorage.getItem('fontSize');
-    const lightMode = localStorage.getItem('lightMode');
-    const highContrast = localStorage.getItem('highContrast');
-
-    if (fontSize) setFontSize(fontSize);
-    
-    // التحقق مما إذا كان الوضع المضيء محفوظاً
-    if (lightMode === 'true') {
-        document.body.classList.add('light-mode');
-        updateThemeButtonText(true);
-    } else {
-        updateThemeButtonText(false); // الوضع الافتراضي (المظلم)
-    }
-    
-    if (highContrast === 'true') document.body.classList.add('high-contrast');
+    const size = localStorage.getItem('fontSize');
+    const light = localStorage.getItem('lightMode');
+    const high = localStorage.getItem('highContrast');
+    if (size) setFontSize(size);
+    if (light === 'true') { document.body.classList.add('light-mode'); updateThemeBtn(true); }
+    else { updateThemeBtn(false); }
+    if (high === 'true') document.body.classList.add('high-contrast');
 }
 
-function speakText(elementId) {
+// TTS
+function speakText(id) {
     window.speechSynthesis.cancel();
-    const text = document.getElementById(elementId).innerText;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ar-SA';
-    utterance.rate = 0.9;
-    window.speechSynthesis.speak(utterance);
+    const text = document.getElementById(id).innerText;
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ar-SA'; u.rate = 0.9;
+    window.speechSynthesis.speak(u);
 }
 
-function checkAnswer(isCorrect, feedbackId) {
-    const feedbackEl = document.getElementById(feedbackId);
-    if (isCorrect) {
-        feedbackEl.innerHTML = '<span style="color:#00ff00; font-weight:bold; font-size:1.2rem">🎉 إجابة صحيحة!</span>';
-    } else {
-        feedbackEl.innerHTML = '<span style="color:#ff0000; font-weight:bold; font-size:1.2rem">❌ حاول مرة أخرى</span>';
-    }
+// Quiz
+function checkAnswer(isCorrect, id) {
+    const el = document.getElementById(id);
+    if(isCorrect) el.innerHTML = '<span style="color:#0f0; font-weight:bold">🎉 إجابة صحيحة!</span>';
+    else el.innerHTML = '<span style="color:#f00; font-weight:bold">❌ حاول مرة أخرى</span>';
 }

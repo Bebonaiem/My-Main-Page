@@ -2,44 +2,94 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الدرس الثالث: مشروع المدرسة</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     <div class="accessibility-toolbar">
-        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button onclick="window.location.href='index.html'">🏠 الرئيسية</button>
         <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
-        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+        <button onclick="speakText('content')">🔊 قراءة</button>
     </div>
-    <header><h1>الدرس الثالث: مشروع المدرسة</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
 
     <main id="content">
-        <img src="img/lesson-7-hero.jpg" alt="تجهيز المشروع" class="hero-image">
+        <section class="lesson-hero">
+            <img src="img/lesson-7-hero.jpg" alt="مشروع المدرسة">
+            <div class="hero-overlay">
+                <span class="breadcrumb">الوحدة الثانية / الدرس 3</span>
+                <h1>مشروع المدرسة الرقمي</h1>
+            </div>
+        </section>
 
         <section class="lesson-card">
-            <h2>تجهيز المجلدات</h2>
-            <p>لإنشاء مشروع منظم، يجب إنشاء مجلد رئيسي يحتوي على:</p>
-            <ul>
-                <li>ملف <strong>index.html</strong> (الصفحة الرئيسية).</li>
-                <li>ملف <strong>style.css</strong> (التنسيقات).</li>
-                <li>مجلد <strong>images</strong> (للصور).</li>
+            <h2>📂 تجهيز المشروع</h2>
+            <p>أنشئ مجلداً باسم <code>project</code> وضع بداخله:</p>
+            <ul class="fancy-list">
+                <li>ملف <code>School.html</code> (الصفحة الرئيسية).</li>
+                <li>ملف <code>Style.css</code> (ملف التنسيقات).</li>
+                <li>مجلد للصور لحفظ صور المدرسة والطلاب.</li>
             </ul>
         </section>
 
         <section class="lesson-card">
-            <h2>أكواد HTML الأساسية</h2>
-            <ul>
-                <li><code>&lt;header&gt;</code>: رأس الصفحة.</li>
-                <li><code>&lt;nav&gt;</code>: القائمة.</li>
-                <li><code>&lt;section&gt;</code>: أقسام المحتوى.</li>
-                <li><code>&lt;footer&gt;</code>: تذييل الصفحة.</li>
-            </ul>
+            <h2>🏗️ تقسيم الصفحة (أكواد HTML)</h2>
+            <p>سنستخدم وسوم خاصة لتقسيم الصفحة بشكل منظم:</p>
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3>&lt;header&gt;</h3>
+                    <p>الجزء العلوي، يحتوي على اسم المدرسة وشعارها.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>&lt;nav&gt;</h3>
+                    <p>يحتوي على روابط التنقل (الرئيسية، اتصل بنا، عن المدرسة).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>&lt;section&gt;</h3>
+                    <p>لتقسيم المحتوى إلى أجزاء (قسم المعلومات، قسم الأنشطة).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>&lt;footer&gt;</h3>
+                    <p>تذييل الصفحة، يحتوي على حقوق النشر ومعلومات الاتصال.</p>
+                </div>
+            </div>
         </section>
 
-        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-            <a href="lesson-6.html" class="btn" style="background: #333; color:#fff">السابق</a>
-            <a href="lesson-8.html" class="btn">الدرس التالي ⬅️</a>
+        <section class="lesson-card">
+            <h2>💻 كود المشروع العملي</h2>
+            <p>إليك مثال لكود صفحة المدرسة:</p>
+            <div style="background:#222; color:#fff; padding:15px; direction:ltr; border-radius:8px; font-family:monospace; white-space: pre-wrap;">
+&lt;div class="container"&gt;
+  &lt;header&gt;
+    &lt;h1&gt;مدرسة الإعدادية&lt;/h1&gt;
+  &lt;/header&gt;
+  
+  &lt;section&gt;
+    &lt;h2&gt;معلومات أساسية&lt;/h2&gt;
+    &lt;p&gt;اسم المدرسة: ...&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;حقوق النشر 2025&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+            </div>
+        </section>
+
+        <section class="lesson-card quiz-box">
+            <h2>🎮 اختبر معلوماتك</h2>
+            <p>أي وسم يُستخدم لكتابة حقوق النشر في أسفل الصفحة؟</p>
+            <div class="quiz-options">
+                <button class="quiz-btn" onclick="checkAnswer(true, 'f7')">&lt;footer&gt;</button>
+                <button class="quiz-btn" onclick="checkAnswer(false, 'f7')">&lt;header&gt;</button>
+            </div>
+            <p id="f7" style="margin-top: 15px; font-weight: bold;"></p>
+        </section>
+
+        <div style="display:flex; justify-content:space-between; margin-top:30px;">
+            <a href="lesson-6.html" class="nav-btn">⬅️ السابق</a>
+            <a href="lesson-8.html" class="nav-btn" style="background:var(--primary-color); color:#000;">الدرس التالي ➡️</a>
         </div>
     </main>
     <script src="js/main.js"></script>

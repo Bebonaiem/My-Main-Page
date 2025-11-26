@@ -2,49 +2,75 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الدرس الثاني: التهديدات السيبرانية</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     <div class="accessibility-toolbar">
-        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button onclick="window.location.href='index.html'">🏠 الرئيسية</button>
         <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
-        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+        <button onclick="speakText('content')">🔊 قراءة</button>
     </div>
-    <header><h1>الدرس الثاني: التهديدات السيبرانية</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
 
     <main id="content">
-        <img src="img/lesson-2-hero.jpg" alt="أمن المعلومات" class="hero-image">
-
-        <section class="lesson-card">
-            <h2>1. برامج الفدية (Ransomware)</h2>
-            <p>هي برامج خبيثة تقوم بتشفير ملفاتك (قفلها) وتطلب منك دفع المال لفك القفل.</p>
-            <div class="info-box" style="border-color: #ff0000;">
-                <p><strong>نصيحة:</strong> لا تفتح روابط مجهولة ولا تدفع الفدية أبداً.</p>
+        <section class="lesson-hero">
+            <img src="img/lesson-2-hero.jpg" alt="أمن المعلومات">
+            <div class="hero-overlay">
+                <span class="breadcrumb">الوحدة الأولى / الدرس 2</span>
+                <h1>التهديدات السيبرانية المتقدمة</h1>
             </div>
         </section>
 
         <section class="lesson-card">
-            <h2>2. الهندسة الاجتماعية</h2>
-            <p>فن خداع البشر للحصول على معلومات سرية.</p>
-            <ul>
-                <li><strong>التصيد (Phishing):</strong> رسائل وهمية تبدو كأنها من البنك.</li>
-                <li><strong>الاحتيال:</strong> انتحال شخصية موظف دعم فني.</li>
-            </ul>
+            <h2>🚫 برامج الفدية (Ransomware)</h2>
+            <p>هي برامج ضارة تقوم بتشفير ملفاتك (جعلها غير قابلة للقراءة) وتطلب فدية مالية لاستعادة الوصول إليها.</p>
+            <div class="info-box" style="border-right-color: #ff0000;">
+                <strong>كيف تعمل؟</strong> تنتشر عبر رسائل البريد المشبوهة أو المواقع الضارة. بمجرد دخولها، يبدأ التشفير وتظهر رسالة الابتزاز.
+            </div>
         </section>
 
-        <section class="lesson-card" style="border-color: var(--accent-color);">
-            <h2>🎮 نشاط تفاعلي</h2>
-            <p><strong>سؤال:</strong> برنامج يغلق ملفاتك ويطلب المال يسمى؟</p>
-            <button class="btn" onclick="checkAnswer(true, 'f2')">برامج الفدية</button>
-            <button class="btn" onclick="checkAnswer(false, 'f2')">مكافح الفيروسات</button>
-            <p id="f2" style="margin-top: 15px;"></p>
+        <section class="lesson-card">
+            <h2>🎭 أساليب الهندسة الاجتماعية المتقدمة</h2>
+            <p>هي فن خداع البشر لكشف المعلومات السرية، ولها أنواع متعددة:</p>
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3>1. التصيد الموجه (Spear Phishing)</h3>
+                    <p>يستهدف شخصاً محدداً بجمع معلومات عنه (اسمه، عمله) لتبدو الرسالة حقيقية ومقنعة جداً.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>2. انتحال الشخصية (Pretexting)</h3>
+                    <p>يخلق المهاجم سيناريو وهمي (مثلاً: "أنا موظف البنك واحتاج تحديث بياناتك") ليخدع الضحية.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>3. الاستدراج (Baiting)</h3>
+                    <p>تقديم شيء مغري (مثل "تحميل لعبة مجاناً" أو "فلاشة USB ملقاة") تحتوي على فيروسات.</p>
+                </div>
+            </div>
         </section>
 
-        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-            <a href="lesson-1.html" class="btn" style="background: #333; color:#fff">السابق</a>
-            <a href="lesson-3.html" class="btn">الدرس التالي ⬅️</a>
+        <section class="lesson-card">
+            <h2>💥 هجمات الحرمان من الخدمة (DDoS)</h2>
+            <p>تهدف إلى إيقاف موقع إلكتروني عن العمل بجعله مزدحماً جداً بطلبات وهمية.</p>
+            <div class="info-box">
+                <strong>الروبوتات (Botnets):</strong> هي شبكة من الأجهزة المخترقة التي يتحكم فيها المهاجم عن بعد لإرسال ملايين الطلبات للموقع المستهدف في نفس الوقت، مما يؤدي لتعطله.
+            </div>
+        </section>
+
+        <section class="lesson-card quiz-box">
+            <h2>🎮 اختبر معلوماتك</h2>
+            <p>مهاجم يتصل بك ويدعي أنه "الدعم الفني" ليحصل على كلمة المرور، هذا يسمى؟</p>
+            <div class="quiz-options">
+                <button class="quiz-btn" onclick="checkAnswer(true, 'f2')">انتحال الشخصية (Pretexting)</button>
+                <button class="quiz-btn" onclick="checkAnswer(false, 'f2')">برامج الفدية</button>
+            </div>
+            <p id="f2" style="margin-top: 15px; font-weight: bold;"></p>
+        </section>
+
+        <div style="display:flex; justify-content:space-between; margin-top:30px;">
+            <a href="lesson-1.html" class="nav-btn">⬅️ السابق</a>
+            <a href="lesson-3.html" class="nav-btn" style="background:var(--primary-color); color:#000;">الدرس التالي ➡️</a>
         </div>
     </main>
     <script src="js/main.js"></script>

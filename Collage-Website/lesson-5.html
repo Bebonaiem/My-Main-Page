@@ -2,45 +2,80 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الدرس الأول: مبادئ تصميم الويب</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     <div class="accessibility-toolbar">
-        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button onclick="window.location.href='index.html'">🏠 الرئيسية</button>
         <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
-        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+        <button onclick="speakText('content')">🔊 قراءة</button>
     </div>
-    <header><h1>الدرس الأول: مبادئ تصميم الويب</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
 
     <main id="content">
-        <img src="img/lesson-5-hero.jpg" alt="تصميم واجهات" class="hero-image">
-
-        <section class="lesson-card">
-            <h2>الفرق بين UI و UX</h2>
-            <div class="info-box">
-                <h3>🎨 واجهة المستخدم (UI)</h3>
-                <p>هي الشكل: الألوان، الأزرار، الصور، الخطوط.</p>
-            </div>
-            <div class="info-box" style="border-color: var(--accent-color);">
-                <h3>😊 تجربة المستخدم (UX)</h3>
-                <p>هي الشعور: هل الموقع سهل الاستخدام؟ هل الوصول للمعلومة سريع؟</p>
+        <section class="lesson-hero">
+            <img src="img/lesson-5-hero.jpg" alt="تصميم الويب">
+            <div class="hero-overlay">
+                <span class="breadcrumb">الوحدة الثانية / الدرس 1</span>
+                <h1>مبادئ تصميم واجهات الويب</h1>
             </div>
         </section>
 
         <section class="lesson-card">
-            <h2>مبادئ التصميم الجيد</h2>
-            <ul>
-                <li><strong>التباين:</strong> النص واضح على الخلفية.</li>
-                <li><strong>التناسق:</strong> نفس الألوان في كل الصفحات.</li>
-                <li><strong>البساطة:</strong> عدم ازدحام الصفحة.</li>
+            <h2>🎯 مفهوم تجربة المستخدم (UX)</h2>
+            <p>هو التفكير في شعور المستخدم أثناء استخدام الموقع: هل هو سعيد؟ هل يجد ما يريد بسهولة؟</p>
+            <div class="info-box">
+                <strong>مثال:</strong> تخيل مكتبة كتب مرتبة (سهلة الاستخدام) مقابل مكتبة كتبها ملقاة على الأرض (صعبة ومحبطة). هذا هو الفرق بين UX الجيد والسيء.
+            </div>
+        </section>
+
+        <section class="lesson-card">
+            <h2>🏗️ مبادئ أساسية في تصميم UX</h2>
+            <ul class="fancy-list">
+                <li><strong>سهولة التنقل (Navigation):</strong> يستطيع المستخدم الوصول لما يريد بسرعة ودون عناء.</li>
+                <li><strong>الوضوح (Clarity):</strong> تقديم المعلومات بطريقة سهلة الفهم (خط واضح، جمل قصيرة).</li>
+                <li><strong>التناسق (Consistency):</strong> الحفاظ على نفس الأسلوب والألوان في جميع صفحات الموقع.</li>
             </ul>
         </section>
 
-        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-            <a href="lesson-4.html" class="btn" style="background: #333; color:#fff">السابق</a>
-            <a href="lesson-6.html" class="btn">الدرس التالي ⬅️</a>
+        <section class="lesson-card">
+            <h2>🎨 تصميم واجهة المستخدم (UI)</h2>
+            <p>هو "الشكل" الذي يظهر للمستخدم (الأزرار، الألوان، الصور). ومبادئه:</p>
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3>الجاذبية البصرية</h3>
+                    <p>تعطي انطباعاً أولياً جيداً. العين ترتاح للتصميم الجميل والمنظم.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>الألوان</h3>
+                    <p>اختيار ألوان متناسقة (مثل تدرجات الأزرق) وتجنب الألوان الصارخة التي تشتت الانتباه.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>الخطوط</h3>
+                    <p>استخدام خطوط واضحة ومقروءة، وتجنب الخطوط المزخرفة التي يصعب قراءتها.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>التخطيط (Layout)</h3>
+                    <p>تنظيم العناصر بشكل منطقي (رأس الصفحة، المحتوى، التذييل) ليكون الموقع سهل الاستخدام.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-card quiz-box">
+            <h2>🎮 اختبر معلوماتك</h2>
+            <p>أي مما يلي يهتم بـ "مشاعر وسهولة استخدام" الزائر للموقع؟</p>
+            <div class="quiz-options">
+                <button class="quiz-btn" onclick="checkAnswer(true, 'f5')">تجربة المستخدم (UX)</button>
+                <button class="quiz-btn" onclick="checkAnswer(false, 'f5')">واجهة المستخدم (UI)</button>
+            </div>
+            <p id="f5" style="margin-top: 15px; font-weight: bold;"></p>
+        </section>
+
+        <div style="display:flex; justify-content:space-between; margin-top:30px;">
+            <a href="lesson-4.html" class="nav-btn">⬅️ السابق</a>
+            <a href="lesson-6.html" class="nav-btn" style="background:var(--primary-color); color:#000;">الدرس التالي ➡️</a>
         </div>
     </main>
     <script src="js/main.js"></script>
