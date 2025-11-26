@@ -21,15 +21,16 @@
 </head>
 <body>
     
-    <!-- Accessibility Toolbar with Dropdown -->
+    <!-- Progress Bar -->
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+
+    <!-- Accessibility Toolbar -->
     <div class="accessibility-toolbar">
-        <!-- Font Size -->
         <button onclick="setFontSize('normal')" title="خط عادي">A</button> 
         <button onclick="setFontSize('large')" title="خط كبير">A+</button>
         
         <span style="border-right:1px solid var(--border-color); height:20px; margin:0 5px;"></span>
 
-        <!-- Theme Dropdown -->
         <select id="theme-selector" onchange="setTheme(this.value)" class="theme-select">
             <option value="default">🌑 الافتراضي</option>
             <option value="light-mode">☀️ المضيء</option>
@@ -41,20 +42,56 @@
 
         <span style="border-right:1px solid var(--border-color); height:20px; margin:0 5px;"></span>
 
-        <!-- Tools -->
         <button onclick="speakText('content')" title="قراءة النص">🔊</button>
         <button onclick="window.location.href='accessibility.html'" title="نسخة مبسطة">♿</button>
     </div>
 
+    <!-- NEW Responsive Navigation Bar -->
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <img src="img/logo.png" alt="Logo">
+                <span>تعلم بمتعة</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+
+            <!-- Menu Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">🏠 الرئيسية</a></li>
+
+                <!-- Unit 1 Dropdown -->
+                <li>
+                    <a href="javascript:void(0)" style="cursor:default">📘 الذكاء الاصطناعي ▾</a>
+                    <div class="dropdown-content">
+                        <a href="lesson-1.html">1. الأنظمة الذكية</a>
+                        <a href="lesson-2.html">2. التهديدات السيبرانية</a>
+                        <a href="lesson-3.html">3. البيانات الضخمة</a>
+                        <a href="lesson-4.html">4. البيانات والذكاء الاصطناعي</a>
+                    </div>
+                </li>
+
+                <!-- Unit 2 Dropdown -->
+                <li>
+                    <a href="javascript:void(0)" style="cursor:default">🎨 تصميم الويب ▾</a>
+                    <div class="dropdown-content">
+                        <a href="lesson-5.html">1. مبادئ التصميم</a>
+                        <a href="lesson-6.html">2. تنسيق CSS</a>
+                        <a href="lesson-7.html">3. مشروع المدرسة</a>
+                        <a href="lesson-8.html">4. موقع بالذكاء الاصطناعي</a>
+                    </div>
+                </li>
+
+                <li><a href="team.html">👥 فريق العمل</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <h1>مادة الكمبيوتر وتكنولوجيا المعلومات</h1>
         <p>منصة تعليمية تفاعلية - الفصل الدراسي الأول 2025</p>
-        <nav>
-            <ul>
-                <li><a href="index.html" style="background:#fff; color:#333">🏠 الرئيسية</a></li>
-                <li><a href="team.html">👥 فريق العمل</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main id="content">

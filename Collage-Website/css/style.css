@@ -138,7 +138,7 @@ img { max-width: 100%; height: auto; display: block; }
    ========================================= */
 .progress-container {
     width: 100%; height: 4px; background: transparent;
-    position: fixed; top: 0; left: 0; z-index: 2000;
+    position: fixed; top: 0; left: 0; z-index: 3000;
 }
 .progress-bar {
     height: 100%;
@@ -151,7 +151,7 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 8px 15px;
     display: flex; justify-content: center; align-items: center; 
     gap: 10px; flex-wrap: wrap; 
-    position: sticky; top: 0; z-index: 1000;
+    position: sticky; top: 0; z-index: 2000;
     transition: background-color 0.4s ease;
 }
 body.light-mode .accessibility-toolbar { background: #fff; color: #333; }
@@ -198,15 +198,6 @@ header {
 
 header h1 { font-weight: 800; font-size: 2rem; margin-bottom: 10px; line-height: 1.3; }
 header p { font-size: 1rem; opacity: 0.9; max-width: 700px; margin: 0 auto 20px; }
-
-nav ul { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-
-nav a {
-    color: white; padding: 8px 20px; border-radius: 30px; font-weight: bold;
-    background: var(--nav-bg); backdrop-filter: blur(10px); border: 1px solid var(--nav-border);
-    transition: var(--transition); font-size: 0.9rem;
-}
-nav a:hover { background: #fff; color: var(--primary-dark); transform: translateY(-2px); }
 
 
 /* =========================================
@@ -333,13 +324,11 @@ body.reading-mode footer { background: #e7e0cc; color: #5d4037; border-top: none
 
 
 /* =========================================
-   9. MOBILE RESPONSIVENESS
+   9. MOBILE RESPONSIVENESS (GENERAL)
    ========================================= */
 @media (max-width: 768px) {
     header h1 { font-size: 1.6rem; }
-    nav ul { gap: 8px; }
-    nav a { padding: 6px 14px; font-size: 0.85rem; width: auto; }
-
+    
     main { padding: 15px; width: 100%; }
     
     .lessons-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -356,4 +345,194 @@ body.reading-mode footer { background: #e7e0cc; color: #5d4037; border-top: none
     .accessibility-toolbar { padding: 8px 5px; justify-content: space-between; }
     .accessibility-toolbar button { padding: 6px 10px; font-size: 0.85rem; }
     .theme-select { min-width: 110px; font-size: 0.85rem; }
+}
+
+/* =========================================
+   10. NEW RESPONSIVE NAVBAR
+   ========================================= */
+.main-navbar {
+    background: var(--card-bg); /* Adapts to theme */
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 45px; /* Sits below the accessibility toolbar */
+    z-index: 999;
+    backdrop-filter: blur(10px); /* Glass effect */
+    transition: background 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 0; /* Remove padding to bring elements closer */
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Reduced height to bring elements closer */
+}
+
+/* --- Logo --- */
+.nav-logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.nav-logo span { color: var(--text-color); }
+.nav-logo img { height: 40px; width: auto; border:none; }
+
+/* --- Desktop Links --- */
+.nav-links {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links > li { position: relative; height: 100%; display: flex; align-items: center; }
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 12px; /* Reduced padding to bring elements closer */
+    border-radius: 8px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nav-links a:hover, .nav-links li:hover > a {
+    background: rgba(255,255,255,0.1);
+    color: var(--primary-color);
+}
+body.light-mode .nav-links a:hover { background: rgba(0,0,0,0.05); }
+
+/* Current page indicator */
+.nav-links a[href]:hover, .nav-links a[href]:focus {
+    background: rgba(255,255,255,0.1);
+}
+.nav-links a.current-page {
+    position: relative;
+    background: rgba(255,255,255,0.1);
+}
+.nav-links a.current-page::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* --- Dropdown Menu --- */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position right below the button */
+    right: 0; /* Align right for RTL */
+    background-color: var(--card-bg);
+    min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    z-index: 1000;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+    margin-top: 0; /* Remove any extra spacing */
+}
+
+/* Light mode shadow fix */
+body.light-mode .dropdown-content { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+.dropdown-content a {
+    padding: 12px 20px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.dropdown-content a:last-child { border-bottom: none; }
+.dropdown-content a:hover { padding-right: 25px; /* Slide effect */ }
+
+/* Show Dropdown on Hover */
+.nav-links li:hover .dropdown-content { display: flex; }
+
+/* --- Mobile Menu Button --- */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 850px) {
+    .mobile-menu-btn { display: block; }
+
+    .nav-links {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 60px; /* Adjusted to be closer */
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        border-bottom: 2px solid var(--primary-color);
+        flex-direction: column;
+        padding: 15px; /* Reduced padding */
+        gap: 5px; /* Reduced gap to bring elements closer */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        align-items: flex-start;
+    }
+
+    .nav-links.active { display: flex; }
+
+    .nav-links > li { width: 100%; display: block; height: auto; }
+    .nav-links a { width: 100%; padding: 8px; justify-content: flex-start; } /* Reduced padding */
+
+    /* Dropdown items with submenu */
+    .nav-links > li > a[style*='cursor:default']::after {
+        content: ' ▾';
+        font-size: 0.8em;
+        margin-left: 5px;
+    }
+
+    /* Mobile Dropdown */
+    .dropdown-content {
+        position: static; /* Stack normally */
+        display: none; /* Hidden until hover/click */
+        box-shadow: none;
+        border: none;
+        background: rgba(0,0,0,0.1); /* Slightly darker bg */
+        margin: 5px 15px; /* Reduced margin to be closer */
+        min-width: auto;
+        border-right: 2px solid var(--border-color);
+        border-radius: 0;
+        width: auto;
+    }
+    
+    .nav-links li:hover .dropdown-content { display: none; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); } /* Reduced distance */
+    to { opacity: 1; transform: translateY(0); }
 }

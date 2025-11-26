@@ -6,26 +6,61 @@
     <title>الدرس الأول: مبادئ تصميم الويب</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="img/logo.png">
-    <!-- بيانات المشاركة -->
     <meta property="og:title" content="الدرس الأول: مبادئ تصميم الويب">
     <meta property="og:description" content="الفرق بين تجربة المستخدم (UX) وواجهة المستخدم (UI) وأهم قواعد التصميم الناجح.">
     <meta property="og:image" content="https://learnfun.me/Collage-Website/img/lesson-5-hero.jpg">
-    <meta property="og:url" content="https://learnfun.me/Collage-Website/lesson-5.html">
-    <meta property="og:type" content="article">
-
-    <!-- دعم تويتر -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="الدرس الأول: مبادئ تصميم الويب">
-    <meta name="twitter:description" content="الفرق بين تجربة المستخدم (UX) وواجهة المستخدم (UI) وأهم قواعد التصميم الناجح.">
-    <meta name="twitter:image" content="https://learnfun.me/Collage-Website/img/lesson-5-hero.jpg">
 </head>
 <body>
     <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+    
     <div class="accessibility-toolbar">
-        <button onclick="window.location.href='index.html'">🏠 الرئيسية</button>
-        <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
-        <button onclick="speakText('content')">🔊 قراءة</button>
+        <button onclick="setFontSize('normal')" title="خط عادي">A</button> 
+        <button onclick="setFontSize('large')" title="خط كبير">A+</button>
+        <span style="border-right:1px solid var(--border-color); height:20px; margin:0 5px;"></span>
+        <select id="theme-selector" onchange="setTheme(this.value)" class="theme-select">
+            <option value="default">🌑 الافتراضي</option>
+            <option value="light-mode">☀️ المضيء</option>
+            <option value="nature-mode">🌿 الطبيعة</option>
+            <option value="sunset-mode">🌅 الغروب</option>
+            <option value="reading-mode">📖 القراءة</option>
+            <option value="high-contrast">👁️ تباين عالي</option>
+        </select>
+        <span style="border-right:1px solid var(--border-color); height:20px; margin:0 5px;"></span>
+        <button onclick="speakText('content')" title="قراءة النص">🔊</button>
+        <button onclick="window.location.href='accessibility.html'" title="نسخة مبسطة">♿</button>
     </div>
+
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="img/logo.png" alt="Logo">
+                <span>تعلم بمتعة</span>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">🏠 الرئيسية</a></li>
+                <li>
+                    <a href="javascript:void(0)" style="cursor:default">📘 الذكاء الاصطناعي ▾</a>
+                    <div class="dropdown-content">
+                        <a href="lesson-1.html">1. الأنظمة الذكية</a>
+                        <a href="lesson-2.html">2. التهديدات السيبرانية</a>
+                        <a href="lesson-3.html">3. البيانات الضخمة</a>
+                        <a href="lesson-4.html">4. البيانات والذكاء الاصطناعي</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" style="cursor:default">🎨 تصميم الويب ▾</a>
+                    <div class="dropdown-content">
+                        <a href="lesson-5.html">1. مبادئ التصميم</a>
+                        <a href="lesson-6.html">2. تنسيق CSS</a>
+                        <a href="lesson-7.html">3. مشروع المدرسة</a>
+                        <a href="lesson-8.html">4. موقع بالذكاء الاصطناعي</a>
+                    </div>
+                </li>
+                <li><a href="team.html">👥 فريق العمل</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main id="content">
         <section class="lesson-hero">

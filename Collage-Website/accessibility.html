@@ -226,14 +226,32 @@
     <!-- إعادة استخدام دالة القراءة من الملف الرئيسي -->
     <script src="js/main.js"></script>
     <script>
-        // دالة قراءة محسنة لهذه الصفحة فقط
+        // دالة قراءة خاصة لهذه الصفحة (Override) لتتبع الحالة المحلية
+        let localSpeakingId = null; 
+
         function speakText(elementId) {
-            window.speechSynthesis.cancel(); // إيقاف أي قراءة سابقة
+            // 1. إذا كان المتصفح يتحدث بالفعل ونفس العنصر تم الضغط عليه -> توقف
+            if (window.speechSynthesis.speaking && localSpeakingId === elementId) {
+                window.speechSynthesis.cancel(); 
+                localSpeakingId = null;
+                return;
+            }
+
+            // 2. إيقاف أي صوت سابق وبدء الجديد
+            window.speechSynthesis.cancel(); 
+            
             var text = document.getElementById(elementId).innerText;
             var utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'ar-SA'; // اللغة العربية
-            utterance.rate = 0.85; // سرعة أبطأ قليلاً للوضوح
+            utterance.lang = 'ar-SA'; 
+            utterance.rate = 0.85; 
             utterance.pitch = 1;
+
+            // عند انتهاء الكلام طبيعياً، نعيد تعيين المتغير
+            utterance.onend = function() {
+                localSpeakingId = null;
+            };
+
+            localSpeakingId = elementId;
             window.speechSynthesis.speak(utterance);
         }
     </script>
