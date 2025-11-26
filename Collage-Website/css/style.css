@@ -1,0 +1,444 @@
+/* =========================================
+   1. استيراد الخطوط والإعدادات الأساسية
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+:root {
+    /* === الوضع المظلم (الافتراضي - Default Black Theme) === */
+    --primary-color: #4cc9f0;       /* أزرق سماوي نيون (للتباين مع الأسود) */
+    --primary-dark: #4361ee;        /* أزرق ملكي */
+    --accent-color: #f72585;        /* وردي نيون */
+    --bg-color: #050505;            /* أسود عميق */
+    --card-bg: #121212;             /* رمادي داكن جداً للبطاقات */
+    --text-color: #e0e0e0;          /* أبيض هادئ */
+    --text-light: #a0a0a0;          /* رمادي فاتح للنصوص الفرعية */
+    --border-color: #333;           /* لون الحدود */
+    
+    /* خلفية الهيدر (تدرج لوني داكن) */
+    --header-bg: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    --nav-bg: rgba(255, 255, 255, 0.08);
+    --nav-border: rgba(255, 255, 255, 0.15);
+    --nav-hover-text: #fff;
+    
+    /* الظلال والتأثيرات */
+    --border-radius: 16px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    --shadow-hover: 0 0 25px rgba(76, 201, 240, 0.15); /* توهج نيون عند التحويم */
+    
+    /* إعدادات عامة */
+    --font-main: 'Tajawal', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* === الوضع المضيء (Light Mode - عند التفعيل) === */
+body.light-mode {
+    --primary-color: #4361ee;       /* أزرق ملكي قوي */
+    --primary-dark: #3a0ca3;
+    --accent-color: #f72585;
+    --bg-color: #f0f2f5;            /* رمادي فاتح جداً */
+    --card-bg: #ffffff;             /* أبيض ناصع */
+    --text-color: #2b2d42;          /* كحلي غامق */
+    --text-light: #6c757d;
+    --border-color: rgba(0,0,0,0.08);
+    
+    /* خلفية الهيدر (تدرج لوني ساطع) */
+    --header-bg: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+    --nav-bg: rgba(255, 255, 255, 0.25);
+    --nav-border: transparent;
+    --nav-hover-text: #4361ee;
+    
+    /* الظلال */
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 15px 30px rgba(67, 97, 238, 0.2);
+}
+
+/* === وضع التباين العالي (Accessibility) === */
+body.high-contrast {
+    --primary-color: #ffff00;
+    --primary-dark: #ffffff;
+    --accent-color: #00ffff;
+    --bg-color: #000000;
+    --card-bg: #000000;
+    --text-color: #ffffff;
+    --text-light: #cccccc;
+    --shadow: none;
+    --border-color: #ffffff;
+    border: 1px solid #ffffff;
+    --header-bg: #000000;
+}
+
+/* === تكبير الخطوط (Accessibility) === */
+body.large-font { font-size: 115%; }
+body.extra-large-font { font-size: 135%; }
+
+
+/* =========================================
+   2. التنسيقات العامة (Global Styles)
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    transition: background-color 0.4s ease, color 0.4s ease; /* تنقل ناعم بين الثيمات */
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+
+/* =========================================
+   3. شريط أدوات الوصول (Toolbar)
+   ========================================= */
+.accessibility-toolbar {
+    background: #111;
+    border-bottom: 1px solid #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: #fff;
+    position: relative;
+    z-index: 1000;
+    font-size: 0.9rem;
+}
+/* تعديل لون الشريط في الوضع المضيء */
+body.light-mode .accessibility-toolbar {
+    background: #e9ecef;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.accessibility-toolbar button {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: inherit;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: var(--transition);
+}
+body.light-mode .accessibility-toolbar button {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.accessibility-toolbar button:hover {
+    background: var(--primary-color);
+    color: #fff; /* النص أبيض عند التحويم دائماً */
+    border-color: var(--primary-color);
+}
+
+
+/* =========================================
+   4. الهيدر والقوائم (Header & Nav)
+   ========================================= */
+header {
+    background: var(--header-bg);
+    color: white;
+    padding: 4rem 1rem 6rem 1rem; /* مساحة سفلية إضافية للتداخل */
+    text-align: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-bottom: -50px; /* تداخل مع المحتوى */
+    position: relative;
+}
+
+header h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--nav-border);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    background: white;
+    color: var(--nav-hover-text);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
+
+nav a.special-btn {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(247, 37, 133, 0.4);
+}
+nav a.special-btn:hover {
+    background: #d00060;
+    color: white;
+}
+
+
+/* =========================================
+   5. المحتوى الرئيسي (Main)
+   ========================================= */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* القسم التعريفي */
+.info-section {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    margin-bottom: 4rem;
+    border: 1px solid var(--border-color);
+}
+
+
+/* =========================================
+   6. الشبكة والبطاقات (Grid & Cards)
+   ========================================= */
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* عنوان الوحدة */
+.unit-title {
+    grid-column: 1 / -1;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.unit-title h2 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin: 0;
+}
+body.light-mode .unit-title h2 { color: var(--primary-dark); }
+
+/* بطاقة الدرس */
+.lesson-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* لقص الصورة */
+    border: 1px solid var(--border-color);
+}
+
+.lesson-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+/* حاوية الصورة في البطاقة */
+.card-image-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.lesson-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.lesson-card:hover img {
+    transform: scale(1.1); /* تأثير تكبير الصورة عند التحويم */
+}
+
+/* محتوى البطاقة */
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-card h3 {
+    color: var(--text-color); /* أبيض في المظلم */
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+body.light-mode .lesson-card h3 { color: var(--primary-dark); }
+
+.lesson-card p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    flex-grow: 1; /* لدفع الزر للأسفل */
+    font-size: 0.95rem;
+}
+
+
+/* =========================================
+   7. الصور داخل الدروس (Hero Images)
+   ========================================= */
+.hero-image {
+    width: 100%;
+    height: 350px; /* ارتفاع كبير للبانر */
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+
+/* =========================================
+   8. العناصر الداخلية للدروس (Typography)
+   ========================================= */
+.lesson-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+body.light-mode .lesson-card h2 { color: var(--primary-dark); }
+
+.lesson-card ul, .lesson-card ol {
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+.lesson-card li { margin-bottom: 8px; }
+
+/* المربعات الملونة (للمعلومات) */
+.info-box {
+    background: rgba(76, 201, 240, 0.08); /* خلفية شفافة زرقاء */
+    border-right: 4px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+body.light-mode .info-box { background: rgba(67, 97, 238, 0.08); }
+
+/* الأكواد البرمجية */
+code {
+    background: #2d2d2d;
+    color: #f72585;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    direction: ltr;
+    display: inline-block;
+}
+
+
+/* =========================================
+   9. الأزرار (Buttons)
+   ========================================= */
+.btn {
+    display: block;
+    width: 100%;
+    background: var(--primary-color);
+    color: #000; /* نص أسود لتباين أفضل مع ألوان النيون */
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+/* في الوضع المضيء الزر يكون أزرق غامق فالنص أبيض */
+body.light-mode .btn { color: #fff; }
+
+.btn:hover {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 0 20px var(--accent-color);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   10. التذييل (Footer) & Skip Link
+   ========================================= */
+footer {
+    background: #000;
+    color: #555;
+    text-align: center;
+    padding: 40px;
+    margin-top: 80px;
+    border-top: 1px solid #222;
+}
+body.light-mode footer {
+    background: #e9ecef;
+    color: #6c757d;
+    border-top: none;
+}
+
+/* رابط التخطي (مخفي حتى التركيز عليه) */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    right: 50%;
+    transform: translateX(50%);
+    background: var(--accent-color);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 0 0 10px 10px;
+    z-index: 9999;
+    font-weight: bold;
+    text-decoration: none;
+    transition: top 0.3s;
+}
+.skip-link:focus { top: 0; }
+
+
+/* =========================================
+   11. استجابة الشاشات (Media Queries)
+   ========================================= */
+@media (max-width: 768px) {
+    header h1 { font-size: 1.8rem; }
+    header { padding-bottom: 4rem; margin-bottom: -30px; }
+    .lessons-grid { grid-template-columns: 1fr; }
+    .hero-image { height: 180px; }
+    .accessibility-toolbar { font-size: 0.8rem; padding: 10px 5px; }
+}

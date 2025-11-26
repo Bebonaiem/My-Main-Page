@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الدرس الثالث: مشروع المدرسة</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="accessibility-toolbar">
+        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
+        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+    </div>
+    <header><h1>الدرس الثالث: مشروع المدرسة</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
+
+    <main id="content">
+        <img src="img/lesson-7-hero.jpg" alt="تجهيز المشروع" class="hero-image">
+
+        <section class="lesson-card">
+            <h2>تجهيز المجلدات</h2>
+            <p>لإنشاء مشروع منظم، يجب إنشاء مجلد رئيسي يحتوي على:</p>
+            <ul>
+                <li>ملف <strong>index.html</strong> (الصفحة الرئيسية).</li>
+                <li>ملف <strong>style.css</strong> (التنسيقات).</li>
+                <li>مجلد <strong>images</strong> (للصور).</li>
+            </ul>
+        </section>
+
+        <section class="lesson-card">
+            <h2>أكواد HTML الأساسية</h2>
+            <ul>
+                <li><code>&lt;header&gt;</code>: رأس الصفحة.</li>
+                <li><code>&lt;nav&gt;</code>: القائمة.</li>
+                <li><code>&lt;section&gt;</code>: أقسام المحتوى.</li>
+                <li><code>&lt;footer&gt;</code>: تذييل الصفحة.</li>
+            </ul>
+        </section>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+            <a href="lesson-6.html" class="btn" style="background: #333; color:#fff">السابق</a>
+            <a href="lesson-8.html" class="btn">الدرس التالي ⬅️</a>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

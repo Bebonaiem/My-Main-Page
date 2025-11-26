@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الدرس الثالث: البيانات الضخمة</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="accessibility-toolbar">
+        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
+        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+    </div>
+    <header><h1>الدرس الثالث: البيانات الضخمة</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
+
+    <main id="content">
+        <img src="img/lesson-3-hero.jpg" alt="البيانات الضخمة" class="hero-image">
+
+        <section class="lesson-card">
+            <h2>ما هي البيانات الضخمة؟</h2>
+            <p>هي كميات هائلة من البيانات لا يمكن تخزينها بالأدوات التقليدية.</p>
+        </section>
+
+        <section class="lesson-card">
+            <h2>خصائص البيانات الضخمة (The 5 Vs)</h2>
+            <ol>
+                <li><strong>الحجم (Volume):</strong> كمية البيانات ضخمة جداً.</li>
+                <li><strong>السرعة (Velocity):</strong> البيانات تتولد بسرعة كبيرة.</li>
+                <li><strong>التنوع (Variety):</strong> تشمل نصوص، صور، فيديو.</li>
+                <li><strong>الدقة (Veracity):</strong> مدى صحة البيانات.</li>
+                <li><strong>القيمة (Value):</strong> الفائدة منها.</li>
+            </ol>
+        </section>
+
+        <section class="lesson-card" style="border-color: var(--accent-color);">
+            <h2>🎮 نشاط تفاعلي</h2>
+            <p><strong>سؤال:</strong> خاصية "التنوع" تعني وجود أنواع مختلفة من البيانات؟</p>
+            <button class="btn" onclick="checkAnswer(true, 'f3')">صواب ✅</button>
+            <button class="btn" onclick="checkAnswer(false, 'f3')">خطأ ❌</button>
+            <p id="f3" style="margin-top: 15px;"></p>
+        </section>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+            <a href="lesson-2.html" class="btn" style="background: #333; color:#fff">السابق</a>
+            <a href="lesson-4.html" class="btn">الدرس التالي ⬅️</a>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

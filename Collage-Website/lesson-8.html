@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الدرس الرابع: موقع باستخدام AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="accessibility-toolbar">
+        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
+        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+    </div>
+    <header><h1>الدرس الرابع: موقع باستخدام AI</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
+
+    <main id="content">
+        <img src="img/lesson-8-hero.jpg" alt="إنشاء موقع بالـ AI" class="hero-image">
+
+        <section class="lesson-card">
+            <h2>أدوات الـ AI للمواقع</h2>
+            <p>يمكنك إنشاء موقع كامل في ثوانٍ باستخدام أدوات مثل Wegic و Jimdo.</p>
+        </section>
+
+        <section class="lesson-card">
+            <h2>كيفية الاستخدام (Prompts)</h2>
+            <div class="info-box">
+                <p>تعتمد هذه الأدوات على الأوامر النصية. مثال:</p>
+                <p><em>"أنشئ موقعاً لمدرسة إعدادية يحتوي على صور للطلاب وجدول الحصص بألوان زرقاء."</em></p>
+            </div>
+        </section>
+
+        <section class="lesson-card" style="border-color: var(--accent-color);">
+            <h2>🎮 نشاط تفاعلي</h2>
+            <p><strong>سؤال:</strong> الأمر الذي نكتبه للذكاء الاصطناعي يسمى؟</p>
+            <button class="btn" onclick="checkAnswer(true, 'f8')">Prompt</button>
+            <button class="btn" onclick="checkAnswer(false, 'f8')">Tag</button>
+            <p id="f8" style="margin-top: 15px;"></p>
+        </section>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+            <a href="lesson-7.html" class="btn" style="background: #333; color:#fff">السابق</a>
+            <a href="index.html" class="btn">العودة للرئيسية 🏠</a>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

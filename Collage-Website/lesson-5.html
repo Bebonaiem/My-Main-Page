@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الدرس الأول: مبادئ تصميم الويب</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="accessibility-toolbar">
+        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
+        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+    </div>
+    <header><h1>الدرس الأول: مبادئ تصميم الويب</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
+
+    <main id="content">
+        <img src="img/lesson-5-hero.jpg" alt="تصميم واجهات" class="hero-image">
+
+        <section class="lesson-card">
+            <h2>الفرق بين UI و UX</h2>
+            <div class="info-box">
+                <h3>🎨 واجهة المستخدم (UI)</h3>
+                <p>هي الشكل: الألوان، الأزرار، الصور، الخطوط.</p>
+            </div>
+            <div class="info-box" style="border-color: var(--accent-color);">
+                <h3>😊 تجربة المستخدم (UX)</h3>
+                <p>هي الشعور: هل الموقع سهل الاستخدام؟ هل الوصول للمعلومة سريع؟</p>
+            </div>
+        </section>
+
+        <section class="lesson-card">
+            <h2>مبادئ التصميم الجيد</h2>
+            <ul>
+                <li><strong>التباين:</strong> النص واضح على الخلفية.</li>
+                <li><strong>التناسق:</strong> نفس الألوان في كل الصفحات.</li>
+                <li><strong>البساطة:</strong> عدم ازدحام الصفحة.</li>
+            </ul>
+        </section>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+            <a href="lesson-4.html" class="btn" style="background: #333; color:#fff">السابق</a>
+            <a href="lesson-6.html" class="btn">الدرس التالي ⬅️</a>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

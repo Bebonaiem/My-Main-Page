@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الدرس الثاني: التهديدات السيبرانية</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#content" class="skip-link">انتقل للمحتوى</a>
+    <div class="accessibility-toolbar">
+        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
+        <button id="theme-btn" onclick="toggleTheme()">☀️ الوضع المضيء</button>
+        <button onclick="toggleContrast()">👁️ تباين</button> <button onclick="speakText('content')">🔊 قراءة</button>
+    </div>
+    <header><h1>الدرس الثاني: التهديدات السيبرانية</h1><nav><ul><li><a href="index.html">🏠 الرئيسية</a></li></ul></nav></header>
+
+    <main id="content">
+        <img src="img/lesson-2-hero.jpg" alt="أمن المعلومات" class="hero-image">
+
+        <section class="lesson-card">
+            <h2>1. برامج الفدية (Ransomware)</h2>
+            <p>هي برامج خبيثة تقوم بتشفير ملفاتك (قفلها) وتطلب منك دفع المال لفك القفل.</p>
+            <div class="info-box" style="border-color: #ff0000;">
+                <p><strong>نصيحة:</strong> لا تفتح روابط مجهولة ولا تدفع الفدية أبداً.</p>
+            </div>
+        </section>
+
+        <section class="lesson-card">
+            <h2>2. الهندسة الاجتماعية</h2>
+            <p>فن خداع البشر للحصول على معلومات سرية.</p>
+            <ul>
+                <li><strong>التصيد (Phishing):</strong> رسائل وهمية تبدو كأنها من البنك.</li>
+                <li><strong>الاحتيال:</strong> انتحال شخصية موظف دعم فني.</li>
+            </ul>
+        </section>
+
+        <section class="lesson-card" style="border-color: var(--accent-color);">
+            <h2>🎮 نشاط تفاعلي</h2>
+            <p><strong>سؤال:</strong> برنامج يغلق ملفاتك ويطلب المال يسمى؟</p>
+            <button class="btn" onclick="checkAnswer(true, 'f2')">برامج الفدية</button>
+            <button class="btn" onclick="checkAnswer(false, 'f2')">مكافح الفيروسات</button>
+            <p id="f2" style="margin-top: 15px;"></p>
+        </section>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+            <a href="lesson-1.html" class="btn" style="background: #333; color:#fff">السابق</a>
+            <a href="lesson-3.html" class="btn">الدرس التالي ⬅️</a>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
