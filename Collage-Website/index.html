@@ -7,10 +7,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    
+    <!-- Accessibility Toolbar with Dropdown -->
     <div class="accessibility-toolbar">
-        <button onclick="setFontSize('normal')">A</button> <button onclick="setFontSize('large')">A+</button>
-        <button id="theme-btn" onclick="toggleTheme()">☀️ وضع النهار</button>
-        <button onclick="toggleContrast()">👁️ تباين</button>
+        <!-- Font Size -->
+        <button onclick="setFontSize('normal')" title="خط عادي">A</button> 
+        <button onclick="setFontSize('large')" title="خط كبير">A+</button>
+        
+        <span style="border-right:1px solid var(--border-color); height:20px; margin:0 5px;"></span>
+
+        <!-- Theme Dropdown -->
+        <select id="theme-selector" onchange="setTheme(this.value)" class="theme-select">
+            <option value="default">🌑 الافتراضي</option>
+            <option value="light-mode">☀️ المضيء</option>
+            <option value="nature-mode">🌿 الطبيعة</option>
+            <option value="sunset-mode">🌅 الغروب</option>
+            <option value="reading-mode">📖 القراءة</option>
+            <option value="high-contrast">👁️ تباين عالي</option>
+        </select>
+
+        <span style="border-right:1px solid var(--border-color); height:20px; margin:0 5px;"></span>
+
+        <!-- Tools -->
+        <button onclick="speakText('content')" title="قراءة النص">🔊</button>
+        <button onclick="window.location.href='accessibility.html'" title="نسخة مبسطة">♿</button>
     </div>
 
     <header>
@@ -19,7 +39,7 @@
         <nav>
             <ul>
                 <li><a href="index.html" style="background:#fff; color:#333">🏠 الرئيسية</a></li>
-                <li><a href="accessibility.html" style="background:var(--accent-color); border:none">♿ نسخة مبسطة</a></li>
+                <li><a href="team.html">👥 فريق العمل</a></li>
             </ul>
         </nav>
     </header>
@@ -31,9 +51,9 @@
         </div>
 
         <section class="lessons-grid">
-            <h2 style="grid-column:1/-1; border-bottom:2px solid var(--primary-color); padding-bottom:10px;">📘 الوحدة الأولى: الذكاء الاصطناعي</h2>
+            <h2 style="grid-column:1/-1; border-bottom:2px solid var(--primary-color); padding-bottom:10px; margin-bottom:20px;">📘 الوحدة الأولى: الذكاء الاصطناعي</h2>
             
-            <!-- الدرس 1 -->
+            <!-- Lesson 1 -->
             <div class="lesson-card" style="padding:0;">
                 <img src="img/lesson-1.jpg" alt="IoT">
                 <div class="card-content">
@@ -42,7 +62,7 @@
                     <a href="lesson-1.html" class="btn">ابدأ الدرس</a>
                 </div>
             </div>
-            <!-- الدرس 2 -->
+            <!-- Lesson 2 -->
             <div class="lesson-card" style="padding:0;">
                 <img src="img/lesson-2.jpg" alt="Security">
                 <div class="card-content">
@@ -51,7 +71,7 @@
                     <a href="lesson-2.html" class="btn">ابدأ الدرس</a>
                 </div>
             </div>
-            <!-- الدرس 3 -->
+            <!-- Lesson 3 -->
             <div class="lesson-card" style="padding:0;">
                 <img src="img/lesson-3.jpg" alt="Big Data">
                 <div class="card-content">
@@ -60,7 +80,7 @@
                     <a href="lesson-3.html" class="btn">ابدأ الدرس</a>
                 </div>
             </div>
-            <!-- الدرس 4 -->
+            <!-- Lesson 4 -->
             <div class="lesson-card" style="padding:0;">
                 <img src="img/lesson-4.jpg" alt="AI">
                 <div class="card-content">
@@ -70,9 +90,9 @@
                 </div>
             </div>
 
-            <h2 style="grid-column:1/-1; border-bottom:2px solid var(--accent-color); padding-bottom:10px; margin-top:30px;">🎨 الوحدة الثانية: تصميم الويب</h2>
+            <h2 style="grid-column:1/-1; border-bottom:2px solid var(--accent-color); padding-bottom:10px; margin-top:30px; margin-bottom:20px;">🎨 الوحدة الثانية: تصميم الويب</h2>
 
-            <!-- الدرس 5 -->
+            <!-- Lesson 5 -->
             <div class="lesson-card" style="padding:0;">
                 <img src="img/lesson-5.jpg" alt="UI/UX">
                 <div class="card-content">
@@ -81,7 +101,7 @@
                     <a href="lesson-5.html" class="btn">ابدأ الدرس</a>
                 </div>
             </div>
-            <!-- الدرس 6 -->
+            <!-- Lesson 6 -->
             <div class="lesson-card" style="padding:0;">
                 <img src="img/lesson-6.jpg" alt="CSS">
                 <div class="card-content">
@@ -90,7 +110,7 @@
                     <a href="lesson-6.html" class="btn">ابدأ الدرس</a>
                 </div>
             </div>
-            <!-- الدرس 7 -->
+            <!-- Lesson 7 -->
             <div class="lesson-card" style="padding:0;">
                 <img src="img/lesson-7.jpg" alt="Project">
                 <div class="card-content">
@@ -99,7 +119,7 @@
                     <a href="lesson-7.html" class="btn">ابدأ الدرس</a>
                 </div>
             </div>
-            <!-- الدرس 8 -->
+            <!-- Lesson 8 -->
             <div class="lesson-card" style="padding:0;">
                 <img src="img/lesson-8.jpg" alt="AI Web">
                 <div class="card-content">

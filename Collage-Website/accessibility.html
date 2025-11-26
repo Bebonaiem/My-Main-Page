@@ -3,26 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نسخة مبسطة</title>
+    <title>النسخة المبسطة - سهلة القراءة</title>
+    <!-- نربط ملف التنسيق الأساسي ونضيف عليه تعديلات خاصة هنا -->
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .simple-card { border: 2px solid #fff; padding: 30px; margin: 20px 0; background: #111; border-radius: 20px; text-align: center; }
-        .simple-icon { font-size: 50px; display: block; margin-bottom: 10px; }
-        h2 { color: var(--primary-color); }
+        /* === تنسيقات خاصة بصفحة الوصول فقط === */
+        body {
+            background-color: #000000 !important;
+            color: #FFFF00 !important; /* أصفر فاقع للتباين العالي */
+            font-family: 'Tajawal', sans-serif;
+            font-size: 130%; /* خط أكبر افتراضياً */
+            line-height: 2.2; /* تباعد كبير بين الأسطر لسهولة القراءة */
+        }
+
+        /* إخفاء الهيدر التقليدي */
+        header, footer { display: none; }
+
+        /* شريط تنقل خاص */
+        .access-nav {
+            background: #1a1a1a;
+            padding: 20px;
+            border-bottom: 4px solid #FFFF00;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .access-btn {
+            background: #000;
+            color: #FFFF00;
+            border: 2px solid #FFFF00;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .access-btn:hover { background: #FFFF00; color: #000; }
+
+        /* حاوية المحتوى */
+        .access-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            border-bottom: 2px dashed #FFFF00;
+            padding-bottom: 20px;
+        }
+
+        /* البطاقات المبسطة */
+        .access-card {
+            background: #111;
+            border: 3px solid #fff;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+        }
+
+        .access-card h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .access-card p {
+            color: #FFFF00;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .speak-btn {
+            background: #333;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        .speak-btn:hover { background: #fff; color: #000; }
+
+        .go-btn {
+            background: #FFFF00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 600px) {
+            .access-card { padding: 20px; }
+            .access-card h2 { font-size: 1.5rem; }
+            .access-card p { font-size: 1.2rem; }
+        }
     </style>
 </head>
-<body class="extra-large-font">
-    <div class="accessibility-toolbar">
-        <button onclick="window.history.back()" style="background: var(--accent-color);">⬅️ رجوع</button>
-        <button onclick="speakText('content')">🔊 استمع</button>
-    </div>
-    <main id="content" style="max-width: 700px;">
-        <h1 style="text-align: center; margin-bottom: 40px;">ملخص المنهج المبسط</h1>
-        <div class="simple-card"><span class="simple-icon">🌐</span><h2>1. إنترنت الأشياء</h2><p>هو توصيل الأجهزة بالإنترنت.</p></div>
-        <div class="simple-card"><span class="simple-icon">🤖</span><h2>2. الذكاء الاصطناعي</h2><p>الكمبيوتر يفكر مثل الإنسان.</p></div>
-        <div class="simple-card"><span class="simple-icon">🔒</span><h2>3. الأمان</h2><p>لا تشارك كلمة المرور مع أحد.</p></div>
-        <div class="simple-card"><span class="simple-icon">🎨</span><h2>4. تصميم المواقع</h2><p>نستخدم CSS لتلوين الموقع.</p></div>
+<body>
+
+    <!-- شريط التنقل العلوي -->
+    <nav class="access-nav">
+        <button class="access-btn" onclick="window.location.href='index.html'">🏠 خروج</button>
+        <div style="font-size: 1.2rem; font-weight: bold;">النسخة المبسطة</div>
+    </nav>
+
+    <main class="access-container">
+        <h1 class="page-title">ملخص المنهج الدراسي</h1>
+
+        <!-- الوحدة الأولى -->
+        <h2 style="color: #fff; margin-top: 50px;">📘 الوحدة الأولى: الذكاء الاصطناعي</h2>
+
+        <!-- ملخص الدرس 1 -->
+        <div class="access-card">
+            <h2><span>1️⃣</span> الأنظمة الذكية</h2>
+            <p id="txt1">تتكون الأنظمة الذكية من ثلاثة أجزاء: إنترنت الأشياء لجمع المعلومات، والذكاء الاصطناعي للتفكير، والروبوتات لتنفيذ الأوامر.</p>
+            <div class="controls">
+                <button class="speak-btn" onclick="speakText('txt1')">🔊 استمع للنص</button>
+                <a href="lesson-1.html" class="go-btn">الذهاب للدرس الكامل ⬅️</a>
+            </div>
+        </div>
+
+        <!-- ملخص الدرس 2 -->
+        <div class="access-card">
+            <h2><span>2️⃣</span> الأمن السيبراني</h2>
+            <p id="txt2">احذر من "برامج الفدية" التي تغلق ملفاتك وتطلب المال، ولا تصدق رسائل البريد المزيفة التي تحاول سرقة بياناتك.</p>
+            <div class="controls">
+                <button class="speak-btn" onclick="speakText('txt2')">🔊 استمع للنص</button>
+                <a href="lesson-2.html" class="go-btn">الذهاب للدرس الكامل ⬅️</a>
+            </div>
+        </div>
+
+        <!-- ملخص الدرس 3 -->
+        <div class="access-card">
+            <h2><span>3️⃣</span> البيانات الضخمة</h2>
+            <p id="txt3">البيانات الضخمة هي كميات هائلة من المعلومات، ولها خمس خصائص تسمى الـ 5Vs: الحجم، السرعة، التنوع، الدقة، والقيمة.</p>
+            <div class="controls">
+                <button class="speak-btn" onclick="speakText('txt3')">🔊 استمع للنص</button>
+                <a href="lesson-3.html" class="go-btn">الذهاب للدرس الكامل ⬅️</a>
+            </div>
+        </div>
+
+        <!-- ملخص الدرس 4 -->
+        <div class="access-card">
+            <h2><span>4️⃣</span> تحليل البيانات</h2>
+            <p id="txt4">الذكاء الاصطناعي يحتاج للبيانات ليتعلم. كلما زادت البيانات الصحيحة، أصبح الذكاء الاصطناعي أكثر دقة وذكاءً.</p>
+            <div class="controls">
+                <button class="speak-btn" onclick="speakText('txt4')">🔊 استمع للنص</button>
+                <a href="lesson-4.html" class="go-btn">الذهاب للدرس الكامل ⬅️</a>
+            </div>
+        </div>
+
+        <!-- الوحدة الثانية -->
+        <h2 style="color: #fff; margin-top: 60px; border-top: 2px solid #333; padding-top: 30px;">🎨 الوحدة الثانية: تصميم الويب</h2>
+
+        <!-- ملخص الدرس 5 -->
+        <div class="access-card">
+            <h2><span>5️⃣</span> تجربة المستخدم</h2>
+            <p id="txt5">تجربة المستخدم (UX) تعني أن يكون الموقع سهل الاستخدام. واجهة المستخدم (UI) تعني أن يكون شكل الموقع جميلاً وجذاباً.</p>
+            <div class="controls">
+                <button class="speak-btn" onclick="speakText('txt5')">🔊 استمع للنص</button>
+                <a href="lesson-5.html" class="go-btn">الذهاب للدرس الكامل ⬅️</a>
+            </div>
+        </div>
+
+        <!-- ملخص الدرس 6 -->
+        <div class="access-card">
+            <h2><span>6️⃣</span> لغة CSS</h2>
+            <p id="txt6">نستخدم لغة CSS لتلوين الموقع، تغيير حجم الخطوط، وتنسيق شكل الصفحة لتبدو جميلة ومنظمة.</p>
+            <div class="controls">
+                <button class="speak-btn" onclick="speakText('txt6')">🔊 استمع للنص</button>
+                <a href="lesson-6.html" class="go-btn">الذهاب للدرس الكامل ⬅️</a>
+            </div>
+        </div>
+
+        <!-- ملخص الدرس 8 -->
+        <div class="access-card">
+            <h2><span>7️⃣</span> مواقع بالذكاء الاصطناعي</h2>
+            <p id="txt8">يمكنك الآن إنشاء موقع كامل في دقائق عن طريق كتابة وصف للموقع (Prompt) لأدوات الذكاء الاصطناعي.</p>
+            <div class="controls">
+                <button class="speak-btn" onclick="speakText('txt8')">🔊 استمع للنص</button>
+                <a href="lesson-8.html" class="go-btn">الذهاب للدرس الكامل ⬅️</a>
+            </div>
+        </div>
+
     </main>
+
+    <!-- إعادة استخدام دالة القراءة من الملف الرئيسي -->
     <script src="js/main.js"></script>
+    <script>
+        // دالة قراءة محسنة لهذه الصفحة فقط
+        function speakText(elementId) {
+            window.speechSynthesis.cancel(); // إيقاف أي قراءة سابقة
+            var text = document.getElementById(elementId).innerText;
+            var utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ar-SA'; // اللغة العربية
+            utterance.rate = 0.85; // سرعة أبطأ قليلاً للوضوح
+            utterance.pitch = 1;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
 </body>
 </html>
