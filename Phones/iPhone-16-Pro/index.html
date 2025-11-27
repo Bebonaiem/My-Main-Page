@@ -128,7 +128,20 @@
 </head>
 <body data-page-key="techDetailiPhone" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-iphone">
             <div class="container">
@@ -254,31 +267,44 @@
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                // Shared keys (header, footer, etc.)
-                siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول LearnFun.me', en: 'About LearnFun.me' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-                
-                // Page-specific keys for iPhone 16 Pro
+        window.pageTranslations = {
                 techDetailiPhonePageTitle: { ar: 'مراجعة iPhone 16 Pro المفصلة - LearnFun.me', en: 'In-Depth iPhone 16 Pro Review - LearnFun.me' },
                 techDetailiPhoneMetaDescription: { ar: 'مراجعة شاملة وعميقة لهاتف iPhone 16 Pro. تعرف على مواصفات معالج A18 Pro، كاميرا ProRAW، شاشة ProMotion، وميزات iOS 18 الحصرية. كل ما تحتاج معرفته قبل الشراء.', en: 'Comprehensive and in-depth review of the iPhone 16 Pro. Learn about the A18 Pro chip, ProRAW camera, ProMotion display, and exclusive iOS 18 features. Everything you need to know before you buy.' },
                 iphoneImageAlt: { ar: 'صورة لهاتف iPhone 16 Pro بتصميم أنيق', en: 'Image of the stylishly designed iPhone 16 Pro' },
-                
                 iphoneTitle: { ar: 'تصميم <span class="accent">متطور</span>. أداء استثنائي.', en: 'Sophisticated <span class="accent">Design</span>. Exceptional Performance.' },
                 iphoneTagline: { ar: 'هاتف iPhone 16 Pro يجمع بين التصميم الفاخر والأداء المتميز، مع نظام كاميرا احترافي وواجهة مستخدم سلسة.', en: 'The iPhone 16 Pro combines luxury design with exceptional performance, featuring a professional camera system and smooth user interface.' },
                 keyFeaturesTitle: { ar: 'أبرز الميزات المتطورة', en: 'Highlights of Innovation' },
@@ -290,12 +316,10 @@
                 highlightDesignDesc: { ar: 'هيكل تيتانيوم خفيف ومتين مع شاشة Super Retina XDR متطورة.', en: 'Lightweight and durable titanium frame with advanced Super Retina XDR display.'},
                 highlightiPhoneOS: { ar: 'iOS 18 الحصري', en: 'Exclusive iOS 18' },
                 highlightOSDesc: { ar: 'واجهة مستخدم متطورة مع ميزات ذكاء اصطناعي جديدة وأمان محسن.', en: 'Advanced user interface with new AI features and enhanced security.'},
-
                 reviewChipTitle: { ar: 'قوة المعالج المتطورة', en: 'Advanced Processing Power' },
                 reviewChipP1: { ar: 'مع معالج A18 Pro، يقدم iPhone 16 Pro أداءً استثنائيًا في كل مهمة. تم تحسين وحدة معالجة الذكاء الاصطناعي العصبية بشكل كبير، مما يتيح ميزات جديدة مثل التعرف على الصور المتقدم ومعالجة اللغة الطبيعية. هذا هو المستقبل في راحة يدك.', en: 'With the A18 Pro chip, the iPhone 16 Pro delivers exceptional performance in every task. The Neural Engine has been significantly enhanced, enabling new features like advanced image recognition and natural language processing. This is the future in the palm of your hand.' },
                 reviewCameraTitle: { ar: 'فن التصوير الاحترافي', en: 'The Art of Professional Photography' },
                 reviewCameraP1: { ar: 'نظام الكاميرا في iPhone 16 Pro هو الأكثر تقدمًا حتى الآن. المستشعر الرئيسي المطور يلتقط تفاصيل مذهلة وضوءًا أكثر بنسبة 150%، مما يجعل الصور الليلية أكثر وضوحًا من أي وقت مضى. مع دعم ProRAW و ProRes، يمكن للمصورين المحترفين تحقيق نتائج استوديو احترافية.', en: 'The camera system in the iPhone 16 Pro is the most advanced yet. The upgraded main sensor captures stunning detail and 150% more light, making night shots clearer than ever. With ProRAW and ProRes support, professional photographers can achieve studio-quality results.' },
-                
                 specsTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specCategoryDisplay: { ar: 'الشاشة', en: 'Display' },
                 specTypeLabel: { ar: 'النوع', en: 'Type' },
@@ -331,7 +355,6 @@
                 specWiredChargeValue: { ar: '30 واط، 50% في 30 دقيقة', en: '30W, 50% in 30 min' },
                 specWirelessChargeLabel: { ar: 'الشحن اللاسلكي', en: 'Wireless Charging' },
                 specWirelessChargeValue: { ar: '15 واط (MagSafe)، 7.5 واط (Qi)', en: '15W (MagSafe), 7.5W (Qi)' },
-                
                 prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
                 prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
                 prosItem1: { ar: 'أداء استثنائي مع معالج A18 Pro', en: 'Exceptional performance with A18 Pro chip' },
@@ -342,82 +365,11 @@
                 consItem1: { ar: 'سعر مرتفع مقارنة بالمنافسين', en: 'High price compared to competitors' },
                 consItem2: { ar: 'لا يدعم الشحن السريع للغاية', en: 'No ultra-fast charging support' },
                 consItem3: { ar: 'لا يدعم إضافة بطاقة ذاكرة', en: 'No expandable storage' },
-                
                 reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewVerdictP1: { ar: 'هاتف iPhone 16 Pro هو قمة التطور في عالم الهواتف الذكية. إذا كنت تبحث عن هاتف يجمع بين التصميم الفاخر والأداء المتميز والكاميرا الاحترافية، فهو الخيار الأمثل. قد يكون السعر مرتفعًا، لكنك تحصل على تجربة مستخدم لا مثيل لها مع دعم طويل الأمد للتحديثات.', en: 'The iPhone 16 Pro is the pinnacle of smartphone evolution. If you\'re looking for a phone that combines luxury design, exceptional performance, and professional photography capabilities, this is the perfect choice. While the price may be high, you get an unparalleled user experience with long-term update support.' },
-            };
-            
-            // Generic script for all detail pages
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../../'; 
-
-            const headerHTML = `<div class=\"container\"><a href=\"${pathPrefix}..\" class=\"logo\">learnfun.me</a><nav class=\"nav-links\"><ul><li><a href=\"${pathPrefix}../\" data-nav-key=\"home\" data-translate-key=\"navHome\"></a></li><li><a href=\"${pathPrefix}../tech/\" data-nav-key=\"tech\" data-translate-key=\"navTech\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-nav-key=\"contact\" data-translate-key=\"navContact\"></a></li></ul></nav><button class=\"menu-toggle\" id=\"menu-toggle\" aria-label=\"Toggle navigation menu\"><span data-translate-aria=\"menuAriaLabel\"></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                let bodyClass = 'page-body';
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) bodyClass += ` ${pageKey}`;
-                document.body.className = bodyClass;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('[data-translate-aria]').forEach(el => {
-                    const key = el.dataset.translateAria;
-                    if (translations[key]?.[lang]) el.setAttribute('aria-label', translations[key][lang]);
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html> 
+

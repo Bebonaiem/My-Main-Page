@@ -42,13 +42,7 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
 ">
     <meta name="language" content="Arabic, English">
     
-    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>
-        window.ezstandalone = window.ezstandalone || {};
-        ezstandalone.cmd = ezstandalone.cmd || [];
-    </script>
+    <!-- Removed unnecessary third-party scripts to improve performance -->
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://learnfun.me/about/">
@@ -113,6 +107,160 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
              border-left: 3px solid var(--border-color);
              padding-left: 1.5rem;
         }
+        
+        @media (max-width: 768px) {
+            .content-page .principles-list .principle-title {
+                font-size: 1.4rem;
+                gap: 0.75rem;
+            }
+            
+            .content-page .principles-list .principle-title .info-icon {
+                font-size: 1.3rem;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .content-page .principles-list p {
+                padding-inline-start: 0;
+                padding-top: 0.5rem;
+            }
+            
+            .rtl-layout .content-page .principles-list p {
+                border-right: none;
+                border-top: 3px solid var(--border-color);
+                padding-right: 0;
+            }
+            
+            .ltr-layout .content-page .principles-list p {
+                border-left: none;
+                border-top: 3px solid var(--border-color);
+                padding-left: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content-page .principles-list .principle-title {
+                font-size: 1.2rem;
+                gap: 0.5rem;
+            }
+            
+            .content-page .principles-list .principle-title .info-icon {
+                font-size: 1.1rem;
+                width: 36px;
+                height: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .team-member-photo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .team-member-name {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .team-member-photo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .team-member-name {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content-page .container {
+                padding: 2.5rem 2rem;
+            }
+            
+            .content-page h1 {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+            
+            .content-page h2 {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+            
+            .content-page p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content-page .container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .content-page h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content-page h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .btn {
+                width: 100%;
+                padding: 12px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .content-page .container {
+                padding: 1.5rem 1rem;
+            }
+            
+            .content-page h1 {
+                font-size: 1.6rem;
+            }
+            
+            .content-page h2 {
+                font-size: 1.3rem;
+            }
+            
+            .content-page .principles-list .principle-title {
+                font-size: 1.1rem;
+                gap: 0.5rem;
+            }
+            
+            .content-page .principles-list .principle-title .info-icon {
+                font-size: 1rem;
+                width: 30px;
+                height: 30px;
+            }
+            
+            .team-member-photo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .team-member-name {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body data-page-key="about">
@@ -121,7 +269,20 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
         <a href="#" data-lang="ar" class="active">AR</a>
     </div>
 
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main class="main-content content-page">
         <div class="container about-section">
             <h1 data-translate-key="aboutH1"></h1>
@@ -129,9 +290,7 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
             
             <img src="../img/team/Bebo.webp" alt="Bebo Naiem" class="team-member-photo">
             <div class="team-member-name">Bebo Naiem</div>
-            
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop" data-translate-alt="aboutImageAlt" alt="فريق يعمل على أجهزة لابتوب وهواتف في بيئة عصرية ومشرقة.">
-            
+                        
             <h2 data-translate-key="aboutPrinciplesH2"></h2>
             <ul class="principles-list">
                 <li>
@@ -157,34 +316,41 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
 
         </div>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-
-            /**
-             * =================================================================
-             * TRANSLATION DICTIONARY (REVISED FOR 'ABOUT' PAGE)
-             * =================================================================
-             */
-            const translations = {
-                // --- Shared Keys ---
-                siteName: { ar: 'learn fun', en: 'learn fun' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول Learn Fun', en: 'About Learn Fun' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerTermsLink: { ar: 'شروط الاستخدام', en: 'Terms of Service' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learn fun', en: 'All Rights Reserved © 2025 learn fun' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-
-                // --- Page-specific Keys (REVISED) ---
+        window.pageTranslations = {
                 aboutPageTitle: { ar: 'من نحن - Learn Fun', en: 'About Us - Learn Fun' },
                 aboutMetaDescription: { ar: 'تعرف على قصة ورؤية موقع Learn Fun، المنصة المتخصصة في مراجعات الأجهزة والتقنية.', en: 'Learn about the story and vision of Learn Fun, the platform specializing in tech and gadget reviews.' },
                 aboutH1: { ar: 'عن Learn Fun: شغف بالتقنية... وتركيز عليك', en: 'About Learn Fun: A Passion for Tech... A Focus on You' },
@@ -202,154 +368,8 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 aboutCtaH2: { ar: 'ابدأ رحلتك معنا', en: 'Start Your Journey With Us' },
                 aboutCtaP: { ar: 'أنت الآن تعرف قصتنا. اكتشف مراجعاتنا ودعنا نساعدك في العثور على جهازك القادم.', en: 'Now you know our story. Explore our reviews and let us help you find your next device.' },
                 aboutCtaBtn: { ar: 'تصفح قسم التقنية', en: 'Browse the Tech Section' }
-            };
-
-            /**
-             * =================================================================
-             * DYNAMICALLY LOAD HEADER AND FOOTER
-             * =================================================================
-             */
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../'; 
-
-            const headerHTML = `
-                <div class="container">
-                    <a href="${pathPrefix}" class="logo" data-translate-key="siteName"></a>
-                    <nav class="nav-links">
-                        <ul>
-                            <li><a href="${pathPrefix}" data-translate-key="navHome" data-nav-key="index"></a></li>
-                            <li><a href="${pathPrefix}tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
-                            <li><a href="${pathPrefix}contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
-                        </ul>
-                    </nav>
-                    <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu" data-translate-key="menuAriaLabel"><span></span><span></span><span></span></button>
-                </div>`;
-            
-            const footerHTML = `
-                <div class="container">
-                    <div class="footer-content">
-                        <div class="footer-section">
-                            <h4 data-translate-key="footerAboutTitle"></h4>
-                            <p data-translate-key="footerAboutText"></p>
-                        </div>
-                         <div class="footer-section">
-                            <h4 data-translate-key="footerLinksTitle"></h4>
-                            <ul>
-                                <li><a href="${pathPrefix}about/" data-translate-key="footerAboutLink"></a></li>
-                                <li><a href="${pathPrefix}contact/" data-translate-key="footerContactLink"></a></li>
-                                <li><a href="${pathPrefix}privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
-                                <li><a href="${pathPrefix}terms-of-service/" data-translate-key="footerTermsLink"></a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section">
-                            <h4 data-translate-key="footerFollowTitle"></h4>
-                            <div class="social-links">
-                                <a href="#" aria-label="Facebook">F</a>
-                                <a href="#" aria-label="Twitter">T</a>
-                                <a href="#" aria-label="Instagram">I</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-bottom">
-                        <p data-translate-key="footerRights"></p>
-                        <p data-translate-key="footerDeveloper"></p>
-                    </div>
-                </div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            /**
-             * =================================================================
-             * MOBILE MENU TOGGLE
-             * =================================================================
-             */
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            /**
-             * =================================================================
-             * LANGUAGE SWITCHING LOGIC
-             * =================================================================
-             */
-            const langSwitcher = document.getElementById('lang-switcher');
-
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.body.classList.remove('rtl-layout', 'ltr-layout');
-                document.body.classList.add(lang === 'ar' ? 'rtl-layout' : 'ltr-layout');
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey] && translations[titleKey][lang]) {
-                        document.title = translations[titleKey][lang];
-                    }
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey] && translations[metaDescKey][lang]) {
-                        metaDescEl.setAttribute('content', translations[metaDescKey][lang]);
-                    }
-                }
-
-                document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
-                    const key = el.dataset.translatePlaceholder;
-                    if (translations[key] && translations[key][lang]) {
-                        el.placeholder = translations[key][lang];
-                    }
-                });
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key] && translations[key][lang]) {
-                        el.alt = translations[key][lang];
-                    }
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => {
-                    a.classList.toggle('active', a.dataset.lang === lang);
-                });
-                
-                const currentNavKey = pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.dataset.navKey === currentNavKey) {
-                        link.classList.add('active');
-                    }
-                });
-                // Since this is the about page, we set the about link in the footer to active manually.
-                 document.querySelector('.footer-section a[data-translate-key="footerAboutLink"]').classList.add('active-footer-link');
-
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink && targetLink.dataset.lang) {
-                        setLanguage(targetLink.dataset.lang);
-                    }
-                });
-            }
-
-            const savedLang = localStorage.getItem('siteLanguage');
-            const browserLang = navigator.language.slice(0, 2);
-            const initialLang = savedLang || (browserLang === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

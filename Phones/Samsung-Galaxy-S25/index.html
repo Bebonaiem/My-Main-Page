@@ -139,7 +139,20 @@
 </head>
 <body data-page-key="techDetailGalaxy" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-galaxy">
             <div class="container">
@@ -321,37 +334,49 @@
              </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول LearnFun.me', en: 'About LearnFun.me' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerTermsLink: { ar: 'شروط الاستخدام', en: 'Terms of Service' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-                
+        window.pageTranslations = {
                 techDetailGalaxyPageTitle: { ar: 'مراجعة هاتف Samsung Galaxy S25 - LearnFun.me', en: 'Samsung Galaxy S25 Review - LearnFun.me' },
                 techDetailGalaxyMetaDescription: { ar: 'مراجعة تفصيلية لهاتف Samsung Galaxy S25: الأداء القوي، الكاميرا المتطورة، وتجربة One UI المميزة.', en: 'Detailed review of the Samsung Galaxy S25: Powerful performance, advanced camera, and the distinctive One UI experience.' },
                 galaxyPhoneImageAlt: { ar: 'صورة لهاتف Samsung Galaxy S25', en: 'Image of the Samsung Galaxy S25 phone' },
-                
                 galaxyTitle: { ar: 'هاتف Samsung Galaxy S25', en: 'Samsung Galaxy S25' },
                 galaxyTagline: { ar: 'أداء قوي في هيكل أنيق، مع تجربة One UI المميزة.', en: 'Powerful performance in an elegant design, with the distinctive One UI experience.' },
-                
                 highlightGalaxyPerformance: { ar: 'أداء قوي', en: 'Powerful Performance' },
                 highlightGalaxyCamera: { ar: 'كاميرا متطورة', en: 'Advanced Camera' },
                 highlightGalaxyBattery: { ar: 'شحن سريع', en: 'Fast Charging' },
-
                 specsTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specsDisplayTitle: { ar: 'الشاشة', en: 'Display' },
                 specsDisplaySize: { ar: 'حجم الشاشة', en: 'Screen Size' },
@@ -373,7 +398,6 @@
                 specsCharging: { ar: 'الشحن السريع', en: 'Fast Charging' },
                 specsWireless: { ar: 'الشحن اللاسلكي', en: 'Wireless Charging' },
                 specsUpdates: { ar: 'دعم التحديثات', en: 'Update Support' },
-
                 benchmarkTitle: { ar: 'نتائج الاختبارات', en: 'Benchmark Results' },
                 benchmarkCPU: { ar: 'أداء المعالج', en: 'CPU Performance' },
                 benchmarkCPUScore: { ar: 'أداء قوي في جميع المهام', en: 'Strong in all tasks' },
@@ -383,7 +407,6 @@
                 benchmarkBatteryScore: { ar: 'جيد للاستخدام اليومي', en: 'Good for daily use' },
                 benchmarkCamera: { ar: 'جودة الكاميرا', en: 'Camera Quality' },
                 benchmarkCameraScore: { ar: 'صور عالية الجودة', en: 'High quality photos' },
-
                 comparisonTitle: { ar: 'مقارنة مع الطرازات السابقة', en: 'Comparison with Previous Models' },
                 comparisonFeature: { ar: 'الميزة', en: 'Feature' },
                 comparisonS25: { ar: 'Galaxy S25', en: 'Galaxy S25' },
@@ -393,12 +416,10 @@
                 comparisonTelephoto: { ar: 'التقريب البصري', en: 'Optical Zoom' },
                 comparisonBattery: { ar: 'البطارية', en: 'Battery' },
                 comparisonDesign: { ar: 'تصميم الحواف', en: 'Edge Design' },
-
                 reviewPerformanceTitle: { ar: 'أداء قوي في كل شيء', en: 'Powerful Performance in Everything' },
                 reviewPerformanceP1: { ar: 'مع معالج Snapdragon 8 Gen 4 الجديد، يوفر الهاتف أداءً قوياً في جميع المهام، من الألعاب إلى التطبيقات الثقيلة. التصميم المسطح الجديد يجعله أكثر راحة في الاستخدام.', en: 'With the new Snapdragon 8 Gen 4 processor, the phone delivers powerful performance in all tasks, from gaming to heavy applications. The new flat design makes it more comfortable to use.' },
                 reviewCameraTitle: { ar: 'الكاميرا: جودة عالية في كل الظروف', en: 'The Camera: High Quality in All Conditions' },
                 reviewCameraP1: { ar: 'نظام الكاميرا المكون من ثلاث عدسات يوفر صوراً عالية الجودة في جميع الظروف. الكاميرا الرئيسية 50 ميجابكسل تلتقط تفاصيل دقيقة، بينما توفر الكاميرا المقربة صوراً واضحة للصور البعيدة.', en: 'The triple-camera system provides high-quality photos in all conditions. The 50-megapixel main camera captures fine details, while the telephoto camera provides clear shots of distant subjects.' },
-                
                 prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
                 prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
                 prosItem1: { ar: 'أداء قوي مع معالج Snapdragon 8 Gen 4', en: 'Strong performance with Snapdragon 8 Gen 4' },
@@ -409,72 +430,11 @@
                 consItem1: { ar: 'سعة البطارية أقل من المنافسين', en: 'Battery capacity less than competitors' },
                 consItem2: { ar: 'لا يدعم الشحن اللاسلكي السريع', en: 'No fast wireless charging' },
                 consItem3: { ar: 'السعر مرتفع نسبياً', en: 'Relatively high price' },
-                
                 reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewVerdictP1: { ar: 'هاتف Samsung Galaxy S25 هو خيار ممتاز لمن يبحث عن هاتف ذكي متكامل مع أداء قوي وكاميرا متطورة. التصميم الجديد المسطح يجعله أكثر راحة في الاستخدام، وإن كانت سعة البطارية قد تكون نقطة ضعف مقارنة بالمنافسين.', en: 'The Samsung Galaxy S25 is an excellent choice for those looking for a complete smartphone with strong performance and advanced camera. The new flat design makes it more comfortable to use, although the battery capacity might be a weak point compared to competitors.' },
-            };
-            
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../'; 
-
-            const headerHTML = `<div class=\"container\"><a href=\"${pathPrefix}../\" class=\"logo\">learnfun.me</a><nav class=\"nav-links\"><ul><li><a href=\"${pathPrefix}../\" data-nav-key=\"home\" data-translate-key=\"navHome\"></a></li><li><a href=\"${pathPrefix}../tech/\" data-nav-key=\"tech\" data-translate-key=\"navTech\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-nav-key=\"contact\" data-translate-key=\"navContact\"></a></li></ul></nav><button class=\"menu-toggle\" id=\"menu-toggle\" aria-label=\"Toggle navigation menu\"><span data-translate-aria=\"menuAriaLabel\"></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li><li><a href=\"${pathPrefix}../terms-of-service/\" data-translate-key=\"footerTermsLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.body.className = `page-body ${lang}-layout`;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => link.classList.toggle('active', link.dataset.navKey === currentNavKey));
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html> 
+

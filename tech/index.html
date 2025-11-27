@@ -70,13 +70,7 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
     <link rel="stylesheet" href="../style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7696225868255842" crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-7696225868255842">
-    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>
-        window.ezstandalone = window.ezstandalone || {};
-        ezstandalone.cmd = ezstandalone.cmd || [];
-    </script>
+    <!-- Removed unnecessary third-party scripts to improve performance -->
 </head>
 <body data-page-key="tech">
     <div id="lang-switcher">
@@ -84,7 +78,20 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
         <a href="#" data-lang="ar" class="active">AR</a>
     </div>
 
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="page-header">
             <div class="container">
@@ -1280,36 +1287,49 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
             </div>
         </div>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
 
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                siteName: { ar: 'learn fun', en: 'learn fun' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
+        window.pageTranslations = {
                 readFullReviewBtn: { ar: 'اقرأ المراجعة الكاملة', en: 'Read Full Review' },
-                footerAboutTitle: { ar: 'حول Learn Fun', en: 'About Learn Fun' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learn fun', en: 'All Rights Reserved © 2025 learn fun' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-                
                 techPageTitle: { ar: 'مراجعات الموبايلات - Learn Fun', en: 'Mobile Phone Reviews - Learn Fun' },
                 techMetaDescription: { ar: 'أحدث مراجعات ومقارنات الهواتف الذكية. مواصفات دقيقة وترشيحات لمساعدتك على الاختيار.', en: 'Latest reviews and comparisons of smartphones. Accurate specs and recommendations to help you choose.' },
-                
-                // NEW KEYS for Laptop Section Link
                 techSectionLaptops: { ar: 'أجهزة اللابتوب', en: 'Laptops & Computers' },
                 laptopsLinkTitle: { ar: 'قسم مراجعات اللابتوبات', en: 'Laptop Reviews Section' },
                 laptopsLinkDesc: { ar: 'هل تبحث عن لابتوب جديد؟ اكتشف مراجعاتنا وتحليلاتنا لأحدث أجهزة الكمبيوتر المحمولة.', en: 'Looking for a new laptop? Discover our reviews and analysis of the latest notebooks.'},
                 browseLaptopsBtn: { ar: 'تصفح قسم اللابتوبات', en: 'Browse Laptop Section' },
-
                 techHeaderH1: { ar: 'مراجعات الأجهزة والتقنية', en: 'Gadgets & Tech Reviews' },
                 techHeaderP: { ar: 'مقارنات ومواصفات لمساعدتك على اتخاذ قرار الشراء الأنسب لك.', en: 'Comparisons and specifications to help you make the best purchasing decision for you.' },
                 techSearchPlaceholder: { ar: 'ابحث عن هاتف...', en: 'Search for a phone...' },
@@ -1321,7 +1341,6 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 sortNewest: { ar: 'الأحدث', en: 'Newest' },
                 sortNameAsc: { ar: 'الاسم (أ - ي)', en: 'Name (A-Z)' },
                 sortNameDesc: { ar: 'الاسم (ي - أ)', en: 'Name (Z-A)' },
-
                 badgeBestAllRound: { ar: 'الأفضل تكاملاً', en: 'Best All-Round' },
                 badgeBestVideo: { ar: 'الأفضل للفيديو', en: 'Best for Video' },
                 badgeBestCamera: { ar: 'الأفضل تصويراً', en: 'Best Camera' },
@@ -1351,7 +1370,6 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 badgeBudgetKing: { ar: 'ملك الميزانية', en: 'Budget King' },
                 badgeBestAIBudget: { ar: 'أفضل ذكاء اصطناعي اقتصادي', en: 'Best Budget AI' },
                 badgeBigScreen: { ar: 'شاشة كبيرة', en: 'Big Screen' },
-
                 techReview1Title: { ar: 'مراجعة هاتف Galaxy S25 Ultra', en: 'Galaxy S25 Ultra Phone Review' },
                 techReview1Spec1: { ar: '<strong>المعالج:</strong> Snapdragon 9 Gen 4', en: '<strong>Processor:</strong> Snapdragon 9 Gen 4' },
                 techReview1Spec2: { ar: '<strong>الشاشة:</strong> 6.8 بوصة Dynamic AMOLED', en: '<strong>Display:</strong> 6.8-inch Dynamic AMOLED' },
@@ -1412,19 +1430,14 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 techReview15Spec1: { ar: '<strong>الكاميرا:</strong> عدسة قابلة للسحب ومستشعر 1 بوصة', en: '<strong>Camera:</strong> Retractable lens & 1-inch sensor' },
                 techReview15Spec2: { ar: '<strong>المتانة:</strong> زجاج كونلون فائق الصلابة', en: '<strong>Durability:</strong> Ultra-tough Kunlun Glass' },
                 techReview15Spec3: { ar: '<strong>الميزات:</strong> اتصال بالقمر الصناعي', en: '<strong>Features:</strong> Satellite Communication' },
-                
-                // NEW: Huawei Mate 60 Pro translations
                 techReviewHuaweiMate60ProTitle: { ar: 'مراجعة Huawei Mate 60 Pro', en: 'Huawei Mate 60 Pro Review' },
                 techReviewHuaweiMate60ProSpec1: { ar: '<strong>المعالج:</strong> Kirin 9000S', en: '<strong>Processor:</strong> Kirin 9000S' },
                 techReviewHuaweiMate60ProSpec2: { ar: '<strong>الشاشة:</strong> 6.82" LTPO OLED', en: '<strong>Display:</strong> 6.82" LTPO OLED' },
                 techReviewHuaweiMate60ProSpec3: { ar: '<strong>الكاميرا:</strong> نظام XMAGE', en: '<strong>Camera:</strong> XMAGE System' },
-                
-                // NEW: Huawei P50 Pro translations
                 techReviewHuaweiP50ProTitle: { ar: 'مراجعة Huawei P50 Pro', en: 'Huawei P50 Pro Review' },
                 techReviewHuaweiP50ProSpec1: { ar: '<strong>الكاميرا:</strong> نظام Leica المتطور', en: '<strong>Camera:</strong> Advanced Leica System' },
                 techReviewHuaweiP50ProSpec2: { ar: '<strong>الشاشة:</strong> 6.6" OLED', en: '<strong>Display:</strong> 6.6" OLED' },
                 techReviewHuaweiP50ProSpec3: { ar: '<strong>البطارية:</strong> 4360mAh', en: '<strong>Battery:</strong> 4360mAh' },
-                
                 techReview16Title: { ar: 'مراجعة Motorola Razr 50 Ultra', en: 'Motorola Razr 50 Ultra Review' },
                 techReview16Spec1: { ar: '<strong>شاشة الغطاء:</strong> 4.0 بوصة الأكبر في فئتها', en: '<strong>Cover Screen:</strong> 4.0-inch, largest in class' },
                 techReview16Spec2: { ar: '<strong>التصميم:</strong> جلد نباتي وألوان عصرية', en: '<strong>Design:</strong> Vegan leather & trendy colors' },
@@ -1489,34 +1502,26 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 techReview30Spec1: { ar: '<strong>المعالج:</strong> Exynos 1480', en: '<strong>Processor:</strong> Exynos 1480' },
                 techReview30Spec2: { ar: '<strong>الشاشة:</strong> Super AMOLED 120Hz', en: '<strong>Display:</strong> 120Hz Super AMOLED' },
                 techReview30Spec3: { ar: '<strong>الكاميرا:</strong> 50MP مع OIS', en: '<strong>Camera:</strong> 50MP with OIS' },
-                
-                // NEW: Samsung Galaxy A35 translations
                 techReview31Title: { ar: 'مراجعة Samsung Galaxy A35', en: 'Samsung Galaxy A35 Review' },
                 techReview31Spec1: { ar: '<strong>المعالج:</strong> Exynos 1380', en: '<strong>Processor:</strong> Exynos 1380' },
                 techReview31Spec2: { ar: '<strong>الشاشة:</strong> 6.6" Super AMOLED 120Hz', en: '<strong>Display:</strong> 6.6" Super AMOLED 120Hz' },
                 techReview31Spec3: { ar: '<strong>الكاميرا:</strong> 50MP مع OIS', en: '<strong>Camera:</strong> 50MP with OIS' },
-
-                // NEW: Additional phone translations
                 techReviewASUSROG8ProTitle: { ar: 'مراجعة ASUS ROG Phone 8 Pro', en: 'ASUS ROG Phone 8 Pro Review' },
                 techReviewASUSROG8ProSpec1: { ar: '<strong>المعالج:</strong> Snapdragon 8 Gen 3', en: '<strong>Processor:</strong> Snapdragon 8 Gen 3' },
                 techReviewASUSROG8ProSpec2: { ar: '<strong>الشاشة:</strong> 165Hz AMOLED', en: '<strong>Display:</strong> 165Hz AMOLED' },
                 techReviewASUSROG8ProSpec3: { ar: '<strong>التبريد:</strong> نظام تبريد متقدم', en: '<strong>Cooling:</strong> Advanced Cooling System' },
-                
                 techReviewRedmiNote10Title: { ar: 'مراجعة Xiaomi Redmi Note 10', en: 'Xiaomi Redmi Note 10 Review' },
                 techReviewRedmiNote10Spec1: { ar: '<strong>الشاشة:</strong> Super AMOLED', en: '<strong>Display:</strong> Super AMOLED' },
                 techReviewRedmiNote10Spec2: { ar: '<strong>الكاميرا:</strong> 48MP Quad Camera', en: '<strong>Camera:</strong> 48MP Quad Camera' },
                 techReviewRedmiNote10Spec3: { ar: '<strong>البطارية:</strong> 5000mAh', en: '<strong>Battery:</strong> 5000mAh' },
-                
                 techReviewPixel8ProTitle: { ar: 'مراجعة Google Pixel 8 Pro', en: 'Google Pixel 8 Pro Review' },
                 techReviewPixel8ProSpec1: { ar: '<strong>المعالج:</strong> Google Tensor G3', en: '<strong>Processor:</strong> Google Tensor G3' },
                 techReviewPixel8ProSpec2: { ar: '<strong>الكاميرا:</strong> 50MP AI Camera', en: '<strong>Camera:</strong> 50MP AI Camera' },
                 techReviewPixel8ProSpec3: { ar: '<strong>الشاشة:</strong> LTPO OLED 120Hz', en: '<strong>Display:</strong> LTPO OLED 120Hz' },
-                
                 techReviewIPhone15ProMaxTitle: { ar: 'مراجعة iPhone 15 Pro Max', en: 'iPhone 15 Pro Max Review' },
                 techReviewIPhone15ProMaxSpec1: { ar: '<strong>المعالج:</strong> Apple A17 Pro', en: '<strong>Processor:</strong> Apple A17 Pro' },
                 techReviewIPhone15ProMaxSpec2: { ar: '<strong>الشاشة:</strong> Super Retina XDR', en: '<strong>Display:</strong> Super Retina XDR' },
                 techReviewIPhone15ProMaxSpec3: { ar: '<strong>الكاميرا:</strong> 48MP Pro Camera', en: '<strong>Camera:</strong> 48MP Pro Camera' },
-
                 techReviewXiaomi14UltraTitle: { ar: 'مراجعة Xiaomi 14 Ultra', en: 'Xiaomi 14 Ultra Review' },
                 techReviewXiaomi14UltraSpec1: { ar: '<strong>الكاميرا:</strong> نظام Leica بصري', en: '<strong>Camera:</strong> Leica Optical System' },
                 techReviewXiaomi14UltraSpec2: { ar: '<strong>الشاشة:</strong> 6.73" AMOLED 2K', en: '<strong>Display:</strong> 6.73" AMOLED 2K' },
@@ -1589,231 +1594,24 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 techReview33Spec1: { ar: '<strong>المعالج:</strong> Apple A18', en: '<strong>Processor:</strong> Apple A18' },
                 techReview33Spec2: { ar: '<strong>الشاشة:</strong> 6.7" Super Retina XDR', en: '<strong>Display:</strong> 6.7" Super Retina XDR' },
                 techReview33Spec3: { ar: '<strong>الكاميرا:</strong> 48MP كاميرا رئيسية', en: '<strong>Camera:</strong> 48MP Main Camera' },
-                
-                // NEW: POCO and Xiaomi phones translations
                 techReviewRedmiK70ProTitle: { ar: 'مراجعة Redmi K70 Pro', en: 'Redmi K70 Pro Review' },
                 techReviewRedmiK70ProSpec1: { ar: '<strong>المعالج:</strong> Snapdragon 8 Gen 3', en: '<strong>Processor:</strong> Snapdragon 8 Gen 3' },
                 techReviewRedmiK70ProSpec2: { ar: '<strong>الشاشة:</strong> 2K 120Hz', en: '<strong>Display:</strong> 2K 120Hz' },
                 techReviewRedmiK70ProSpec3: { ar: '<strong>الشحن:</strong> 120W HyperCharge', en: '<strong>Charging:</strong> 120W HyperCharge' },
-                
                 techReviewPOCOX6ProTitle: { ar: 'مراجعة POCO X6 Pro', en: 'POCO X6 Pro Review' },
                 techReviewPOCOX6ProSpec1: { ar: '<strong>المعالج:</strong> Snapdragon 8 Gen 2', en: '<strong>Processor:</strong> Snapdragon 8 Gen 2' },
                 techReviewPOCOX6ProSpec2: { ar: '<strong>الشاشة:</strong> 1.5K 120Hz', en: '<strong>Display:</strong> 1.5K 120Hz' },
                 techReviewPOCOX6ProSpec3: { ar: '<strong>البطارية:</strong> 5000mAh', en: '<strong>Battery:</strong> 5000mAh' },
-                
                 techReviewPOCOX6Title: { ar: 'مراجعة POCO X6', en: 'POCO X6 Review' },
                 techReviewPOCOX6Spec1: { ar: '<strong>المعالج:</strong> Dimensity 8300', en: '<strong>Processor:</strong> Dimensity 8300' },
                 techReviewPOCOX6Spec2: { ar: '<strong>الشاشة:</strong> 1.5K 120Hz', en: '<strong>Display:</strong> 1.5K 120Hz' },
                 techReviewPOCOX6Spec3: { ar: '<strong>البطارية:</strong> 5000mAh', en: '<strong>Battery:</strong> 5000mAh' },
-                
                 techReviewXiaomiMixFold3Title: { ar: 'مراجعة Xiaomi Mix Fold 3', en: 'Xiaomi Mix Fold 3 Review' },
                 techReviewXiaomiMixFold3Spec1: { ar: '<strong>المعالج:</strong> Snapdragon 8 Gen 2', en: '<strong>Processor:</strong> Snapdragon 8 Gen 2' },
                 techReviewXiaomiMixFold3Spec2: { ar: '<strong>الشاشة:</strong> 8.26" قابلة للطي', en: '<strong>Display:</strong> 8.26" Foldable' },
                 techReviewXiaomiMixFold3Spec3: { ar: '<strong>الكاميرا:</strong> نظام رباعي 50MP', en: '<strong>Camera:</strong> 50MP Quad Camera' },
-                
-                footerTermsLink: { ar: 'شروط الاستخدام', en: 'Terms of Service' },
-            };
-            
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = ''; 
-
-            const headerHTML = `<div class="container"><a href="${pathPrefix}../" class="logo" data-translate-key="siteName"></a><nav class="nav-links"><ul><li><a href="${pathPrefix}../" data-translate-key="navHome" data-nav-key="index"></a></li><li><a href="${pathPrefix}../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li><li><a href="${pathPrefix}../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li></ul></nav><button class="menu-toggle" id="menu-toggle" aria-label="Open Menu" data-translate-key="menuAriaLabel"><span></span><span></span><span></span></button></div>`;
-            const footerHTML = `
-                <div class="container">
-                    <div class="footer-content">
-                        <div class="footer-section">
-                            <h4 data-translate-key="footerAboutTitle"></h4>
-                            <p data-translate-key="footerAboutText"></p>
-                        </div>
-                        <div class="footer-section">
-                            <h4 data-translate-key="footerLinksTitle"></h4>
-                            <ul>
-                                <li><a href="../about/" data-translate-key="footerAboutLink"></a></li>
-                                <li><a href="../contact/" data-translate-key="footerContactLink"></a></li>
-                                <li><a href="../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
-                                <li><a href="../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section">
-                            <h4 data-translate-key="footerFollowTitle"></h4>
-                            <div class="social-links">
-                                <a href="#" aria-label="Facebook">F</a>
-                                <a href="#" aria-label="Twitter">T</a>
-                                <a href="#" aria-label="Instagram">I</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-bottom">
-                        <p data-translate-key="footerRights"></p>
-                        <p data-translate-key="footerDeveloper"></p>
-                    </div>
-                </div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
-
-            // --- START OF FIX ---
-            const searchInput = document.getElementById('tech-search');
-            // FIX: Select the grid by its unique ID to avoid conflict with the laptop section grid.
-            const techGrid = document.getElementById('phone-grid'); 
-            const allCards = techGrid ? Array.from(techGrid.querySelectorAll('.tech-card')) : [];
-            const noResultsMessage = document.getElementById('no-results-message');
-            const brandFilterContainer = document.querySelector('.brand-filters');
-            const sortBySelect = document.getElementById('sort-by');
-            
-            // NEW: Function to save filter state to localStorage
-            function saveFilterState(filter, sort) {
-                localStorage.setItem('techBrandFilter', filter);
-                localStorage.setItem('techSortBy', sort);
-            }
-            
-            // NEW: Function to load filter state from localStorage
-            function loadFilterState() {
-                const savedFilter = localStorage.getItem('techBrandFilter') || 'all';
-                const savedSort = localStorage.getItem('techSortBy') || 'newest';
-                return { filter: savedFilter, sort: savedSort };
-            }
-            
-            function updateDisplayedCards() {
-                // This function is now protected by an `if (techGrid)` block below,
-                // so we can be sure the elements exist.
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                const activeFilter = brandFilterContainer.querySelector('.filter-btn.active').dataset.filter;
-                const sortValue = sortBySelect.value;
-                
-                // NEW: Save the current filter state
-                saveFilterState(activeFilter, sortValue);
-                
-                let filteredCards = allCards.filter(card => {
-                    const brandMatch = activeFilter === 'all' || card.dataset.brand === activeFilter;
-                    const nameMatch = card.dataset.name.toLowerCase().includes(searchTerm);
-                    return brandMatch && nameMatch;
-                });
-                
-                filteredCards.sort((a, b) => {
-                    switch(sortValue) {
-                        case 'name-asc':
-                            return a.dataset.name.localeCompare(b.dataset.name);
-                        case 'name-desc':
-                            return b.dataset.name.localeCompare(a.dataset.name);
-                        case 'newest':
-                        default:
-                            return parseFloat(b.dataset.timestamp) - parseFloat(a.dataset.timestamp);
-                    }
-                });
-                
-                techGrid.innerHTML = '';
-                if(filteredCards.length > 0) {
-                    filteredCards.forEach(card => techGrid.appendChild(card));
-                    noResultsMessage.style.display = 'none';
-                } else {
-                    noResultsMessage.style.display = 'block';
-                }
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.body.classList.remove('rtl-layout', 'ltr-layout');
-                document.body.classList.add(lang === 'ar' ? 'rtl-layout' : 'ltr-layout');
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
-                    const key = el.dataset.translatePlaceholder;
-                    if (translations[key]?.[lang]) el.placeholder = translations[key][lang];
-                });
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-                
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-            
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) {
-                        setLanguage(targetLink.dataset.lang);
-                        if (techGrid) { // Safety check
-                            updateDisplayedCards();
-                        }
-                    }
-                });
-            }
-            
-            // FIX: Only add listeners and run the initial render if the phone grid exists.
-            if (techGrid) {
-                if (searchInput) searchInput.addEventListener('input', updateDisplayedCards);
-                if (brandFilterContainer) {
-                    brandFilterContainer.addEventListener('click', (e) => {
-                        if (e.target.classList.contains('filter-btn')) {
-                            brandFilterContainer.querySelector('.active').classList.remove('active');
-                            e.target.classList.add('active');
-                            updateDisplayedCards();
-                        }
-                    });
-                }
-                if (sortBySelect) sortBySelect.addEventListener('change', updateDisplayedCards);
-                
-                // NEW: Apply saved filter state on page load
-                const savedState = loadFilterState();
-                
-                // Apply saved brand filter
-                const filterButtons = brandFilterContainer.querySelectorAll('.filter-btn');
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.dataset.filter === savedState.filter) {
-                        btn.classList.add('active');
-                    }
-                });
-                
-                // Apply saved sort order
-                sortBySelect.value = savedState.sort;
-                
-                const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-                setLanguage(initialLang);
-                updateDisplayedCards(); // Initial render with saved state
-            } else {
-                // If the grid doesn't exist, still set the language for the rest of the page.
-                const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-                setLanguage(initialLang);
-            }
-        });
+        };
     </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

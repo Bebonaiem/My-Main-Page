@@ -21,13 +21,7 @@
     <link rel="stylesheet" href="../../style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7696225868255842"crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-7696225868255842">
-    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>
-        window.ezstandalone = window.ezstandalone || {};
-        ezstandalone.cmd = ezstandalone.cmd || [];
-    </script>
+    <!-- Removed unnecessary third-party scripts to improve performance -->
     <style>
         /* --- Base Styles (Mostly Unchanged) --- */
         .page-body { background-color: #f8f9fa; }
@@ -200,7 +194,20 @@
 </head>
 <body data-page-key="techDetailPixel8Pro" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-google">
             <div class="container">
@@ -393,24 +400,41 @@
             </div>
         </div>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول LearnFun.me', en: 'About LearnFun.me' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
+        window.pageTranslations = {
                 techDetailPixel8ProPageTitle: { ar: 'مراجعة هاتف Google Pixel 8 Pro - LearnFun.me', en: 'Google Pixel 8 Pro Review - LearnFun.me' },
                 techDetailPixel8ProMetaDescription: { ar: 'مراجعة تفصيلية لهاتف Google Pixel 8 Pro: المواصفات، الكاميرا، الأداء، والتصميم. كل ما تريد معرفته قبل الشراء.', en: 'Detailed review of the Google Pixel 8 Pro: specs, camera, performance, and design. Everything you need to know before you buy.' },
                 pixel8ProPhoneImageAlt: { ar: 'صورة لهاتف Google Pixel 8 Pro', en: 'Image of the Google Pixel 8 Pro phone' },
@@ -437,8 +461,6 @@
                 consPixel8ProItem3: { ar: 'متوفر فقط بألوان محدودة', en: 'Available in limited colors only' },
                 reviewPixel8ProVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewPixel8ProVerdictP1: { ar: 'Google Pixel 8 Pro هو الخيار الأمثل لمحبي التصوير وتجارب الذكاء الاصطناعي. رغم بعض التنازلات في الأداء والشحن، إلا أنه يقدم قيمة فريدة لا توجد في المنافسين.', en: 'The Google Pixel 8 Pro is the ideal choice for photography enthusiasts and AI experience lovers. Despite some compromises in performance and charging, it offers unique value not found in competitors.' },
-                
-                // New translations for specifications section
                 specsPixel8ProTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specsPixel8ProDisplayTitle: { ar: 'الشاشة', en: 'Display' },
                 specsPixel8ProDisplaySize: { ar: 'حجم الشاشة', en: 'Screen Size' },
@@ -460,8 +482,6 @@
                 specsPixel8ProCharging: { ar: 'الشحن السريع', en: 'Fast Charging' },
                 specsPixel8ProWireless: { ar: 'الشحن اللاسلكي', en: 'Wireless Charging' },
                 specsPixel8ProFeatures: { ar: 'الميزات الفريدة', en: 'Unique Features' },
-
-                // New translations for benchmark section
                 benchmarkPixel8ProTitle: { ar: 'نتائج الاختبارات', en: 'Benchmark Results' },
                 benchmarkPixel8ProCPU: { ar: 'أداء المعالج', en: 'CPU Performance' },
                 benchmarkPixel8ProCPUScore: { ar: 'أعلى درجة في اختبارات المعالج', en: 'Highest CPU benchmark score' },
@@ -471,8 +491,6 @@
                 benchmarkPixel8ProBatteryScore: { ar: 'أطول عمر بطارية في الاستخدام المكثف', en: 'Longest battery life under heavy use' },
                 benchmarkPixel8ProCamera: { ar: 'جودة الكاميرا', en: 'Camera Quality' },
                 benchmarkPixel8ProCameraScore: { ar: 'أعلى درجة في اختبارات الكاميرا', en: 'Highest camera benchmark score' },
-
-                // New translations for comparison section
                 comparisonPixel8ProTitle: { ar: 'مقارنة مع الطرازات السابقة', en: 'Comparison with Previous Models' },
                 comparisonFeature: { ar: 'الميزة', en: 'Feature' },
                 comparisonPixel8Pro: { ar: 'Pixel 8 Pro', en: 'Pixel 8 Pro' },
@@ -482,70 +500,9 @@
                 comparisonDisplay: { ar: 'حجم الشاشة', en: 'Display Size' },
                 comparisonBattery: { ar: 'سعة البطارية', en: 'Battery Capacity' },
                 comparisonCamera: { ar: 'الكاميرا الرئيسية', en: 'Main Camera' },
-            };
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../../'; 
-
-            const headerHTML = `<div class=\"container\"><a href=\"${pathPrefix}../\" class=\"logo\">learnfun.me</a><nav class=\"nav-links\"><ul><li><a href=\"${pathPrefix}../\" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href=\"${pathPrefix}../tech/\" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href=\"${pathPrefix}../contact/\" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class=\"menu-toggle\" id=\"menu-toggle\" aria-label=\"Toggle navigation menu\"><span data-translate-aria="menuAriaLabel"></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.body.className = `page-body ${lang}-layout`;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>
+

@@ -200,12 +200,17 @@ img {
     backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px); 
     padding: 1.25rem 0; 
+    position: -webkit-sticky; /* Safari compatibility */
     position: sticky; 
     top: 0; 
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000; 
     border-bottom: 1px solid rgba(229, 231, 235, 0.7); 
     transition: all var(--transition-medium); 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    will-change: transform; /* Optimize for animations */
 }
 
 .header.scrolled {
@@ -1214,6 +1219,7 @@ img {
     border-radius: var(--border-radius-lg); 
     box-shadow: var(--shadow); 
     border: 1px solid var(--border-color); 
+    margin: 2rem auto;
 }
 .content-page h1 { 
     font-size: 3rem; 
@@ -1299,6 +1305,105 @@ img {
 @media (max-width: 768px) {
     .content-page .container {
         padding: 2.5rem 2rem;
+    }
+    
+    .content-page h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    
+    .content-page h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    
+    .content-page p, .content-page ul {
+        font-size: 1rem;
+    }
+    
+    .team-member-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .team-member-name {
+        font-size: 1.5rem;
+    }
+    
+    .content-page .principles-list p {
+        padding-inline-start: 0;
+        padding-top: 0.5rem;
+    }
+    
+    .rtl-layout .content-page .principles-list p {
+        border-right: none;
+        border-top: 3px solid var(--border-color);
+        padding-right: 0;
+    }
+    
+    .ltr-layout .content-page .principles-list p {
+        border-left: none;
+        border-top: 3px solid var(--border-color);
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-page .container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .content-page h1 {
+        font-size: 1.8rem;
+    }
+    
+    .content-page h2 {
+        font-size: 1.4rem;
+    }
+    
+    .content-page .principles-list .principle-title {
+        font-size: 1.3rem;
+        gap: 0.75rem;
+    }
+    
+    .content-page .principles-list .principle-title .info-icon {
+        font-size: 1.2rem;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 400px) {
+    .content-page .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .content-page h1 {
+        font-size: 1.6rem;
+    }
+    
+    .content-page h2 {
+        font-size: 1.3rem;
+    }
+    
+    .content-page .principles-list .principle-title {
+        font-size: 1.1rem;
+        gap: 0.5rem;
+    }
+    
+    .content-page .principles-list .principle-title .info-icon {
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .team-member-photo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .team-member-name {
+        font-size: 1.2rem;
     }
 }
 

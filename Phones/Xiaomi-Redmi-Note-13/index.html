@@ -162,7 +162,20 @@
 </head>
 <body data-page-key="techDetailRedmi13">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="article-header">
             <h1 data-translate-key="redmi13Title"></h1>
@@ -290,22 +303,50 @@
         </section>
 
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
+        window.pageTranslations = {
                 techDetailRedmi13PageTitle: { ar: 'مراجعة هاتف Xiaomi Redmi Note 13 - Learn Fun', en: 'Xiaomi Redmi Note 13 Review - Learn Fun' },
                 techDetailRedmi13MetaDescription: { ar: 'مراجعة تفصيلية لهاتف Xiaomi Redmi Note 13: شاشة AMOLED 120Hz، كاميرا 108MP، وقيمة استثنائية في الفئة المتوسطة.', en: 'Detailed review of the Xiaomi Redmi Note 13: 120Hz AMOLED display, 108MP camera, and exceptional value in the mid-range category.' },
-                
                 redmi13PhoneImageAlt: { ar: 'صورة لهاتف Xiaomi Redmi Note 13', en: 'Image of a Xiaomi Redmi Note 13 phone' },
                 redmi13Title: { ar: 'هاتف Xiaomi Redmi Note 13', en: 'Xiaomi Redmi Note 13' },
                 redmi13Tagline: { ar: 'ميزات رائدة بسعر لا يقاوم. بطل الفئة الاقتصادية.', en: 'Flagship features at an irresistible price. The budget champion.' },
-                
                 highlightDisplay: { ar: 'شاشة AMOLED 120Hz', en: '120Hz AMOLED Display' },
                 highlightCamera: { ar: 'كاميرا 108MP', en: '108MP Camera' },
                 highlightBattery: { ar: 'بطارية 5000mAh', en: '5000mAh Battery' },
                 highlightValue: { ar: 'قيمة استثنائية', en: 'Exceptional Value' },
-                
                 specsTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specsDisplayTitle: { ar: 'الشاشة', en: 'Display' },
                 specsDisplaySize: { ar: 'حجم الشاشة', en: 'Screen Size' },
@@ -327,21 +368,17 @@
                 specsCharging: { ar: 'الشحن السريع', en: 'Fast Charging' },
                 specsAudio: { ar: 'منفذ سماعات', en: 'Audio Jack' },
                 specsProtection: { ar: 'الحماية', en: 'Protection' },
-
                 reviewScreenTitle: { ar: 'شاشة تتفوق على سعرها', en: 'A Screen That Punches Above Its Price' },
                 reviewScreenP1: { ar: 'من النادر أن تجد شاشة AMOLED بمعدل تحديث 120Hz في هذه الفئة السعرية. النتيجة هي تجربة مشاهدة غنية بالألوان وناعمة للغاية، مع حواف رفيعة بشكل مدهش تمنح الهاتف مظهراً أغلى من سعره.', en: 'It\'s rare to find a 120Hz AMOLED display in this price category. The result is a color-rich and incredibly smooth viewing experience, with surprisingly thin bezels that give the phone a more expensive look.' },
                 reviewPerformanceTitle: { ar: 'أداء متوازن للاستخدام اليومي', en: 'Balanced Performance for Daily Use' },
                 reviewPerformanceP1: { ar: 'يأتي الهاتف بمعالج Snapdragon 685 الذي يوفر أداءً كافياً للمهام اليومية مثل تصفح الإنترنت، وسائل التواصل الاجتماعي، ومشاهدة الفيديوهات. مع 8 جيجابايت من ذاكرة الوصول العشوائي، يمكن للهاتف التعامل مع التطبيقات المتعددة بسلاسة.', en: 'The phone comes with the Snapdragon 685 processor which provides sufficient performance for daily tasks like web browsing, social media, and video streaming. With 8GB of RAM, the phone can handle multiple applications smoothly.' },
                 reviewPerformanceP2: { ar: 'في اختبارات الأداء، حقق الهاتف نتائج جيدة في المهام اليومية، مع استجابة سريعة للشاشة اللمسية وتشغيل سلس للتطبيقات. ومع ذلك، قد تلاحظ بعض التأخير عند تشغيل الألعاب الثقيلة أو تحرير الفيديو.', en: 'In performance tests, the phone achieved good results in daily tasks, with responsive touch screen and smooth app operation. However, you might notice some lag when running heavy games or video editing.' },
-                
                 reviewBatteryTitle: { ar: 'عمر بطارية متميز', en: 'Outstanding Battery Life' },
                 reviewBatteryP1: { ar: 'البطارية بسعة 5000 مللي أمبير في الساعة هي واحدة من أفضل مميزات الهاتف. في الاستخدام العادي، يمكن للهاتف العمل ليوم كامل بسهولة، وحتى مع الاستخدام المكثف، ستحصل على 6-7 ساعات من وقت الشاشة.', en: 'The 5000mAh battery is one of the phone\'s best features. With normal usage, the phone can easily last a full day, and even with heavy usage, you\'ll get 6-7 hours of screen time.' },
                 reviewBatteryP2: { ar: 'يدعم الهاتف الشحن السريع بقوة 33 واط، مما يعني أنه يمكنك شحن البطارية من 0% إلى 100% في حوالي ساعة واحدة. كما يدعم الشحن العكسي، مما يجعله مفيداً لشحن الأجهزة الأخرى في حالات الطوارئ.', en: 'The phone supports 33W fast charging, meaning you can charge the battery from 0% to 100% in about one hour. It also supports reverse charging, making it useful for charging other devices in emergencies.' },
-                
                 reviewDesignTitle: { ar: 'تصميم أنيق وعصري', en: 'Elegant and Modern Design' },
                 reviewDesignP1: { ar: 'يتميز الهاتف بتصميم أنيق مع حواف رفيعة للغاية وفتحة كاميرا صغيرة في الأعلى. الإطار مصنوع من البلاستيك المقوى، بينما الزجاج الأمامي محمي بطبقة Gorilla Glass 3. الهاتف خفيف الوزن نسبياً (183 جرام) وسهل الاستخدام بيد واحدة.', en: 'The phone features an elegant design with extremely thin bezels and a small camera cutout at the top. The frame is made of reinforced plastic, while the front glass is protected by Gorilla Glass 3. The phone is relatively lightweight (183g) and easy to use with one hand.' },
                 reviewDesignP2: { ar: 'يأتي الهاتف بألوان متعددة، مع خيارات لامعة ومطفية. الخيارات اللامعة تعطي مظهراً فاخراً، بينما الخيارات المطفية توفر قبضة أفضل وتقليل بصمات الأصابع. منفذ سماعات الرأس 3.5 مم موجود، وهو ميزة مفيدة لمحبي الموسيقى.', en: 'The phone comes in multiple colors, with glossy and matte options. The glossy options give a premium look, while the matte options provide better grip and reduce fingerprints. The 3.5mm headphone jack is present, which is a useful feature for music lovers.' },
-                
                 prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
                 prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
                 prosItem1: { ar: 'شاشة AMOLED 120Hz رائعة بالنسبة للسعر', en: 'Fantastic AMOLED 120Hz screen for the price' },
@@ -350,64 +387,11 @@
                 consTitle: { ar: 'السلبيات', en: 'Cons' },
                 consItem1: { ar: 'الأداء ليس مثالياً للألعاب الثقيلة', en: 'Performance is not ideal for heavy gaming' },
                 consItem2: { ar: 'لا يوجد تسجيل فيديو بدقة 4K', en: 'No 4K video recording' },
-                
                 reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewVerdictP1: { ar: 'يقدم هاتف Xiaomi Redmi Note 13 قيمة لا تصدق مقابل المال. إنه يركز على الأشياء الأكثر أهمية للمستخدم العادي: شاشة رائعة، عمر بطارية طويل، وكاميرا جيدة. إذا كانت ميزانيتك محدودة وتبحث عن أفضل هاتف ممكن، فهذا هو الخيار الذي يجب أن تفكر فيه.', en: 'The Xiaomi Redmi Note 13 offers incredible value for money. It focuses on what matters most to the average user: a great screen, long battery life, and a good camera. If you are on a budget and looking for the best possible phone, this is the one to consider.' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learn fun', en: 'All Rights Reserved © 2025 learn fun' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-                footerAboutTitle: { ar: 'حول Learn Fun', en: 'About Learn Fun' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerTermsLink: { ar: 'شروط الاستخدام', en: 'Terms of Service' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-            };
-            // Paste the generic JS loader script here...
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../';
-            const headerHTML = `<div class="container"><a href="${pathPrefix}../" class="logo">learn fun</a><nav class="nav-links"><ul><li><a href="${pathPrefix}../" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href="${pathPrefix}../tech/" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href="${pathPrefix}../contact/" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class="menu-toggle" id="menu-toggle" aria-label="Open Menu" data-translate-key="menuAriaLabel"><span></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class="container"><div class="footer-content"><div class="footer-section"><h4 data-translate-key="footerAboutTitle"></h4><p data-translate-key="footerAboutText"></p></div><div class="footer-section"><h4 data-translate-key="footerLinksTitle"></h4><ul><li><a href="${pathPrefix}../about/" data-translate-key="footerAboutLink"></a></li><li><a href="${pathPrefix}../contact/" data-translate-key="footerContactLink"></a></li><li><a href="${pathPrefix}../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li><li><a href="${pathPrefix}../terms-of-service/" data-translate-key="footerTermsLink"></a></li></ul></div><div class="footer-section"><h4 data-translate-key="footerFollowTitle"></h4><div class="social-links"><a href="#" aria-label="Facebook">F</a><a href="#" aria-label="Twitter">T</a><a href="#" aria-label="Instagram">I</a></div></div></div><div class="footer-bottom"><p data-translate-key="footerRights"></p><p data-translate-key="footerDeveloper"></p></div></div>`;
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) el.innerHTML = translations[key][lang];
-                });
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-            };
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>
+

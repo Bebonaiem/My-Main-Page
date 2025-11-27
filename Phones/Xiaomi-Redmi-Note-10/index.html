@@ -200,7 +200,20 @@
 </head>
 <body data-page-key="techDetailRedmiNote10" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-xiaomi">
             <div class="container">
@@ -393,24 +406,41 @@
             </div>
         </div>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول LearnFun.me', en: 'About LearnFun.me' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
+        window.pageTranslations = {
                 techDetailRedmiNote10PageTitle: { ar: 'مراجعة هاتف Xiaomi Redmi Note 10 - LearnFun.me', en: 'Xiaomi Redmi Note 10 Review - LearnFun.me' },
                 techDetailRedmiNote10MetaDescription: { ar: 'مراجعة تفصيلية لهاتف Xiaomi Redmi Note 10: المواصفات، الكاميرا، الأداء، والتصميم. كل ما تريد معرفته قبل الشراء.', en: 'Detailed review of the Xiaomi Redmi Note 10: specs, camera, performance, and design. Everything you need to know before you buy.' },
                 redmiNote10PhoneImageAlt: { ar: 'صورة لهاتف Xiaomi Redmi Note 10', en: 'Image of the Xiaomi Redmi Note 10 phone' },
@@ -437,8 +467,6 @@
                 consRedmiNote10Item3: { ar: 'لا يدعم الشحن اللاسلكي', en: 'Does not support wireless charging' },
                 reviewRedmiNote10VerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewRedmiNote10VerdictP1: { ar: 'Xiaomi Redmi Note 10 هو خيار ممتاز في فئة الهواتف الاقتصادية. يجمع بين شاشة ممتازة وعمر بطارية طويل ونظام كاميرا جيد بسعر منافس جداً.', en: 'The Xiaomi Redmi Note 10 is an excellent choice in the budget smartphone category. It combines an excellent display, long battery life, and a good camera system at a very competitive price.' },
-                
-                // New translations for specifications section
                 specsRedmiNote10Title: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specsRedmiNote10DisplayTitle: { ar: 'الشاشة', en: 'Display' },
                 specsRedmiNote10DisplaySize: { ar: 'حجم الشاشة', en: 'Screen Size' },
@@ -460,8 +488,6 @@
                 specsRedmiNote10Charging: { ar: 'الشحن السريع', en: 'Fast Charging' },
                 specsRedmiNote10SIM: { ar: 'فتحات SIM', en: 'SIM Slots' },
                 specsRedmiNote10Colors: { ar: 'الألوان المتاحة', en: 'Available Colors' },
-
-                // New translations for benchmark section
                 benchmarkRedmiNote10Title: { ar: 'نتائج الاختبارات', en: 'Benchmark Results' },
                 benchmarkRedmiNote10CPU: { ar: 'أداء المعالج', en: 'CPU Performance' },
                 benchmarkRedmiNote10CPUScore: { ar: 'درجة اختبار المعالج', en: 'CPU benchmark score' },
@@ -471,8 +497,6 @@
                 benchmarkRedmiNote10BatteryScore: { ar: 'عمر البطارية في الاستخدام المكثف', en: 'Battery life under heavy use' },
                 benchmarkRedmiNote10Camera: { ar: 'جودة الكاميرا', en: 'Camera Quality' },
                 benchmarkRedmiNote10CameraScore: { ar: 'درجة اختبار الكاميرا', en: 'Camera benchmark score' },
-
-                // New translations for comparison section
                 comparisonRedmiNote10Title: { ar: 'مقارنة مع الطرازات السابقة', en: 'Comparison with Previous Models' },
                 comparisonFeature: { ar: 'الميزة', en: 'Feature' },
                 comparisonRedmiNote10: { ar: 'Redmi Note 10', en: 'Redmi Note 10' },
@@ -482,70 +506,8 @@
                 comparisonDisplay: { ar: 'الشاشة', en: 'Display' },
                 comparisonBattery: { ar: 'سعة البطارية', en: 'Battery Capacity' },
                 comparisonCamera: { ar: 'الكاميرا الرئيسية', en: 'Main Camera' },
-            };
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../../'; 
-
-            const headerHTML = `<div class=\"container\"><a href=\"${pathPrefix}../\" class=\"logo\">learnfun.me</a><nav class=\"nav-links\"><ul><li><a href=\"${pathPrefix}../\" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href=\"${pathPrefix}../tech/\" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href=\"${pathPrefix}../contact/\" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class=\"menu-toggle\" id=\"menu-toggle\" aria-label=\"Toggle navigation menu\"><span data-translate-aria="menuAriaLabel"></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.body.className = `page-body ${lang}-layout`;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

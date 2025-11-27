@@ -195,7 +195,20 @@ learnfun, learn fun, learnfun.me, learnfun website, learnfun blog, learnfun tech
 </head>
 <body data-page-key="techDetailVivo" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-vivo-v2">
             <div class="container">
@@ -321,32 +334,44 @@ learnfun, learn fun, learnfun.me, learnfun website, learnfun blog, learnfun tech
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                // Shared keys (header, footer, etc.)
-                siteName: { ar: 'learn fun', en: 'learn fun' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول Learn Fun', en: 'About Learn Fun' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerTermsLink: { ar: 'شروط الاستخدام', en: 'Terms of Service' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learn fun', en: 'All Rights Reserved © 2025 learn fun' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-                
-                // Page-specific keys for vivo X100 Pro+
+        window.pageTranslations = {
                 techDetailVivoPageTitle: { ar: 'مراجعة vivo X100 Pro+ المفصلة - Learn Fun', en: 'In-Depth vivo X100 Pro+ Review - Learn Fun' },
                 techDetailVivoMetaDescription: { ar: 'مراجعة شاملة وعميقة لهاتف vivo X100 Pro+. تعرف على مواصفات معالج Snapdragon 8 Gen 3، كاميرا ZEISS، شاشة AMOLED، وميزات OriginOS الحصرية.', en: 'Comprehensive and in-depth review of the vivo X100 Pro+. Learn about the Snapdragon 8 Gen 3 specs, ZEISS camera, AMOLED display, and exclusive OriginOS features.' },
                 vivoPhoneImageAlt: { ar: 'صورة لهاتف vivo X100 Pro+ بتصميم أنيق', en: 'Image of the stylishly designed vivo X100 Pro+ phone' },
-                
                 vivoV2Title: { ar: 'تصوير <span class="accent">احترافي</span>. أداء متميز.', en: 'Professional <span class="accent">Photography</span>. Outstanding Performance.' },
                 vivoTagline: { ar: 'هاتف vivo X100 Pro+ يجمع بين التصوير الاحترافي والأداء المتميز، مع ميزات متطورة وتجربة مستخدم سلسة.', en: 'The vivo X100 Pro+ combines professional photography with outstanding performance, featuring advanced features and a smooth user experience.' },
                 keyFeaturesTitle: { ar: 'أبرز الميزات', en: 'Key Features' },
@@ -358,12 +383,10 @@ learnfun, learn fun, learnfun.me, learnfun website, learnfun blog, learnfun tech
                 highlightChargingDesc: { ar: 'شحن 120 واط مع تقنية FlashCharge للشحن الكامل في دقائق', en: '120W charging with FlashCharge technology for full charge in minutes'},
                 highlightVivoGaming: { ar: 'تجربة ألعاب متطورة', en: 'Advanced Gaming Experience' },
                 highlightGamingDesc: { ar: 'تقنية Game Mode مع تبريد متقدم للأداء المثالي', en: 'Game Mode with advanced cooling for optimal performance'},
-
                 reviewPerformanceTitle: { ar: 'أداء لا يعرف الحدود', en: 'Unlimited Performance' },
                 reviewPerformanceP1: { ar: 'مع معالج Snapdragon 8 Gen 3، يقدم vivo X100 Pro+ أداءً استثنائيًا في كل المهام. نظام التبريد المتقدم يضمن أداءً مستقرًا حتى في الألعاب الثقيلة، بينما يوفر نظام إدارة الطاقة تحسينًا متميزًا لاستهلاك البطارية.', en: 'With the Snapdragon 8 Gen 3, the vivo X100 Pro+ delivers exceptional performance in every task. The advanced cooling system ensures stable performance even in heavy gaming, while the power management system provides excellent battery optimization.' },
                 reviewCameraTitle: { ar: 'فن التصوير الاحترافي', en: 'Professional Photography' },
                 reviewCameraP1: { ar: 'نظام الكاميرا في vivo X100 Pro+ يجمع بين تقنيات ZEISS المتطورة والذكاء الاصطناعي. المستشعر الرئيسي 50 ميجابكسل مع تقنية OIS يضمن صورًا واضحة ومستقرة، بينما تساعد تقنيات ZEISS في تحسين جودة الصور تلقائيًا في مختلف الظروف.', en: 'The camera system in the vivo X100 Pro+ combines advanced ZEISS technologies with artificial intelligence. The 50MP main sensor with OIS ensures clear and stable photos, while ZEISS technologies help automatically enhance image quality in various conditions.' },
-                
                 specsTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specCategoryDisplay: { ar: 'الشاشة', en: 'Display' },
                 specTypeLabel: { ar: 'النوع', en: 'Type' },
@@ -399,7 +422,6 @@ learnfun, learn fun, learnfun.me, learnfun website, learnfun blog, learnfun tech
                 specWiredChargeValue: { ar: '120 واط، 100% في 20 دقيقة', en: '120W, 100% in 20 min' },
                 specWirelessChargeLabel: { ar: 'الشحن اللاسلكي', en: 'Wireless Charging' },
                 specWirelessChargeValue: { ar: '50 واط مع FlashCharge', en: '50W with FlashCharge' },
-                
                 prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
                 prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
                 prosItem1: { ar: 'أداء استثنائي مع معالج Snapdragon 8 Gen 3', en: 'Exceptional performance with Snapdragon 8 Gen 3' },
@@ -410,82 +432,11 @@ learnfun, learn fun, learnfun.me, learnfun website, learnfun blog, learnfun tech
                 consItem1: { ar: 'لا يدعم إضافة بطاقة ذاكرة', en: 'No microSD card support' },
                 consItem2: { ar: 'لا يدعم الشحن اللاسلكي العكسي', en: 'No reverse wireless charging' },
                 consItem3: { ar: 'توفر محدود في بعض الأسواق', en: 'Limited availability in some markets' },
-                
                 reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewVerdictP1: { ar: 'هاتف vivo X100 Pro+ يمثل قفزة كبيرة في عالم الهواتف الذكية. يجمع بين التصوير الاحترافي، الأداء الاستثنائي، والشحن الفائق السرعة في حزمة واحدة. إذا كنت تبحث عن هاتف مميز مع ميزات متطورة، فإن vivo X100 Pro+ هو خيار ممتاز.', en: 'The vivo X100 Pro+ represents a significant leap in the smartphone world. It combines professional photography, exceptional performance, and ultra-fast charging in one package. If you\'re looking for a distinctive phone with advanced features, the vivo X100 Pro+ is an excellent choice.' },
-            };
-            
-            // Generic script for all detail pages
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../'; 
-
-            const headerHTML = `<div class="container"><a href="${pathPrefix}../" class="logo" data-translate-key="siteName"></a><nav class="nav-links"><ul><li><a href="${pathPrefix}../" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href="${pathPrefix}../tech/" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href="${pathPrefix}../contact/" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class="menu-toggle" id="menu-toggle" aria-label="Open Menu" data-translate-key="menuAriaLabel"><span></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class="container"><div class="footer-content"><div class="footer-section"><h4 data-translate-key="footerAboutTitle"></h4><p data-translate-key="footerAboutText"></p></div><div class="footer-section"><h4 data-translate-key="footerLinksTitle"></h4><ul><li><a href="${pathPrefix}../about/" data-translate-key="footerAboutLink"></a></li><li><a href="${pathPrefix}../contact/" data-translate-key="footerContactLink"></a></li><li><a href="${pathPrefix}../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li><li><a href="${pathPrefix}../terms-of-service/" data-translate-key="footerTermsLink"></a></li></ul></div><div class="footer-section"><h4 data-translate-key="footerFollowTitle"></h4><div class="social-links"><a href="#" aria-label="Facebook">F</a><a href="#" aria-label="Twitter">T</a><a href="#" aria-label="Instagram">I</a></div></div></div><div class="footer-bottom"><p data-translate-key="footerRights"></p><p data-translate-key="footerDeveloper"></p></div></div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                let bodyClass = 'page-body';
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) bodyClass += ` ${pageKey}`;
-                document.body.className = bodyClass;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('[data-translate-aria]').forEach(el => {
-                    const key = el.dataset.translateAria;
-                    if (translations[key]?.[lang]) el.setAttribute('aria-label', translations[key][lang]);
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html> 
+

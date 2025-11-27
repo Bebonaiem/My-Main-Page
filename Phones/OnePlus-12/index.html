@@ -127,7 +127,20 @@
 </head>
 <body data-page-key="techDetailOnePlus12" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-oneplus-v2">
             <div class="container">
@@ -247,10 +260,41 @@
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
+        window.pageTranslations = {
                 techDetailOnePlus12PageTitle: { ar: 'مراجعة هاتف OnePlus 12 - LearnFun.me', en: 'OnePlus 12 Review - LearnFun.me' },
                 techDetailOnePlus12MetaDescription: { ar: 'مراجعة تفصيلية لهاتف OnePlus 12: قوة وأداء في حجم مثالي مع كاميرا Hasselblad.', en: 'Detailed review of the OnePlus 12: Power and performance in a perfect size with Hasselblad camera.' },
                 oneplus12PhoneImageAlt: { ar: 'صورة لهاتف OnePlus 12', en: 'Image of the OnePlus 12' },
@@ -294,85 +338,9 @@
                 consItem2: { ar: 'لا يوجد منفذ للسماعات', en: 'No headphone jack' },
                 reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewVerdictP1: { ar: 'OnePlus 12 هو هاتف رائد متكامل يقدم أفضل ما في OnePlus: أداء قوي، كاميرا متطورة، وشحن سريع. إنه خيار ممتاز لمن يبحث عن هاتف رائد بتجربة مستخدم سلسة وأداء موثوق.', en: 'The OnePlus 12 is a complete flagship that delivers the best of OnePlus: powerful performance, advanced camera, and fast charging. It\'s an excellent choice for those looking for a flagship phone with a smooth user experience and reliable performance.' },
-                footerAboutTitle: { ar: 'عن الموقع', en: 'About' },
-                footerAboutText: { ar: 'LearnFun.me هو موقع لمراجعات الأجهزة التقنية وأحدث الهواتف.', en: 'LearnFun.me is a site for tech device reviews and the latest phones.' },
-                footerLinksTitle: { ar: 'روابط مهمة', en: 'Important Links' },
-                footerAboutLink: { ar: 'عن الموقع', en: 'About' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerTermsLink: { ar: 'شروط الخدمة', en: 'Terms of Service' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © LearnFun.me', en: 'All rights reserved © LearnFun.me' },
-                footerDeveloper: { ar: 'تطوير: فريق LearnFun', en: 'Developed by: LearnFun Team' }
-            };
-            
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../';
-            const headerHTML = `<div class="container"><a href="${pathPrefix}../" class="logo">learnfun.me</a><nav class="nav-links"><ul><li><a href="${pathPrefix}../">الرئيسية</a></li><li><a href="${pathPrefix}tech">أجهزة وتقنية</a></li><li><a href="${pathPrefix}contact">اتصل بنا</a></li></ul></nav><button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li><li><a href=\"${pathPrefix}../terms-of-service/\" data-translate-key=\"footerTermsLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-            
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
-                    const key = el.dataset.translatePlaceholder;
-                    if (translations[key]?.[lang]) el.placeholder = translations[key][lang];
-                });
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-                
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => link.classList.toggle('active', link.dataset.navKey === currentNavKey));
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) {
-                        setLanguage(targetLink.dataset.lang);
-                    }
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html> 
+

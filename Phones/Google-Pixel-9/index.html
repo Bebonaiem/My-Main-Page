@@ -155,7 +155,20 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
 </head>
 <body data-page-key="techDetailPixel" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <!-- Page content remains the same -->
         <section class="hero-pixel-v2">
@@ -275,31 +288,44 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                // Shared keys (header, footer, etc.)
-                siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول LearnFun.me', en: 'About LearnFun.me' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-                
-                // Page-specific keys for Google Pixel 9
+        window.pageTranslations = {
                 techDetailPixelPageTitle: { ar: 'مراجعة Google Pixel 9 المفصلة - LearnFun.me', en: 'In-Depth Google Pixel 9 Review - LearnFun.me' },
                 techDetailPixelMetaDescription: { ar: 'مراجعة شاملة وعميقة لهاتف Google Pixel 9. تعرف على مواصفات معالج Tensor G4، كاميرا AI، شاشة Actua، وميزات Android 15 الحصرية. كل ما تحتاج معرفته قبل الشراء.', en: 'Comprehensive and in-depth review of the Google Pixel 9. Learn about the Tensor G4 specs, AI camera, Actua display, and exclusive Android 15 features. Everything you need to know before you buy.' },
                 pixelPhoneImageAlt: { ar: 'صورة لهاتف Google Pixel 9 بتصميم أنيق', en: 'Image of the stylishly designed Google Pixel 9 phone' },
-                
                 pixelV2Title: { ar: 'مصمم <span class="accent">للمساعدة</span>. مدعوم بالذكاء.', en: 'Built to <span class="accent">Help</span>. Powered by AI.' },
                 pixelTagline: { ar: 'الهاتف الذكي الذي يتوقع احتياجاتك ويقدم تجربة Android الأنقى على الإطلاق، مع كاميرا لا مثيل لها.', en: 'The smartphone that anticipates your needs, delivering the purest Android experience with an unparalleled camera.' },
                 keyFeaturesTitle: { ar: 'أبرز الميزات الذكية', en: 'Highlights of Intelligence' },
@@ -311,12 +337,10 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 highlightDesignDesc: { ar: 'شاشة OLED شديدة السطوع والوضوح، مرئية تمامًا حتى تحت أشعة الشمس المباشرة.', en: 'An intensely bright and vivid OLED display, perfectly visible even in direct sunlight.'},
                 highlightPixelOS: { ar: 'أمان وتحديثات طويلة الأمد', en: 'Security & Long-Term Updates' },
                 highlightOSDesc: { ar: '7 سنوات من تحديثات نظام التشغيل والأمان، مع تجربة Android 15 النقية.', en: '7 years of OS and security updates, featuring a pure Android 15 experience.'},
-
                 reviewAITitle: { ar: 'الذكاء الاصطناعي الذي يخدمك', en: 'AI That Works For You' },
                 reviewAIP1: { ar: 'مع معالج Tensor G4، يتجاوز Pixel 9 كونه مجرد هاتف. إنه مساعدك الشخصي الذكي. ميزات مثل "Audio Magic Eraser" تزيل الضوضاء غير المرغوب فيها من مقاطع الفيديو، بينما تتيح لك ميزة "Best Take" دمج أفضل تعابير الوجه من عدة لقطات في صورة واحدة مثالية. هذا هو الذكاء العملي الذي يسهل حياتك.', en: 'With the Tensor G4, the Pixel 9 is more than a phone; it\'s your personal AI assistant. Features like Audio Magic Eraser remove unwanted noise from videos, while Best Take lets you merge the best expressions from multiple shots into one perfect photo. This is practical intelligence that simplifies your life.' },
                 reviewCameraTitle: { ar: 'التقط الواقع كما تراه', en: 'Capture Reality, As You See It' },
                 reviewCameraP1: { ar: 'لطالما كانت كاميرا Pixel هي الأفضل، وPixel 9 يرتقي بها لمستوى جديد. المستشعر الرئيسي المطور يلتقط تفاصيل مذهلة وضوءًا أكثر بنسبة 150%، مما يجعل الصور الليلية أكثر وضوحًا من أي وقت مضى. ومع ميزة "Magic Editor" المعاد تصميمها، يمكنك إعادة ترتيب وتحجيم العناصر في صورك بسهولة، مما يمنحك تحكمًا إبداعيًا كاملاً.', en: 'The Pixel camera has always been a leader, and the Pixel 9 takes it to a new level. The upgraded main sensor captures stunning detail and 150% more light, making night shots clearer than ever. With the redesigned Magic Editor, you can easily reposition and resize objects in your photos, giving you complete creative control.' },
-                
                 specsTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specCategoryDisplay: { ar: 'الشاشة', en: 'Display' },
                 specTypeLabel: { ar: 'النوع', en: 'Type' },
@@ -350,7 +374,6 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 specWiredChargeValue: { ar: '30 واط، 50% في 30 دقيقة (تقريبًا)', en: '30W, 50% in 30 min (advertised)' },
                 specWirelessChargeLabel: { ar: 'الشحن اللاسلكي', en: 'Wireless Charging' },
                 specWirelessChargeValue: { ar: '20 واط مع Pixel Stand (الجيل الثاني)', en: '20W with Pixel Stand (2nd gen)' },
-                
                 prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
                 prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
                 prosItem1: { ar: 'أفضل تجربة كاميرا في فئتها مع ميزات AI فريدة', en: 'Best-in-class camera experience with unique AI features' },
@@ -361,84 +384,10 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 consItem1: { ar: 'سرعات الشحن أبطأ من المنافسين الرئيسيين', en: 'Slower charging speeds than major competitors' },
                 consItem2: { ar: 'أداء معالج Tensor G4 ليس الأقوى في الألعاب الثقيلة', en: 'Tensor G4 performance is not the top for heavy gaming' },
                 consItem3: { ar: 'لا يدعم إضافة بطاقة ذاكرة microSD', en: 'No support for microSD card expansion' },
-                
                 reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewVerdictP1: { ar: 'هاتف Google Pixel 9 ليس مجرد تحديث، بل هو رؤية لمستقبل الهواتف الذكية. إذا كنت تقدر تجربة المستخدم الذكية، والكاميرا التي تلتقط صورًا مذهلة دون عناء، وضمان الحصول على أحدث الميزات والأمان لسنوات قادمة، فهو الخيار الأمثل لك. قد لا يكون الأسرع في الشحن أو الأقوى في الألعاب، ولكنه بالتأكيد الأذكى.', en: 'The Google Pixel 9 is not just an update; it\'s a vision of the future of smartphones. If you value an intelligent user experience, a camera that effortlessly captures stunning photos, and the guarantee of the latest features and security for years to come, this is the phone for you. It might not be the fastest to charge or the most powerful for gaming, but it is certainly the smartest.' },
-            };
-            
-            // Generic script for all detail pages
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../'; 
-
-            // --- CORRECTED SCRIPT ---
-            const headerHTML = `<div class=\"container\"><a href=\"${pathPrefix}../\" class=\"logo\">learnfun.me</a><nav class=\"nav-links\"><ul><li><a href=\"${pathPrefix}../\" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href=\"${pathPrefix}../tech/\" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href=\"${pathPrefix}../contact/\" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class=\"menu-toggle\" id=\"menu-toggle\" aria-label=\"Toggle navigation menu\"><span data-translate-aria="menuAriaLabel"></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                let bodyClass = 'page-body';
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) bodyClass += ` ${pageKey}`;
-                document.body.className = bodyClass;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                 document.querySelectorAll('[data-translate-aria]').forEach(el => {
-                    const key = el.dataset.translateAria;
-                    if (translations[key]?.[lang]) el.setAttribute('aria-label', translations[key][lang]);
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                // --- THIS LOGIC NOW WORKS CORRECTLY ---
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

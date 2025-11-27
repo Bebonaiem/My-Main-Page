@@ -158,7 +158,20 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
 </head>
 <body data-page-key="techDetailROG" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-rog">
             <div class="container">
@@ -278,31 +291,44 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                // Shared keys (header, footer, etc.)
-                siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول LearnFun.me', en: 'About LearnFun.me' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-                
-                // Page-specific keys for ASUS ROG Phone 9
+        window.pageTranslations = {
                 techDetailROGPageTitle: { ar: 'مراجعة ASUS ROG Phone 9 المفصلة - LearnFun.me', en: 'In-Depth ASUS ROG Phone 9 Review - LearnFun.me' },
                 techDetailROGMetaDescription: { ar: 'مراجعة شاملة وعميقة لهاتف ASUS ROG Phone 9. تعرف على مواصفات معالج Snapdragon 8 Gen 3، نظام تبريد متطور، شاشة AMOLED 165Hz، وميزات ROG UI. كل ما تحتاج معرفته قبل الشراء.', en: 'Comprehensive and in-depth review of the ASUS ROG Phone 9. Learn about the Snapdragon 8 Gen 3 chip, advanced cooling system, 165Hz AMOLED display, and ROG UI features. Everything you need to know before you buy.' },
                 rogImageAlt: { ar: 'صورة لهاتف ASUS ROG Phone 9 بتصميم رياضي', en: 'Image of the sporty designed ASUS ROG Phone 9' },
-                
                 rogTitle: { ar: 'قوة <span class="accent">مطلقة</span>. أداء استثنائي.', en: 'Absolute <span class="accent">Power</span>. Exceptional Performance.' },
                 rogTagline: { ar: 'هاتف ASUS ROG Phone 9 يجمع بين القوة المطلقة والأداء الاستثنائي، مع نظام تبريد متطور وشاشة AMOLED 165Hz.', en: 'The ASUS ROG Phone 9 combines absolute power with exceptional performance, featuring an advanced cooling system and 165Hz AMOLED display.' },
                 keyFeaturesTitle: { ar: 'أبرز الميزات المتطورة', en: 'Highlights of Innovation' },
@@ -314,12 +340,10 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 highlightDisplayDesc: { ar: 'شاشة AMOLED متطورة مع معدل تحديث 165Hz و HDR10+.', en: 'Advanced AMOLED display with 165Hz refresh rate and HDR10+.'},
                 highlightROGBattery: { ar: 'بطارية 6000 مللي أمبير', en: '6000 mAh Battery' },
                 highlightBatteryDesc: { ar: 'بطارية كبيرة مع شحن سريع 65 واط.', en: 'Large battery with 65W fast charging.'},
-
                 reviewChipTitle: { ar: 'قوة المعالج المتطورة', en: 'Advanced Processing Power' },
                 reviewChipP1: { ar: 'مع معالج Snapdragon 8 Gen 3، يقدم ROG Phone 9 أداءً استثنائيًا في كل مهمة. تم تحسين وحدة معالجة الذكاء الاصطناعي العصبية بشكل كبير، مما يتيح ميزات جديدة مثل التعرف على الصور المتقدم ومعالجة اللغة الطبيعية. هذا هو المستقبل في راحة يدك.', en: 'With the Snapdragon 8 Gen 3 chip, the ROG Phone 9 delivers exceptional performance in every task. The Neural Engine has been significantly enhanced, enabling new features like advanced image recognition and natural language processing. This is the future in the palm of your hand.' },
                 reviewCoolingTitle: { ar: 'نظام تبريد متطور', en: 'Advanced Cooling System' },
                 reviewCoolingP1: { ar: 'نظام التبريد في ROG Phone 9 هو الأكثر تقدمًا حتى الآن. نظام التبريد السائل مع المروحة الخارجية يحافظ على درجة حرارة منخفضة حتى أثناء الألعاب المكثفة. مع دعم GameCool 6، يمكنك تحقيق أداء مستقر لفترات طويلة.', en: 'The cooling system in the ROG Phone 9 is the most advanced yet. The liquid cooling system with external fan maintains low temperatures even during intensive gaming. With GameCool 6 support, you can achieve stable performance for extended periods.' },
-                
                 specsTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specCategoryDisplay: { ar: 'الشاشة', en: 'Display' },
                 specTypeLabel: { ar: 'النوع', en: 'Type' },
@@ -355,7 +379,6 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 specWiredChargeValue: { ar: '65 واط، 50% في 15 دقيقة', en: '65W, 50% in 15 min' },
                 specWirelessChargeLabel: { ar: 'الشحن اللاسلكي', en: 'Wireless Charging' },
                 specWirelessChargeValue: { ar: '15 واط', en: '15W' },
-                
                 prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
                 prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
                 prosItem1: { ar: 'أداء استثنائي للألعاب', en: 'Exceptional gaming performance' },
@@ -366,82 +389,10 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 consItem1: { ar: 'سعر مرتفع', en: 'High price' },
                 consItem2: { ar: 'تصميم ثقيل', en: 'Heavy design' },
                 consItem3: { ar: 'لا يدعم إضافة بطاقة ذاكرة', en: 'No expandable storage' },
-                
                 reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewVerdictP1: { ar: 'هاتف ASUS ROG Phone 9 هو خيار ممتاز للاعبين المحترفين. يجمع بين الأداء الاستثنائي ونظام التبريد المتطور في تصميم رياضي. مع شاشة AMOLED 165Hz رائعة وبطارية كبيرة، يقدم تجربة ألعاب متميزة.', en: 'The ASUS ROG Phone 9 is an excellent choice for professional gamers. It combines exceptional performance and advanced cooling system in a sporty design. With an excellent 165Hz AMOLED display and large battery, it offers a premium gaming experience.' },
-            };
-            
-            // Generic script for all detail pages
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../'; 
-
-            const headerHTML = `<div class=\"container\"><a href=\"${pathPrefix}../\" class=\"logo\">learnfun.me</a><nav class=\"nav-links\"><ul><li><a href=\"${pathPrefix}../\" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href=\"${pathPrefix}../tech/\" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href=\"${pathPrefix}../contact/\" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class=\"menu-toggle\" id=\"menu-toggle\" aria-label=\"Toggle navigation menu\"><span data-translate-aria="menuAriaLabel"></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}../about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}../contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                let bodyClass = 'page-body';
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) bodyClass += ` ${pageKey}`;
-                document.body.className = bodyClass;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('[data-translate-aria]').forEach(el => {
-                    const key = el.dataset.translateAria;
-                    if (translations[key]?.[lang]) el.setAttribute('aria-label', translations[key][lang]);
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

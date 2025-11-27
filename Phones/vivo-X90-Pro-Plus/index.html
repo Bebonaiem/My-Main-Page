@@ -127,7 +127,20 @@
 </head>
 <body data-page-key="techDetailVivo" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-vivo">
             <div class="container">
@@ -247,32 +260,44 @@
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                // Shared keys (header, footer, etc.)
-                siteName: { ar: 'learn fun', en: 'learn fun' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول Learn Fun', en: 'About Learn Fun' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerTermsLink: { ar: 'شروط الاستخدام', en: 'Terms of Service' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learn fun', en: 'All Rights Reserved © 2025 learn fun' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-                
-                // Page-specific keys for vivo X90 Pro+
+        window.pageTranslations = {
                 techDetailVivoPageTitle: { ar: 'مراجعة vivo X90 Pro+ المفصلة - Learn Fun', en: 'In-Depth vivo X90 Pro+ Review - Learn Fun' },
                 techDetailVivoMetaDescription: { ar: 'مراجعة شاملة وعميقة لهاتف vivo X90 Pro+. تعرف على مواصفات معالج Snapdragon 8 Gen 2، كاميرا متطورة، شاشة AMOLED، وميزات Funtouch OS. كل ما تحتاج معرفته قبل الشراء.', en: 'Comprehensive and in-depth review of the vivo X90 Pro+. Learn about the Snapdragon 8 Gen 2 chip, advanced camera, AMOLED display, and Funtouch OS features. Everything you need to know before you buy.' },
                 vivoImageAlt: { ar: 'صورة لهاتف vivo X90 Pro+ بتصميم أنيق', en: 'Image of the stylishly designed vivo X90 Pro+' },
-                
                 vivoTitle: { ar: 'تصميم <span class="accent">أنيق</span>. أداء قوي.', en: 'Elegant <span class="accent">Design</span>. Strong Performance.' },
                 vivoTagline: { ar: 'هاتف vivo X90 Pro+ يجمع بين التصميم العصري والأداء المتميز، مع نظام كاميرا متطور وواجهة مستخدم سلسة.', en: 'The vivo X90 Pro+ combines modern design with exceptional performance, featuring an advanced camera system and smooth user interface.' },
                 keyFeaturesTitle: { ar: 'أبرز الميزات المتطورة', en: 'Highlights of Innovation' },
@@ -284,12 +309,10 @@
                 highlightDesignDesc: { ar: 'هيكل زجاجي خفيف ومتين مع شاشة AMOLED متطورة.', en: 'Lightweight and durable glass frame with advanced AMOLED display.'},
                 highlightVivoOS: { ar: 'Funtouch OS الحصري', en: 'Exclusive Funtouch OS' },
                 highlightOSDesc: { ar: 'واجهة مستخدم متطورة مع ميزات ذكاء اصطناعي جديدة وأمان محسن.', en: 'Advanced user interface with new AI features and enhanced security.'},
-
                 reviewChipTitle: { ar: 'قوة المعالج المتطورة', en: 'Advanced Processing Power' },
                 reviewChipP1: { ar: 'مع معالج Snapdragon 8 Gen 2، يقدم X90 Pro+ أداءً استثنائيًا في كل مهمة. تم تحسين وحدة معالجة الذكاء الاصطناعي العصبية بشكل كبير، مما يتيح ميزات جديدة مثل التعرف على الصور المتقدم ومعالجة اللغة الطبيعية. هذا هو المستقبل في راحة يدك.', en: 'With the Snapdragon 8 Gen 2 chip, the X90 Pro+ delivers exceptional performance in every task. The Neural Engine has been significantly enhanced, enabling new features like advanced image recognition and natural language processing. This is the future in the palm of your hand.' },
                 reviewCameraTitle: { ar: 'فن التصوير المتطور', en: 'The Art of Advanced Photography' },
                 reviewCameraP1: { ar: 'نظام الكاميرا في X90 Pro+ هو الأكثر تقدمًا حتى الآن. المستشعر الرئيسي المطور يلتقط تفاصيل مذهلة وضوءًا أكثر بنسبة 150%، مما يجعل الصور الليلية أكثر وضوحًا من أي وقت مضى. مع دعم Night Mode و AI Scene Detection، يمكنك تحقيق نتائج احترافية.', en: 'The camera system in the X90 Pro+ is the most advanced yet. The upgraded main sensor captures stunning detail and 150% more light, making night shots clearer than ever. With Night Mode and AI Scene Detection support, you can achieve professional results.' },
-                
                 specsTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specCategoryDisplay: { ar: 'الشاشة', en: 'Display' },
                 specTypeLabel: { ar: 'النوع', en: 'Type' },
@@ -325,7 +348,6 @@
                 specWiredChargeValue: { ar: '120 واط، 50% في 8 دقائق', en: '120W, 50% in 8 min' },
                 specWirelessChargeLabel: { ar: 'الشحن اللاسلكي', en: 'Wireless Charging' },
                 specWirelessChargeValue: { ar: '50 واط', en: '50W' },
-                
                 prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
                 prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
                 prosItem1: { ar: 'شاشة AMOLED رائعة', en: 'Excellent AMOLED display' },
@@ -336,82 +358,11 @@
                 consItem1: { ar: 'لا يدعم إضافة بطاقة ذاكرة', en: 'No expandable storage' },
                 consItem2: { ar: 'لا يدعم الشحن العكسي', en: 'No reverse charging' },
                 consItem3: { ar: 'لا يدعم مقاومة الماء', en: 'No water resistance' },
-                
                 reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewVerdictP1: { ar: 'هاتف vivo X90 Pro+ هو خيار ممتاز لمن يبحث عن هاتف ذكي مع ميزات متطورة. يجمع بين الأداء القوي والكاميرا المتطورة في تصميم أنيق. مع شاشة AMOLED رائعة وبطارية كبيرة، يقدم تجربة مستخدم متميزة بسعر معقول.', en: 'The vivo X90 Pro+ is an excellent choice for those looking for a smartphone with advanced features. It combines strong performance and advanced camera in an elegant design. With an excellent AMOLED display and large battery, it offers a premium user experience at a reasonable price.' },
-            };
-            
-            // Generic script for all detail pages
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../'; 
-
-            const headerHTML = `<div class="container"><a href="${pathPrefix}../" class="logo" data-translate-key="siteName"></a><nav class="nav-links"><ul><li><a href="${pathPrefix}../" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href="${pathPrefix}../tech/" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href="${pathPrefix}../contact/" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class="menu-toggle" id="menu-toggle" aria-label="Open Menu" data-translate-key="menuAriaLabel"><span></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class="container"><div class="footer-content"><div class="footer-section"><h4 data-translate-key="footerAboutTitle"></h4><p data-translate-key="footerAboutText"></p></div><div class="footer-section"><h4 data-translate-key="footerLinksTitle"></h4><ul><li><a href="${pathPrefix}../about/" data-translate-key="footerAboutLink"></a></li><li><a href="${pathPrefix}../contact/" data-translate-key="footerContactLink"></a></li><li><a href="${pathPrefix}../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li><li><a href="${pathPrefix}../terms-of-service/" data-translate-key="footerTermsLink"></a></li></ul></div><div class="footer-section"><h4 data-translate-key="footerFollowTitle"></h4><div class="social-links"><a href="#" aria-label="Facebook">F</a><a href="#" aria-label="Twitter">T</a><a href="#" aria-label="Instagram">I</a></div></div></div><div class="footer-bottom"><p data-translate-key="footerRights"></p><p data-translate-key="footerDeveloper"></p></div></div>`;
-                
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                let bodyClass = 'page-body';
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) bodyClass += ` ${pageKey}`;
-                document.body.className = bodyClass;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        el.innerHTML = translations[key][lang];
-                    }
-                });
-                
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('[data-translate-aria]').forEach(el => {
-                    const key = el.dataset.translateAria;
-                    if (translations[key]?.[lang]) el.setAttribute('aria-label', translations[key][lang]);
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html> 
+
