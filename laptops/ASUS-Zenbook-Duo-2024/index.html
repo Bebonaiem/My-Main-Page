@@ -28,13 +28,7 @@
     <link rel="stylesheet" href="../../style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7696225868255842"crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-7696225868255842">
-    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>
-        window.ezstandalone = window.ezstandalone || {};
-        ezstandalone.cmd = ezstandalone.cmd || [];
-    </script>
+    <!-- Removed unnecessary third-party scripts to improve performance -->
     <style>
         :root {
             --c-primary: #005eff;
@@ -117,7 +111,20 @@
 </head>
 <body data-page-key="techDetailLaptopAsus" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-section">
             <div class="container">
@@ -238,38 +245,49 @@
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                // Shared Keys
-                siteName: { ar: 'learn fun', en: 'learn fun' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول Learn Fun', en: 'About Learn Fun' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learn fun', en: 'All Rights Reserved © 2025 learn fun' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-
-                // Page Specific
+        window.pageTranslations = {
                 techDetailLaptopAsusPageTitle: { ar: 'مراجعة ASUS Zenbook Duo (2024) - Learn Fun', en: 'ASUS Zenbook Duo (2024) Review - Learn Fun' },
                 techDetailLaptopAsusMetaDescription: { ar: 'مراجعة شاملة للابتوب ASUS Zenbook Duo (2024) بشاشتيه المزدوجة وأدائه الفائق.', en: 'A comprehensive review of the ASUS Zenbook Duo (2024) laptop with its dual screens and superior performance.' },
                 zenbookDuoImageAlt: { ar: 'لابتوب ASUS Zenbook Duo مع شاشتين', en: 'ASUS Zenbook Duo laptop with two screens' },
-
                 zenbookDuoTitle: { ar: 'مراجعة ASUS Zenbook Duo (2024)', en: 'ASUS Zenbook Duo (2024) Review' },
                 zenbookDuoTagline: { ar: 'شاشتان. إمكانيات لا محدودة. مستقبل الإنتاجية.', en: 'Two screens. Limitless possibilities. The future of productivity.' },
-                
                 reviewIntroTitle: { ar: 'ثورة في عالم الحواسيب المحمولة', en: 'A Revolution in Portable Computing' },
                 reviewIntroP1: { ar: 'يصل جهاز ASUS Zenbook Duo (2024) ليغير قواعد اللعبة. إنه ليس مجرد جهاز بشاشة إضافية، بل هو مفهوم متكامل يهدف إلى إعادة تعريف الإنتاجية أثناء التنقل. مع شاشتي لمس OLED كاملتي الحجم، يفتح هذا الجهاز آفاقًا جديدة للمبدعين، المبرمجين، والمحترفين الذين تتطلب أعمالهم مساحة عمل واسعة.', en: 'The ASUS Zenbook Duo (2024) arrives to change the game. It\'s not just a device with an extra screen; it\'s an integrated concept aimed at redefining productivity on the go. With two full-size OLED touchscreens, this device opens new horizons for creators, programmers, and professionals whose work demands extensive screen real estate.' },
                 reviewIntroP2: { ar: 'دعونا نغوص في تفاصيل هذا التصميم الجريء ونكتشف ما إذا كان الأداء والعملية يرتقيان إلى مستوى الوعد.', en: 'Let\'s dive into the details of this bold design and find out if the performance and practicality live up to the promise.' },
-                
                 featuresTitle: { ar: 'الميزات الرئيسية', en: 'Key Features' },
                 featuresSubtitle: { ar: 'نظرة سريعة على ما يجعل Zenbook Duo جهازًا فريدًا من نوعه.', en: 'A quick look at what makes the Zenbook Duo a one-of-a-kind device.' },
                 featureDualOledTitle: { ar: 'شاشات OLED مزدوجة', en: 'Dual OLED Displays' },
@@ -280,7 +298,6 @@
                 featureVersatileModesDesc: { ar: 'تحول بسهولة بين وضع اللابتوب، الشاشة المزدوجة، سطح المكتب، والمشاركة.', en: 'Easily switch between Laptop, Dual Screen, Desktop, and Sharing modes.' },
                 featureDetachableKbTitle: { ar: 'لوحة مفاتيح قابلة للفصل', en: 'Detachable Keyboard' },
                 featureDetachableKbDesc: { ar: 'استمتع بالمرونة الكاملة مع لوحة مفاتيح بلوتوث كاملة الحجم ولوحة لمس مدمجة.', en: 'Enjoy full flexibility with a full-size Bluetooth keyboard and touchpad.' },
-
                 modesTitle: { ar: 'أوضاع استخدام لكل سيناريو', en: 'A Mode for Every Scenario' },
                 modesIntro: { ar: 'القوة الحقيقية لـ Zenbook Duo تكمن في مرونته، بفضل برنامج ASUS ScreenXpert الذكي.', en: 'The true power of the Zenbook Duo lies in its flexibility, powered by the intelligent ASUS ScreenXpert software.' },
                 modeLaptopTitle: { ar: 'وضع اللابتوب', en: 'Laptop Mode' },
@@ -291,7 +308,6 @@
                 modeDesktopDesc: { ar: 'افتح الجهاز أفقيًا كالكتاب. يحاكي تجربة استخدام شاشتين مكتبيتين جنبًا إلى جنب.', en: 'Open the device horizontally like a book. This mimics a dual-monitor desktop setup.' },
                 modeSharingTitle: { ar: 'وضع المشاركة', en: 'Sharing Mode' },
                 modeSharingDesc: { ar: 'ضع الجهاز بشكل مسطح وقم بعكس الشاشة. مثالي للاجتماعات والعروض التقديمية الصغيرة.', en: 'Lay the device flat and mirror the screen. Perfect for meetings and small presentations.' },
-                
                 specsTitle: { ar: 'المواصفات التقنية', en: 'Technical Specifications' },
                 specCategoryDisplay: { ar: 'الشاشة', en: 'Display' },
                 specTypeLabel: { ar: 'النوع', en: 'Type' },
@@ -317,7 +333,6 @@
                 specBatteryValue: { ar: '75Whs', en: '75Whs' },
                 specWeightLabel: { ar: 'الوزن (مع لوحة المفاتيح)', en: 'Weight (with keyboard)' },
                 specWeightValue: { ar: '1.65 كجم', en: '1.65 kg (3.64 lbs)' },
-
                 prosConsTitle: { ar: 'نظرة متوازنة', en: 'A Balanced View' },
                 prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
                 prosItem1: { ar: 'إنتاجية لا مثيل لها بفضل الشاشتين', en: 'Unparalleled productivity thanks to dual screens' },
@@ -329,84 +344,11 @@
                 consItem2: { ar: 'عمر البطارية متوسط عند استخدام الشاشتين', en: 'Average battery life when using both screens' },
                 consItem3: { ar: 'يتطلب فترة للتعود على سير العمل الجديد', en: 'Requires a learning curve for the new workflow' },
                 consItem4: { ar: 'السعر المرتفع يجعله استثمارًا كبيرًا', en: 'High price point makes it a significant investment' },
-                
                 reviewVerdictTitle: { ar: 'الحكم النهائي: لمن هذا الجهاز؟', en: 'Final Verdict: Who Is This For?' },
                 reviewVerdictP1: { ar: 'لابتوب ASUS Zenbook Duo هو جهاز استثنائي يستهدف فئة معينة من المستخدمين: المبدعين، المطورين، والمحترفين الذين يقدرون مساحة الشاشة الإضافية والمرونة فوق كل شيء آخر. إذا كان عملك يستفيد من وجود شاشتين وكنت مستعدًا للاستثمار في تقنية متطورة، فهذا الجهاز سيغير قواعد اللعبة بالنسبة لك.', en: 'The ASUS Zenbook Duo is an exceptional device aimed at a specific user: creators, developers, and professionals who value extra screen real estate and flexibility above all else. If your work benefits from a dual-monitor setup and you\'re ready to invest in cutting-edge tech, this device is a game-changer.' },
                 reviewVerdictP2: { ar: 'أما إذا كانت أولويتك هي الخفة والنحافة أو عمر بطارية يدوم طوال اليوم، فقد لا يكون الخيار الأمثل. لكنه بلا شك يقدم لمحة مثيرة ومقنعة عن مستقبل الحوسبة المحمولة.', en: 'However, if your priority is portability or all-day battery life, it might not be the perfect choice. But it undoubtedly offers an exciting and compelling glimpse into the future of mobile computing.' },
-            };
-            
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../../';
-
-            const headerHTML = `<div class="container"><a href="${pathPrefix}" class="logo" data-translate-key="siteName"></a><nav class="nav-links"><ul><li><a href="${pathPrefix}" data-nav-key="index" data-translate-key="navHome"></a></li><li><a href="${pathPrefix}tech/" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href="${pathPrefix}contact/" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class="menu-toggle" id="menu-toggle" aria-label="Open Menu" data-translate-key="menuAriaLabel"><span></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li><li><a href=\"${pathPrefix}../terms-of-service/\" data-translate-key=\"footerTermsLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-            
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.body.className = `page-body ${lang}-layout`;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        const iconHTML = el.querySelector('i') ? el.querySelector('i').outerHTML + ' ' : '';
-                        const spanContent = el.querySelector('span') ? el.querySelector('span') : el;
-                        
-                        if (el.tagName === 'H4' && el.parentElement.classList.contains('pros-cons-col')) {
-                            el.innerHTML = iconHTML + translations[key][lang];
-                        } else if (spanContent.dataset.translateKey) {
-                             spanContent.innerHTML = translations[key][lang];
-                        } else {
-                            el.innerHTML = translations[key][lang];
-                        }
-                    }
-                });
-                
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = 'tech';
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

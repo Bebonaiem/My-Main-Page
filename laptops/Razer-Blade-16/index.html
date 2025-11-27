@@ -92,7 +92,20 @@
 </head>
 <body data-page-key="techDetailLaptopRazer" class="page-body">
     <div id="lang-switcher"><a href="#" data-lang="en">EN</a><a href="#" data-lang="ar" class="active">AR</a></div>
-    <header class="header"></header>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                    <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                    <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
+        </div>
+    </header>
     <main>
         <section class="hero-section">
             <div class="container">
@@ -186,27 +199,41 @@
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate-key="footerAboutTitle"></h4>
+                    <p data-translate-key="footerAboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerLinksTitle"></h4>
+                    <ul>
+                        <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                        <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                        <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                        <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate-key="footerFollowTitle"></h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Twitter">T</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerRights"></p>
+                <p data-translate-key="footerDeveloper"></p>
+            </div>
+        </div>
+    </footer>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const translations = {
-                // Shared Keys
-                siteName: { ar: 'learn fun', en: 'learn fun' },
-                navHome: { ar: 'الرئيسية', en: 'Home' },
-                navTech: { ar: 'أجهزة وتقنية', en: 'Tech & Gadgets' },
-                navContact: { ar: 'اتصل بنا', en: 'Contact Us' },
-                menuAriaLabel: { ar: 'فتح القائمة', en: 'Open Menu' },
-                footerAboutTitle: { ar: 'حول Learn Fun', en: 'About Learn Fun' },
-                footerAboutText: { ar: 'موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.', en: 'Your site for knowledge and technology. We strive to provide valuable and useful content in various fields.' },
-                footerLinksTitle: { ar: 'روابط هامة', en: 'Important Links' },
-                footerPrivacyLink: { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
-                footerAboutLink: { ar: 'من نحن', en: 'About Us' },
-                footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
-                footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
-                footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learn fun', en: 'All Rights Reserved © 2025 learn fun' },
-                footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
-
-                // Page Specific
+        window.pageTranslations = {
                 techDetailLaptopRazerPageTitle: { ar: 'مراجعة Razer Blade 16 - Learn Fun', en: 'Razer Blade 16 Review - Learn Fun' },
                 razerBladeImageAlt: { ar: 'لابتوب الألعاب Razer Blade 16', en: 'Razer Blade 16 Gaming Laptop' },
                 razerBladeTitle: { ar: 'مراجعة Razer Blade 16', en: 'Razer Blade 16 Review' },
@@ -246,80 +273,9 @@
                 consItem3: { ar: 'يمكن أن يصبح ساخنًا ومزعجًا للغاية', en: 'Can get very hot and loud' },
                 reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
                 reviewVerdictP1: { ar: 'جهاز Razer Blade 16 هو قمة هندسة لابتوبات الألعاب. إذا كان السعر لا يمثل مشكلة وكنت تريد أفضل أداء ممكن في تصميم فاخر، فهذا هو الجهاز المناسب لك. إنه استثمار كبير، ولكنه يقدم تجربة لا مثيل لها.', en: 'The Razer Blade 16 is the pinnacle of gaming laptop engineering. If money is no object and you want the absolute best performance in a premium package, this is the machine for you. It\'s a huge investment, but it delivers an unmatched experience.' }
-            };
-
-            const headerElement = document.querySelector('.header');
-            const footerElement = document.querySelector('.footer');
-            const pathPrefix = '../../';
-
-            const headerHTML = `<div class="container"><a href="${pathPrefix}../" class="logo">learn fun</a><nav class="nav-links"><ul><li><a href="${pathPrefix}../" data-nav-key="home" data-translate-key="navHome"></a></li><li><a href="${pathPrefix}../tech/" data-nav-key="tech" data-translate-key="navTech"></a></li><li><a href="${pathPrefix}../contact/" data-nav-key="contact" data-translate-key="navContact"></a></li></ul></nav><button class="menu-toggle" id="menu-toggle" aria-label="Open Menu" data-translate-key="menuAriaLabel"><span></span><span></span><span></span></button></div>`;
-            const footerHTML = `<div class=\"container\"><div class=\"footer-content\"><div class=\"footer-section\"><h4 data-translate-key=\"footerAboutTitle\"></h4><p data-translate-key=\"footerAboutText\"></p></div><div class=\"footer-section\"><h4 data-translate-key=\"footerLinksTitle\"></h4><ul><li><a href=\"${pathPrefix}about/\" data-translate-key=\"footerAboutLink\"></a></li><li><a href=\"${pathPrefix}contact/\" data-translate-key=\"footerContactLink\"></a></li><li><a href=\"${pathPrefix}../privacy-policy/\" data-translate-key=\"footerPrivacyLink\"></a></li><li><a href=\"${pathPrefix}../terms-of-service/\" data-translate-key=\"footerTermsLink\"></a></li></ul></div><div class=\"footer-section\"><h4 data-translate-key=\"footerFollowTitle\"></h4><div class=\"social-links\"><a href=\"#\" aria-label=\"Facebook\">F</a><a href=\"#\" aria-label=\"Twitter\">T</a><a href=\"#\" aria-label=\"Instagram\">I</a></div></div></div><div class=\"footer-bottom\"><p data-translate-key=\"footerRights\"></p><p data-translate-key=\"footerDeveloper\"></p></div></div>`;
-            
-            if(headerElement) headerElement.innerHTML = headerHTML;
-            if(footerElement) footerElement.innerHTML = footerHTML;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
-
-            const langSwitcher = document.getElementById('lang-switcher');
-            const setLanguage = (lang) => {
-                localStorage.setItem('siteLanguage', lang);
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-                document.body.className = `page-body ${lang}-layout`;
-
-                document.querySelectorAll('[data-translate-key]').forEach(el => {
-                    const key = el.dataset.translateKey;
-                    if (translations[key] && translations[key][lang]) {
-                        const iconHTML = el.querySelector('i') ? el.querySelector('i').outerHTML + ' ' : '';
-                        const spanContent = el.querySelector('span') ? el.querySelector('span') : el;
-                        
-                        if (el.tagName === 'H4' && el.parentElement.classList.contains('pros-cons-col')) {
-                            el.innerHTML = iconHTML + translations[key][lang];
-                        } else if (spanContent.dataset.translateKey) {
-                             spanContent.innerHTML = translations[key][lang];
-                        } else {
-                            el.innerHTML = translations[key][lang];
-                        }
-                    }
-                });
-                
-                const pageKey = document.body.dataset.pageKey;
-                if (pageKey) {
-                    const titleKey = `${pageKey}PageTitle`;
-                    const metaDescKey = `${pageKey}MetaDescription`;
-                    if (translations[titleKey]?.[lang]) document.title = translations[titleKey][lang];
-                    const metaDescEl = document.querySelector('meta[name="description"]');
-                    if (metaDescEl && translations[metaDescKey]?.[lang]) metaDescEl.content = translations[metaDescKey][lang];
-                }
-
-                document.querySelectorAll('[data-translate-alt]').forEach(el => {
-                    const key = el.dataset.translateAlt;
-                    if (translations[key]?.[lang]) el.alt = translations[key][lang];
-                });
-
-                document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
-                
-                const currentNavKey = 'tech';
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.toggle('active', link.dataset.navKey === currentNavKey);
-                });
-            };
-
-            if (langSwitcher) {
-                langSwitcher.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetLink = e.target.closest('a');
-                    if (targetLink?.dataset.lang) setLanguage(targetLink.dataset.lang);
-                });
-            }
-
-            const initialLang = localStorage.getItem('siteLanguage') || (navigator.language.slice(0, 2) === 'ar' ? 'ar' : 'en');
-            setLanguage(initialLang);
-        });
+        };
     </script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>
+
