@@ -324,6 +324,124 @@
                 laptopReviewYoga7iSpec2: { ar: '<strong>الميزة:</strong> قيمة رائعة لشاشة كبيرة', en: '<strong>Feature:</strong> Great large-screen value' },
         };
     </script>
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get DOM elements
+            const searchInput = document.getElementById('tech-search');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const sortBySelect = document.getElementById('sort-by');
+            const techCards = document.querySelectorAll('.tech-card');
+            const noResultsMessage = document.getElementById('no-results-message');
+            
+            // Current filter state
+            let currentFilter = 'all';
+            let currentSearch = '';
+            
+            // Load saved filter state from localStorage
+            const savedFilter = localStorage.getItem('laptopsFilter');
+            const savedSort = localStorage.getItem('laptopsSort');
+            
+            if (savedFilter) {
+                currentFilter = savedFilter;
+                updateFilterButtons();
+            }
+            
+            if (savedSort) {
+                sortBySelect.value = savedSort;
+            }
+            
+            // Apply initial filters
+            applyFilters();
+            
+            // Search functionality
+            searchInput.addEventListener('input', function(e) {
+                currentSearch = e.target.value.toLowerCase().trim();
+                applyFilters();
+            });
+            
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    currentFilter = this.dataset.filter;
+                    localStorage.setItem('laptopsFilter', currentFilter);
+                    updateFilterButtons();
+                    applyFilters();
+                });
+            });
+            
+            // Sort functionality
+            sortBySelect.addEventListener('change', function() {
+                localStorage.setItem('laptopsSort', this.value);
+                sortCards(this.value);
+            });
+            
+            // Update active filter button
+            function updateFilterButtons() {
+                filterButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.filter === currentFilter);
+                });
+            }
+            
+            // Apply filters to cards
+            function applyFilters() {
+                let visibleCount = 0;
+                
+                techCards.forEach(card => {
+                    const brand = card.dataset.brand || '';
+                    const name = card.dataset.name || '';
+                    const matchesFilter = currentFilter === 'all' || brand === currentFilter;
+                    const matchesSearch = currentSearch === '' || 
+                                         name.toLowerCase().includes(currentSearch) || 
+                                         card.textContent.toLowerCase().includes(currentSearch);
+                    
+                    if (matchesFilter && matchesSearch) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide no results message
+                if (noResultsMessage) {
+                    noResultsMessage.style.display = visibleCount ? 'none' : 'block';
+                }
+            }
+            
+            // Sort cards
+            function sortCards(sortValue) {
+                const container = document.querySelector('.tech-grid');
+                const cards = Array.from(techCards);
+                
+                cards.sort((a, b) => {
+                    const aTimestamp = parseInt(a.dataset.timestamp) || 0;
+                    const bTimestamp = parseInt(b.dataset.timestamp) || 0;
+                    const aName = (a.dataset.name || '').toLowerCase();
+                    const bName = (b.dataset.name || '').toLowerCase();
+                    
+                    switch(sortValue) {
+                        case 'newest':
+                            return bTimestamp - aTimestamp;
+                        case 'name-asc':
+                            return aName.localeCompare(bName);
+                        case 'name-desc':
+                            return bName.localeCompare(aName);
+                        default:
+                            return 0;
+                    }
+                });
+                
+                // Re-append sorted cards to container
+                cards.forEach(card => container.appendChild(card));
+            }
+            
+            // Apply initial sort
+            if (savedSort) {
+                sortCards(savedSort);
+            }
+        });
+    </script>
     <script src="../js/main.js"></script>
 </body>
 </html>

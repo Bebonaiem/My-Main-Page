@@ -15,9 +15,700 @@
     <link rel="icon" href="../../img/logo-title.ico" sizes="32x32" type="image/x-icon">
     <link rel="stylesheet" href="../../style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7696225868255842" crossorigin="anonymous"></script>
+    <style>
+        /* ================================================= */
+        /*          ENHANCED GUI FOR XIAOMI MIX FOLD 3 PAGE  */
+        /* ================================================= */
+
+        :root {
+            --xiaomi-bg: #000000;
+            --xiaomi-card-bg: #1c1c1e;
+            --xiaomi-accent: #ff6700; /* Xiaomi Orange */
+            --xiaomi-text: #ffffff;
+            --xiaomi-heading-font: 'Inter', 'Cairo', sans-serif;
+            --xiaomi-subtle-border: rgba(255, 255, 255, 0.1);
+            --xiaomi-hover: #ff7b2e;
+            --xiaomi-shadow: rgba(255, 103, 0, 0.2);
+        }
+
+        .page-body { 
+            background-color: var(--xiaomi-bg); 
+            color: var(--xiaomi-text); 
+            background-image: radial-gradient(circle at 10% 20%, rgba(255, 103, 0, 0.05) 0%, rgba(0, 0, 0, 0) 20%),
+                              radial-gradient(circle at 90% 80%, rgba(255, 103, 0, 0.05) 0%, rgba(0, 0, 0, 0) 20%);
+        }
+        
+        .header { 
+            background-color: rgba(0, 0, 0, 0.85); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px); 
+            border-bottom: 1px solid rgba(255, 103, 0, 0.1);
+        }
+        
+        .logo, .nav-links a { color: #fff; }
+        .nav-links a:hover, .nav-links a.active { 
+            color: #fff; 
+            background-color: var(--xiaomi-accent); 
+            padding: 8px 16px; 
+            border-radius: 4px; 
+            transform: translateY(-2px);
+        }
+        .nav-links a::after { display: none; }
+        .menu-toggle { background-color: rgba(0, 0, 0, 0.7); }
+        .menu-toggle span { background-color: #fff; }
+        .footer { 
+            margin-top: 0; 
+            background: linear-gradient(135deg, #111827 0%, #1c1c1e 100%);
+        }
+        
+        /* Hero Section */
+        .hero-xiaomi { 
+            padding: 6rem 0; 
+            background-color: var(--xiaomi-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-xiaomi::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 103, 0, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 0;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .hero-xiaomi .container { 
+            display: grid; 
+            grid-template-columns: 1.2fr 1fr; 
+            align-items: center; 
+            gap: 2rem; 
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-xiaomi .hero-text h1 { 
+            font-family: var(--xiaomi-heading-font); 
+            font-size: 4rem; 
+            font-weight: 800; 
+            line-height: 1.1; 
+            color: #fff; 
+            margin-bottom: 1.5rem; 
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-xiaomi .hero-text h1 .accent { color: var(--xiaomi-accent); }
+        
+        .hero-xiaomi .hero-text p { 
+            font-size: 1.3rem; 
+            line-height: 1.7; 
+            color: var(--xiaomi-text); 
+            max-width: 500px; 
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--xiaomi-accent), #ff8c42);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--xiaomi-shadow);
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(45deg, var(--xiaomi-hover), #ff9a5a);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px var(--xiaomi-shadow);
+        }
+        
+        .hero-xiaomi .hero-image {
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .hero-xiaomi .hero-image img { 
+            max-width: 100%; 
+            filter: drop-shadow(0 20px 25px rgba(0,0,0,0.4)); 
+            transform: rotate(5deg);
+            border-radius: 20px;
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-xiaomi .hero-image:hover img {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        /* Features Showcase */
+        .features-showcase { 
+            padding: 6rem 0; 
+            background: linear-gradient(to bottom, #1a1a1a 0%, #0d0d0d 100%);
+            position: relative;
+        }
+        
+        .features-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--xiaomi-accent), transparent);
+        }
+        
+        .features-showcase h2, .specs-section h2, .pros-cons-section h2, .final-verdict h3 { 
+            font-family: var(--xiaomi-heading-font); 
+            text-align: center; 
+            font-size: 2.5rem; 
+            margin-bottom: 3rem; 
+            color: #fff; 
+            position: relative;
+        }
+        
+        .features-showcase h2::after, .specs-section h2::after, .pros-cons-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--xiaomi-accent);
+            border-radius: 2px;
+        }
+        
+        .features-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 2rem; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card { 
+            background-color: var(--xiaomi-card-bg); 
+            padding: 2rem; 
+            border-radius: var(--border-radius-md); 
+            border: 1px solid var(--xiaomi-subtle-border); 
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--xiaomi-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card .icon { 
+            font-size: 2.5rem; 
+            color: var(--xiaomi-accent); 
+            margin-bottom: 1rem; 
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .icon {
+            transform: scale(1.2);
+        }
+        
+        .feature-card h3 { 
+            font-family: var(--xiaomi-heading-font); 
+            font-size: 1.3rem; 
+            color: #fff; 
+            margin-bottom: 0.5rem; 
+        }
+        
+        .feature-card p { 
+            color: var(--xiaomi-text); 
+            line-height: 1.6; 
+        }
+
+        /* Spotlight Sections */
+        .spotlight { 
+            padding: 6rem 0; 
+            display: block; 
+            text-align: center; 
+            background-color: var(--xiaomi-bg);
+        }
+        
+        .spotlight:nth-child(even) {
+            background-color: #1a1a1a;
+        }
+        
+        .spotlight-text { 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        
+        .spotlight-text h2 { 
+            font-family: var(--xiaomi-heading-font); 
+            font-size: 2.8rem; 
+            margin-bottom: 1.5rem; 
+            color: #fff; 
+            text-align: center; 
+        }
+        
+        .spotlight-text p { 
+            font-size: 1.1rem; 
+            line-height: 1.8; 
+            color: var(--xiaomi-text); 
+            margin-bottom: 1.5rem;
+        }
+
+        /* Specs Table Section */
+        .specs-section { 
+            padding: 6rem 0; 
+            background: linear-gradient(to bottom, #0d0d0d 0%, #000000 100%);
+        }
+        
+        .specs-table { 
+            max-width: 900px; 
+            margin: auto; 
+            background-color: var(--xiaomi-card-bg); 
+            border-radius: var(--border-radius-lg); 
+            overflow: hidden; 
+            border: 1px solid var(--xiaomi-subtle-border); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .spec-row { 
+            display: flex; 
+            border-bottom: 1px solid var(--xiaomi-subtle-border); 
+            padding: 1.25rem 2rem; 
+            transition: background-color 0.3s ease;
+        }
+        
+        .spec-row:hover {
+            background-color: rgba(255, 103, 0, 0.05);
+        }
+        
+        .spec-row:last-child { border-bottom: none; }
+        
+        .spec-label { 
+            width: 35%; 
+            font-weight: 600; 
+            color: #fff; 
+        }
+        
+        .spec-value { 
+            width: 65%; 
+            color: var(--xiaomi-text); 
+        }
+        
+        .spec-category { 
+            background: linear-gradient(90deg, var(--xiaomi-accent), #ff8c42); 
+            color: white; 
+            padding: 1rem 2rem; 
+            font-weight: bold; 
+            font-family: var(--xiaomi-heading-font); 
+            font-size: 1.2rem; 
+            text-align: center;
+        }
+        
+        /* Pros & Cons Grid */
+        .pros-cons-section { 
+            padding: 6rem 0; 
+            background: linear-gradient(to bottom, #1a1a1a 0%, #0d0d0d 100%);
+        }
+        
+        .pros-cons-container { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 2rem; 
+            background: none; 
+            padding: 0; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pros-col, .cons-col { 
+            padding: 2rem; 
+            border-radius: var(--border-radius-md); 
+            transition: transform 0.3s ease;
+        }
+        
+        .pros-col:hover, .cons-col:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pros-col { 
+            background-color: rgba(255, 103, 0, 0.05); 
+            border: 1px solid rgba(255, 103, 0, 0.2); 
+        }
+        
+        .cons-col { 
+            background-color: rgba(255, 69, 58, 0.05); 
+            border: 1px solid rgba(255, 69, 58, 0.2); 
+        }
+        
+        .pros-col h4, .cons-col h4 { 
+            font-family: var(--xiaomi-heading-font); 
+            font-size: 1.5rem; 
+            margin-bottom: 1.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+        
+        .pros-col h4 { color: var(--xiaomi-accent); }
+        .cons-col h4 { color: #ff453a; }
+        
+        .pros-list li, .cons-list li { 
+            color: var(--xiaomi-text); 
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .pros-list li::before { 
+            color: var(--xiaomi-accent); 
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .cons-list li::before { 
+            color: #ff453a; 
+            content: '✗';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Final Verdict */
+        .final-verdict { 
+            padding: 6rem 0; 
+            text-align: center; 
+            background: linear-gradient(135deg, #111827 0%, #1c1c1e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-verdict::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--xiaomi-accent), transparent);
+        }
+        
+        .final-verdict h3 { 
+            font-size: 2.8rem; 
+            margin-bottom: 2rem; 
+            color: white;
+        }
+        
+        .final-verdict p { 
+            max-width: 700px; 
+            margin: auto; 
+            font-size: 1.2rem; 
+            line-height: 1.8; 
+            color: var(--xiaomi-text); 
+            margin-bottom: 2rem;
+        }
+
+        /* Interactive Elements */
+        .rating-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .rating-star {
+            font-size: 2rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .rating-star.active, .rating-star:hover {
+            color: var(--xiaomi-accent);
+            transform: scale(1.2);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-xiaomi .container, .spotlight { grid-template-columns: 1fr; text-align: center; }
+            .hero-xiaomi .hero-text p { margin: auto; max-width: 600px; }
+            .hero-xiaomi .hero-image { order: -1; margin-bottom: 2rem; }
+            .spotlight.reverse .spotlight-image { order: 0; }
+            .spotlight-text h2 { text-align: center; }
+            .hero-xiaomi .hero-text h1 { font-size: 3rem; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-xiaomi .hero-text h1, .spotlight-text h2, .final-verdict h3 { font-size: 2.2rem; }
+            .pros-cons-container { grid-template-columns: 1fr; }
+            .spec-row { flex-direction: column; gap: 0.5rem; }
+            .spec-label, .spec-value { width: 100%; }
+            .features-grid { gap: 1.5rem; }
+            .feature-card { padding: 1.5rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-xiaomi { padding: 4rem 0; }
+            .hero-xiaomi .hero-text h1 { font-size: 2.5rem; }
+            .hero-xiaomi .hero-text p { font-size: 1.1rem; }
+            .features-showcase, .specs-section, .pros-cons-section, .final-verdict { padding: 4rem 0; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+        
+        .key-specs-box:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .key-specs-box h3 { 
+            font-family: var(--xiaomi-heading-font); 
+            font-size: 1.8rem; 
+            color: #fff; 
+            margin-bottom: 1.5rem; 
+            text-align: center;
+        }
+        
+        .key-specs { 
+            list-style: none; 
+            padding: 0; 
+        }
+        
+        .key-specs li { 
+            padding: 0.8rem 0; 
+            border-bottom: 1px solid var(--xiaomi-subtle-border); 
+            color: var(--xiaomi-text); 
+        }
+        
+        .key-specs li:last-child { 
+            border-bottom: none; 
+        }
+        
+        .key-specs li strong { 
+            color: var(--xiaomi-accent); 
+            margin-left: 0.5rem; 
+        }
+
+        /* Review Details */
+        .product-review-details { 
+            padding: 6rem 0; 
+            background-color: var(--xiaomi-bg);
+        }
+        
+        .product-review-details:nth-child(even) {
+            background-color: #1a1a1a;
+        }
+        
+        .product-review-details h2, 
+        .product-review-details h3 { 
+            font-family: var(--xiaomi-heading-font); 
+            color: #fff; 
+            margin-bottom: 1.5rem; 
+        }
+        
+        .product-review-details h2 { 
+            font-size: 2.8rem; 
+            text-align: center; 
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .product-review-details h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--xiaomi-accent);
+            border-radius: 2px;
+        }
+        
+        .product-review-details h3 { 
+            font-size: 1.8rem; 
+            margin-top: 2.5rem; 
+        }
+        
+        .product-review-details p { 
+            font-size: 1.1rem; 
+            line-height: 1.8; 
+            color: var(--xiaomi-text); 
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Pros & Cons Grid */
+        .pros-cons-container { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 2rem; 
+            margin: 3rem 0; 
+            max-width: 1200px;
+        }
+        
+        .pros-list-container, .cons-list-container { 
+            padding: 2rem; 
+            border-radius: var(--border-radius-md); 
+            transition: transform 0.3s ease;
+        }
+        
+        .pros-list-container:hover, .cons-list-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pros-list-container { 
+            background-color: rgba(255, 103, 0, 0.05); 
+            border: 1px solid rgba(255, 103, 0, 0.2); 
+        }
+        
+        .cons-list-container { 
+            background-color: rgba(255, 69, 58, 0.05); 
+            border: 1px solid rgba(255, 69, 58, 0.2); 
+        }
+        
+        .pros-list-container h3, .cons-list-container h3 { 
+            font-family: var(--xiaomi-heading-font); 
+            font-size: 1.5rem; 
+            margin-bottom: 1.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+        
+        .pros-list-container h3 { color: var(--xiaomi-accent); }
+        .cons-list-container h3 { color: #ff453a; }
+        
+        .pros-list li, .cons-list li { 
+            color: var(--xiaomi-text); 
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .pros-list li::before { 
+            color: var(--xiaomi-accent); 
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .cons-list li::before { 
+            color: #ff453a; 
+            content: '✗';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Final Verdict */
+        .final-verdict { 
+            padding: 6rem 0; 
+            text-align: center; 
+            background: linear-gradient(135deg, #111827 0%, #1c1c1e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-verdict::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--xiaomi-accent), transparent);
+        }
+        
+        .final-verdict h3 { 
+            font-size: 2.8rem; 
+            margin-bottom: 2rem; 
+            color: white;
+        }
+        
+        .final-verdict p { 
+            max-width: 700px; 
+            margin: auto; 
+            font-size: 1.2rem; 
+            line-height: 1.8; 
+            color: var(--xiaomi-text); 
+            margin-bottom: 2rem;
+        }
+
+        /* Interactive Elements */
+        .rating-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .rating-star {
+            font-size: 2rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .rating-star.active, .rating-star:hover {
+            color: var(--xiaomi-accent);
+            transform: scale(1.2);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .product-overview { grid-template-columns: 1fr; text-align: center; }
+            .product-image-gallery { order: -1; }
+            .page-header h1 { font-size: 3rem; }
+            .pros-cons-container { grid-template-columns: 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2.5rem; }
+            .page-header p { font-size: 1.1rem; }
+            .product-overview, .product-review-details, .final-verdict { padding: 4rem 0; }
+            .product-details h2 { font-size: 2.2rem; }
+            .key-specs-box h3 { font-size: 1.5rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .page-header { padding: 4rem 0; }
+            .product-overview { gap: 2rem; }
+        }
+    </style>
     <meta name="google-adsense-account" content="ca-pub-7696225868255842">
 </head>
-<body>
+<body data-page-key="techDetailXiaomiMixFold3" class="page-body">
     <div id="lang-switcher">
         <a href="#" data-lang="en">EN</a>
         <a href="#" data-lang="ar" class="active">AR</a>
@@ -39,78 +730,117 @@
     </header>
     
     <main>
-        <section class="page-header">
+        <section class="hero-xiaomi">
             <div class="container">
-                <h1>Xiaomi Mix Fold 3</h1>
-                <p>الهاتف القابل للطي الأحدث من شاومي</p>
+                <div class="hero-text">
+                    <h1 data-translate-key="fold3Title">Xiaomi Mix Fold 3</h1>
+                    <p data-translate-key="fold3Tagline">الهاتف القابل للطي الأحدث من شاومي</p>
+                    <a href="#final-verdict" class="cta-button" data-translate-key="fold3CTA">Check Our Verdict</a>
+                </div>
+                <div class="hero-image">
+                    <img src="../../img/phones/Xiaomi-Mix-Fold-3.webp" data-translate-alt="fold3PhoneImageAlt" alt="Xiaomi Mix Fold 3" loading="lazy">
+                </div>
             </div>
         </section>
         
-        <div class="main-content">
+        <section class="features-showcase">
             <div class="container">
-                <section class="product-overview">
-                    <div class="product-image-gallery">
-                        <img src="../../img/phones/Xiaomi-Mix-Fold-3.webp" alt="Xiaomi Mix Fold 3">
+                <h2 data-translate-key="keyFeaturesTitle">المواصفات الأساسية</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">📱</div>
+                        <h3 data-translate-key="specsChip">المعالج</h3>
+                        <p data-translate-key="specChipValue">Snapdragon 8 Gen 2</p>
                     </div>
-                    
-                    <div class="product-details">
-                        <h2 class="product-title">Xiaomi Mix Fold 3</h2>
-                        <p class="product-tagline">ابتكار في تصميم الهواتف القابلة للطي</p>
-                        
-                        <div class="key-specs-box">
-                            <h3>المواصفات الأساسية</h3>
-                            <ul class="key-specs">
-                                <li><strong>المعالج:</strong> Snapdragon 8 Gen 2</li>
-                                <li><strong>الشاشة:</strong> 8.26 بوصة قابلة للطي + 6.53 بوصة خارجية</li>
-                                <li><strong>الكاميرا:</strong> 50MP + 12MP + 12MP + 10MP</li>
-                                <li><strong>البطارية:</strong> 4820mAh</li>
-                                <li><strong>الذاكرة:</strong> 12GB RAM + 256GB/512GB</li>
-                            </ul>
-                        </div>
+                    <div class="feature-card">
+                        <div class="icon">📺</div>
+                        <h3 data-translate-key="specsDisplay">الشاشة</h3>
+                        <p data-translate-key="specDisplayValue">8.26 بوصة قابلة للطي + 6.53 بوصة خارجية</p>
                     </div>
-                </section>
-                
-                <section class="product-review-details">
-                    <h2>مراجعة Xiaomi Mix Fold 3</h2>
-                    
-                    <h3>التصميم والشاشة</h3>
-                    <p>يأتي Xiaomi Mix Fold 3 بتصميم أنيق ورائع يجمع بين الألومنيوم والزجاج. الشاشة الرئيسية بحجم 8.26 بوصة قابلة للطي بدقة 2K، بينما الشاشة الخارجية بحجم 6.53 بوصة. معدل التحديث 120Hz يوفر تجربة بصرية سلسة.</p>
-                    
-                    <h3>الأداء</h3>
-                    <p>مع معالج Snapdragon 8 Gen 2، يقدم الهاتف أداءً قوياً يناسب الألعاب الثقيلة والمهام المتعددة. الـ 12GB من الـ RAM تضمن تعدد المهام دون تأخير، مما يجعله مثالياً للإنتاجية.</p>
-                    
-                    <h3>الكاميرا</h3>
-                    <p>نظام الكاميرا الرباعي يضم كاميرا رئيسية بقدرة 50MP، مع كاميرات إضافية لتصوير المناظر والبورتريه والسلفي. الجودة ممتازة في ظروف الإضاءة المختلفة، مع دعم تسجيل الفيديو بدقة 8K.</p>
-                    
-                    <h3>البطارية</h3>
-                    <p>بطارية بسعة 4820mAh تدعم الشحن السريع بقوة 67W للشاشة الداخلية و30W للشاشة الخارجية. رغم أن البطارية ليست الأكبر، إلا أن الكفاءة في الاستخدام تجعلها كافية للاستخدام اليومي.</p>
-                    
-                    <div class="pros-cons-container">
-                        <div class="pros-list-container">
-                            <h3>الإيجابيات</h3>
-                            <ul class="pros-list">
-                                <li>تصميم أنيق ورائع</li>
-                                <li>شاشتين بجودة عالية ومعدل تحديث 120Hz</li>
-                                <li>أداء قوي بمعالج Snapdragon 8 Gen 2</li>
-                                <li>نظام كاميرا متطور</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="cons-list-container">
-                            <h3>السلبيات</h3>
-                            <ul class="cons-list">
-                                <li>السعر مرتفع مقارنة بالهواتف التقليدية</li>
-                                <li>البطارية ليست الأكبر في فئتها</li>
-                                <li>وزن الهاتف ثقيل نسبياً</li>
-                            </ul>
-                        </div>
+                    <div class="feature-card">
+                        <div class="icon">📸</div>
+                        <h3 data-translate-key="specsCamera">الكاميرا</h3>
+                        <p data-translate-key="specCameraValue">50MP + 12MP + 12MP + 10MP</p>
                     </div>
-                    
-                    <h3>الحكم النهائي</h3>
-                    <p>Xiaomi Mix Fold 3 يمثل قفزة نوعية في تصميم الهواتف القابلة للطي من شاومي. مع أداء قوي وشاشتين ممتازتين ونظام كاميرا متطور، هو خيار ممتاز للمستخدمين المتقدمين والباحثين عن تجربة فريدة.</p>
-                </section>
+                    <div class="feature-card">
+                        <div class="icon">🔋</div>
+                        <h3 data-translate-key="specsBattery">البطارية</h3>
+                        <p data-translate-key="specBatteryValue">4820mAh</p>
+                    </div>
+                </div>
             </div>
+        </section>
+        
+        <div class="container">
+            <section class="spotlight">
+                <div class="spotlight-text">
+                    <h2 data-translate-key="reviewDesignTitle">التصميم والشاشة</h2>
+                    <p data-translate-key="reviewDesignP1">يأتي Xiaomi Mix Fold 3 بتصميم أنيق ورائع يجمع بين الألومنيوم والزجاج. الشاشة الرئيسية بحجم 8.26 بوصة قابلة للطي بدقة 2K، بينما الشاشة الخارجية بحجم 6.53 بوصة. معدل التحديث 120Hz يوفر تجربة بصرية سلسة.</p>
+                </div>
+            </section>
+
+            <section class="spotlight">
+                <div class="spotlight-text">
+                    <h2 data-translate-key="reviewPerformanceTitle">الأداء</h2>
+                    <p data-translate-key="reviewPerformanceP1">مع معالج Snapdragon 8 Gen 2، يقدم الهاتف أداءً قوياً يناسب الألعاب الثقيلة والمهام المتعددة. الـ 12GB من الـ RAM تضمن تعدد المهام دون تأخير، مما يجعله مثالياً للإنتاجية.</p>
+                </div>
+            </section>
+
+            <section class="spotlight">
+                <div class="spotlight-text">
+                    <h2 data-translate-key="reviewCameraTitle">الكاميرا</h2>
+                    <p data-translate-key="reviewCameraP1">نظام الكاميرا الرباعي يضم كاميرا رئيسية بقدرة 50MP، مع كاميرات إضافية لتصوير المناظر والبورتريه والسلفي. الجودة ممتازة في ظروف الإضاءة المختلفة، مع دعم تسجيل الفيديو بدقة 8K.</p>
+                </div>
+            </section>
+
+            <section class="spotlight">
+                <div class="spotlight-text">
+                    <h2 data-translate-key="reviewBatteryTitle">البطارية</h2>
+                    <p data-translate-key="reviewBatteryP1">بطارية بسعة 4820mAh تدعم الشحن السريع بقوة 67W للشاشة الداخلية و30W للشاشة الخارجية. رغم أن البطارية ليست الأكبر، إلا أن الكفاءة في الاستخدام تجعلها كافية للاستخدام اليومي.</p>
+                </div>
+            </section>
         </div>
+        
+        <section class="pros-cons-section">
+            <div class="container">
+                <h2 data-translate-key="prosConsTitle">الإيجابيات والسلبيات</h2>
+                <div class="pros-cons-container">
+                    <div class="pros-col">
+                        <h4 data-translate-key="prosTitle">الإيجابيات</h4>
+                        <ul class="pros-list">
+                            <li data-translate-key="prosItem1">تصميم أنيق ورائع</li>
+                            <li data-translate-key="prosItem2">شاشتين بجودة عالية ومعدل تحديث 120Hz</li>
+                            <li data-translate-key="prosItem3">أداء قوي بمعالج Snapdragon 8 Gen 2</li>
+                            <li data-translate-key="prosItem4">نظام كاميرا متطور</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cons-col">
+                        <h4 data-translate-key="consTitle">السلبيات</h4>
+                        <ul class="cons-list">
+                            <li data-translate-key="consItem1">السعر مرتفع مقارنة بالهواتف التقليدية</li>
+                            <li data-translate-key="consItem2">البطارية ليست الأكبر في فئتها</li>
+                            <li data-translate-key="consItem3">وزن الهاتف ثقيل نسبياً</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="final-verdict" id="final-verdict">
+            <div class="container">
+                <h3 data-translate-key="reviewVerdictTitle">الحكم النهائي</h3>
+                <p data-translate-key="reviewVerdictP1">Xiaomi Mix Fold 3 يمثل قفزة نوعية في تصميم الهواتف القابلة للطي من شاومي. مع أداء قوي وشاشتين ممتازتين ونظام كاميرا متطور، هو خيار ممتاز للمستخدمين المتقدمين والباحثين عن تجربة فريدة.</p>
+                <div class="rating-container">
+                    <div class="rating-star active">★</div>
+                    <div class="rating-star active">★</div>
+                    <div class="rating-star active">★</div>
+                    <div class="rating-star active">★</div>
+                    <div class="rating-star">★</div>
+                </div>
+                <p data-translate-key="overallRating">Overall Rating: 4/5</p>
+            </div>
+        </section>
     </main>
     
     
@@ -147,6 +877,48 @@
     </footer>
     
     <script>
+        // Translation keys
+        window.pageTranslations = {
+            fold3Title: { ar: 'هاتف Xiaomi Mix Fold 3', en: 'Xiaomi Mix Fold 3' },
+            fold3Tagline: { ar: 'الهاتف القابل للطي الأحدث من شاومي', en: 'Xiaomi\'s Latest Foldable Phone' },
+            fold3CTA: { ar: 'اطلع على حكمتنا', en: 'Check Our Verdict' },
+            fold3PhoneImageAlt: { ar: 'صورة لهاتف Xiaomi Mix Fold 3', en: 'Image of Xiaomi Mix Fold 3 phone' },
+            fold3Tagline2: { ar: 'ابتكار في تصميم الهواتف القابلة للطي', en: 'Innovation in Foldable Phone Design' },
+            keyFeaturesTitle: { ar: 'المواصفات الأساسية', en: 'Key Specifications' },
+            specsChip: { ar: 'المعالج', en: 'Processor' },
+            specChipValue: { ar: 'Snapdragon 8 Gen 2', en: 'Snapdragon 8 Gen 2' },
+            specsDisplay: { ar: 'الشاشة', en: 'Display' },
+            specDisplayValue: { ar: '8.26 بوصة قابلة للطي + 6.53 بوصة خارجية', en: '8.26" Foldable + 6.53" External' },
+            specsCamera: { ar: 'الكاميرا', en: 'Camera' },
+            specCameraValue: { ar: '50MP + 12MP + 12MP + 10MP', en: '50MP + 12MP + 12MP + 10MP' },
+            specsBattery: { ar: 'البطارية', en: 'Battery' },
+            specBatteryValue: { ar: '4820mAh', en: '4820mAh' },
+            specsMemory: { ar: 'الذاكرة', en: 'Memory' },
+            specMemoryValue: { ar: '12GB RAM + 256GB/512GB', en: '12GB RAM + 256GB/512GB' },
+            reviewTitle: { ar: 'مراجعة Xiaomi Mix Fold 3', en: 'Xiaomi Mix Fold 3 Review' },
+            reviewDesignTitle: { ar: 'التصميم والشاشة', en: 'Design and Display' },
+            reviewDesignP1: { ar: 'يأتي Xiaomi Mix Fold 3 بتصميم أنيق ورائع يجمع بين الألومنيوم والزجاج. الشاشة الرئيسية بحجم 8.26 بوصة قابلة للطي بدقة 2K، بينما الشاشة الخارجية بحجم 6.53 بوصة. معدل التحديث 120Hz يوفر تجربة بصرية سلسة.', en: 'The Xiaomi Mix Fold 3 features an elegant design combining aluminum and glass. The main display is an 8.26" foldable 2K screen, while the external display is 6.53". The 120Hz refresh rate provides a smooth visual experience.' },
+            reviewPerformanceTitle: { ar: 'الأداء', en: 'Performance' },
+            reviewPerformanceP1: { ar: 'مع معالج Snapdragon 8 Gen 2، يقدم الهاتف أداءً قوياً يناسب الألعاب الثقيلة والمهام المتعددة. الـ 12GB من الـ RAM تضمن تعدد المهام دون تأخير، مما يجعله مثالياً للإنتاجية.', en: 'With the Snapdragon 8 Gen 2 processor, the phone delivers powerful performance suitable for heavy games and multitasking. The 12GB of RAM ensures smooth multitasking, making it ideal for productivity.' },
+            reviewCameraTitle: { ar: 'الكاميرا', en: 'Camera' },
+            reviewCameraP1: { ar: 'نظام الكاميرا الرباعي يضم كاميرا رئيسية بقدرة 50MP، مع كاميرات إضافية لتصوير المناظر والبورتريه والسلفي. الجودة ممتازة في ظروف الإضاءة المختلفة، مع دعم تسجيل الفيديو بدقة 8K.', en: 'The quad-camera system features a 50MP main camera, with additional cameras for landscapes, portraits, and selfies. The quality is excellent in various lighting conditions, with support for 8K video recording.' },
+            reviewBatteryTitle: { ar: 'البطارية', en: 'Battery' },
+            reviewBatteryP1: { ar: 'بطارية بسعة 4820mAh تدعم الشحن السريع بقوة 67W للشاشة الداخلية و30W للشاشة الخارجية. رغم أن البطارية ليست الأكبر، إلا أن الكفاءة في الاستخدام تجعلها كافية للاستخدام اليومي.', en: 'A 4820mAh battery supports 67W fast charging for the internal screen and 30W for the external screen. Although not the largest battery, its efficiency makes it sufficient for daily use.' },
+            prosConsTitle: { ar: 'الإيجابيات والسلبيات', en: 'Pros & Cons' },
+            prosTitle: { ar: 'الإيجابيات', en: 'Pros' },
+            prosItem1: { ar: 'تصميم أنيق ورائع', en: 'Elegant and stunning design' },
+            prosItem2: { ar: 'شاشتين بجودة عالية ومعدل تحديث 120Hz', en: 'Two high-quality screens with 120Hz refresh rate' },
+            prosItem3: { ar: 'أداء قوي بمعالج Snapdragon 8 Gen 2', en: 'Powerful performance with Snapdragon 8 Gen 2' },
+            prosItem4: { ar: 'نظام كاميرا متطور', en: 'Advanced camera system' },
+            consTitle: { ar: 'السلبيات', en: 'Cons' },
+            consItem1: { ar: 'السعر مرتفع مقارنة بالهواتف التقليدية', en: 'High price compared to traditional phones' },
+            consItem2: { ar: 'البطارية ليست الأكبر في فئتها', en: 'Battery is not the largest in its category' },
+            consItem3: { ar: 'وزن الهاتف ثقيل نسبياً', en: 'Phone is relatively heavy' },
+            reviewVerdictTitle: { ar: 'الحكم النهائي', en: 'Final Verdict' },
+            reviewVerdictP1: { ar: 'Xiaomi Mix Fold 3 يمثل قفزة نوعية في تصميم الهواتف القابلة للطي من شاومي. مع أداء قوي وشاشتين ممتازتين ونظام كاميرا متطور، هو خيار ممتاز للمستخدمين المتقدمين والباحثين عن تجربة فريدة.', en: 'The Xiaomi Mix Fold 3 represents a quantum leap in Xiaomi\'s foldable phone design. With powerful performance, two excellent screens, and an advanced camera system, it\'s an excellent choice for advanced users seeking a unique experience.' },
+            overallRating: { ar: 'التقييم العام: 4/5', en: 'Overall Rating: 4/5' },
+        };
+        
         document.addEventListener('DOMContentLoaded', function() {
             // Load header and footer
             const headerElement = document.querySelector('.header');
@@ -154,35 +926,35 @@
             
             const headerHTML = `
                 <div class="container">
-                    <a href="../../" class="logo">learn fun</a>
+                    <a href="../../" class="logo" data-translate-key="siteName">learnfun.me</a>
                     <nav class="nav-links">
                         <ul>
-                            <li><a href="../../" data-nav-key="index">الرئيسية</a></li>
-                            <li><a href="../../tech/" data-nav-key="tech">أجهزة وتقنية</a></li>
-                            <li><a href="../../contact/" data-nav-key="contact">اتصل بنا</a></li>
+                            <li><a href="../../" data-translate-key="navHome" data-nav-key="index"></a></li>
+                            <li><a href="../../tech/" data-translate-key="navTech" data-nav-key="tech"></a></li>
+                            <li><a href="../../contact/" data-translate-key="navContact" data-nav-key="contact"></a></li>
                         </ul>
                     </nav>
-                    <button class="menu-toggle" id="menu-toggle" aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+                    <button class="menu-toggle" id="menu-toggle" ><span></span><span></span><span></span></button>
                 </div>`;
             
             const footerHTML = `
                 <div class="container">
                     <div class="footer-content">
                         <div class="footer-section">
-                            <h4>حول Learn Fun</h4>
-                            <p>موقعك للمعرفة والتقنية، نسعى لتقديم محتوى قيم ومفيد في مجالات متنوعة.</p>
+                            <h4 data-translate-key="footerAboutTitle"></h4>
+                            <p data-translate-key="footerAboutText"></p>
                         </div>
                         <div class="footer-section">
-                            <h4>روابط هامة</h4>
+                            <h4 data-translate-key="footerLinksTitle"></h4>
                             <ul>
-                                <li><a href="../../about/">من نحن</a></li>
-                                <li><a href="../../contact/">اتصل بنا</a></li>
-                                <li><a href="../../privacy-policy/">سياسة الخصوصية</a></li>
-                                <li><a href="../../terms-of-service/">شروط الاستخدام</a></li>
+                                <li><a href="../../about/" data-translate-key="footerAboutLink"></a></li>
+                                <li><a href="../../contact/" data-translate-key="footerContactLink"></a></li>
+                                <li><a href="../../privacy-policy/" data-translate-key="footerPrivacyLink"></a></li>
+                                <li><a href="../../terms-of-service/" data-translate-key="footerTermsLink"></a></li>
                             </ul>
                         </div>
                         <div class="footer-section">
-                            <h4>تابعنا</h4>
+                            <h4 data-translate-key="footerFollowTitle"></h4>
                             <div class="social-links">
                                 <a href="#" aria-label="Facebook">F</a>
                                 <a href="#" aria-label="Twitter">T</a>
@@ -191,8 +963,8 @@
                         </div>
                     </div>
                     <div class="footer-bottom">
-                        <p>جميع الحقوق محفوظة © 2025 لموقع learn fun</p>
-                        <p>تم التطوير والتصميم بواسطة بيبو نعيم</p>
+                        <p data-translate-key="footerRights"></p>
+                        <p data-translate-key="footerDeveloper"></p>
                     </div>
                 </div>`;
                 
@@ -224,6 +996,19 @@
                     }
                 });
             }
+            
+            // Make rating stars interactive
+            const stars = document.querySelectorAll('.rating-star');
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    // Remove active class from all stars
+                    stars.forEach(s => s.classList.remove('active'));
+                    // Add active class to clicked star and all previous stars
+                    for (let i = 0; i <= index; i++) {
+                        stars[i].classList.add('active');
+                    }
+                });
+            });
         });
     </script>
     <script src="../../js/main.js"></script>

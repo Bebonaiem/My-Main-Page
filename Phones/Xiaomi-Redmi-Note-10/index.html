@@ -21,180 +21,736 @@
     <link rel="stylesheet" href="../../style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7696225868255842"crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-7696225868255842">
-    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>
-        window.ezstandalone = window.ezstandalone || {};
-        ezstandalone.cmd = ezstandalone.cmd || [];
-    </script>
     <style>
-        /* --- Base Styles (Mostly Unchanged) --- */
-        .page-body { background-color: #f8f9fa; }
-        .hero-xiaomi {
-            background: #ff6700;
-            color: #fff;
-            padding: 4rem 1rem;
-            text-align: center;
+        /* ================================================= */
+        /*          ENHANCED GUI FOR REDMI NOTE 10 PAGE     */
+        /* ================================================= */
+
+        :root {
+            --redmi-bg: #000000;
+            --redmi-card-bg: #1c1c1e;
+            --redmi-accent: #ff6700; /* Redmi Orange */
+            --redmi-text: #ffffff;
+            --redmi-heading-font: 'Inter', 'Cairo', sans-serif;
+            --redmi-subtle-border: rgba(255, 255, 255, 0.1);
+            --redmi-hover: #ff7b2e;
+            --redmi-shadow: rgba(255, 103, 0, 0.2);
         }
-        .hero-xiaomi h1 { color: #fff; font-size: 3.5rem; }
-        .hero-xiaomi p { color: #ffe5d0; font-size: 1.3rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .hero-xiaomi img {
-            max-width: 90%;
-            width: 500px;
-            margin: 1rem auto 0;
+
+        .page-body { 
+            background-color: var(--redmi-bg); 
+            color: var(--redmi-text); 
+            background-image: radial-gradient(circle at 10% 20%, rgba(255, 103, 0, 0.05) 0%, rgba(0, 0, 0, 0) 20%),
+                              radial-gradient(circle at 90% 80%, rgba(255, 103, 0, 0.05) 0%, rgba(0, 0, 0, 0) 20%);
+        }
+        .header { 
+            background-color: rgba(0, 0, 0, 0.85); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px); 
+            border-bottom: 1px solid rgba(255, 103, 0, 0.1);
+        }
+        
+        .logo, .nav-links a { color: #fff; }
+        .nav-links a:hover, .nav-links a.active { 
+            color: #fff; 
+            background-color: var(--redmi-accent); 
+            padding: 8px 16px; 
+            border-radius: 4px; 
+            transform: translateY(-2px);
+        }
+        .nav-links a::after { display: none; }
+        .menu-toggle { background-color: rgba(0, 0, 0, 0.7); }
+        .menu-toggle span { background-color: #fff; }
+        .footer { 
+            margin-top: 0; 
+            background: linear-gradient(135deg, #111827 0%, #1c1c1e 100%);
+        }
+        
+        /* Hero Section */
+        .hero-xiaomi { 
+            padding: 6rem 0; 
+            background-color: var(--redmi-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-xiaomi .container { 
+            display: grid; 
+            grid-template-columns: 1.2fr 1fr; 
+            align-items: center; 
+            gap: 2rem; 
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-xiaomi .hero-text h1 { 
+            font-family: var(--redmi-heading-font); 
+            font-size: 4rem; 
+            font-weight: 800; 
+            line-height: 1.1; 
+            color: #fff; 
+            margin-bottom: 1.5rem; 
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-xiaomi .hero-text h1 .accent { color: var(--redmi-accent); }
+        
+        .hero-xiaomi .hero-text p { 
+            font-size: 1.3rem; 
+            line-height: 1.7; 
+            color: var(--redmi-text); 
+            max-width: 500px; 
+            margin-bottom: 2rem;
+        }
+        
+        .hero-xiaomi .hero-image {
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .hero-xiaomi .hero-image img { 
+            max-width: 100%; 
+            filter: drop-shadow(0 20px 25px rgba(0,0,0,0.4)); 
+            transform: rotate(5deg);
+            border-radius: 20px;
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-xiaomi .hero-image:hover img {
+            transform: rotate(0deg) scale(1.05);
+        }
+        
+        .hero-xiaomi::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 103, 0, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 0;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .hero-xiaomi .container { 
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-xiaomi h1 { 
+            font-family: var(--redmi-heading-font); 
+            font-size: 4rem; 
+            font-weight: 800; 
+            line-height: 1.1; 
+            color: #fff; 
+            margin-bottom: 1.5rem; 
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-xiaomi p { 
+            font-size: 1.3rem; 
+            line-height: 1.7; 
+            color: var(--redmi-text); 
+            max-width: 500px; 
+            margin: 0 auto 2rem auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--redmi-accent), #ff8c42);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--redmi-shadow);
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(45deg, var(--redmi-hover), #ff9a5a);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px var(--redmi-shadow);
+        }
+        
+        .hero-xiaomi img { 
+            max-width: 90%; 
+            width: 500px; 
+            margin: 1rem auto 0; 
+            filter: drop-shadow(0 20px 25px rgba(0,0,0,0.4)); 
+            transform: rotate(5deg);
+            border-radius: 20px;
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-xiaomi img:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        /* Features Showcase */
+        .features-showcase { 
+            padding: 6rem 0; 
+            background: linear-gradient(to bottom, #1a1a1a 0%, #0d0d0d 100%);
+            position: relative;
+        }
+        
+        .features-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--redmi-accent), transparent);
+        }
+        
+        .features-showcase h2, .specs-section h2, .pros-cons-section h2, .final-verdict h3 { 
+            font-family: var(--redmi-heading-font); 
+            text-align: center; 
+            font-size: 2.5rem; 
+            margin-bottom: 3rem; 
+            color: #fff; 
+            position: relative;
+        }
+        
+        .features-showcase h2::after, .specs-section h2::after, .pros-cons-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--redmi-accent);
+            border-radius: 2px;
+        }
+        
+        .features-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 2rem; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card { 
+            background-color: var(--redmi-card-bg); 
+            padding: 2rem; 
+            border-radius: var(--border-radius-md); 
+            border: 1px solid var(--redmi-subtle-border); 
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--redmi-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card .icon { 
+            font-size: 2.5rem; 
+            color: var(--redmi-accent); 
+            margin-bottom: 1rem; 
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .icon {
+            transform: scale(1.2);
+        }
+        
+        .feature-card h3 { 
+            font-family: var(--redmi-heading-font); 
+            font-size: 1.3rem; 
+            color: #fff; 
+            margin-bottom: 0.5rem; 
+        }
+        
+        .feature-card p { 
+            color: var(--redmi-text); 
+            line-height: 1.6; 
+        }
+        /* Spotlight Sections */
+        .spotlight { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 3rem; 
+            align-items: center; 
+            margin-bottom: 4rem; 
+            padding: 6rem 3rem; 
+            border-radius: var(--border-radius-lg);
+            background-color: var(--redmi-bg);
+        }
+        
+        .spotlight:nth-child(even) {
+            background-color: #1a1a1a;
+        }
+        
+        .spotlight:nth-child(even) .spotlight-image { order: -1; }
+        
+        .spotlight-text { 
+            max-width: 800px; 
+        }
+        
+        .spotlight-text h2 { 
+            font-family: var(--redmi-heading-font); 
+            font-size: 2.8rem; 
+            margin-bottom: 1.5rem; 
+            color: #fff; 
+            text-align: center; 
+        }
+        
+        .spotlight-text p { 
+            font-size: 1.1rem; 
+            line-height: 1.8; 
+            color: var(--redmi-text); 
+            margin-bottom: 1.5rem;
+        }
+        
+        .spotlight img { 
+            border-radius: var(--border-radius-md); 
+            max-width: 100%; 
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
         }
-        .highlights-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            padding: 3rem;
-            background-color: #fff;
-            margin: -5rem auto 4rem;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-lg);
-            max-width: 1100px;
-            position: relative;
-            z-index: 2;
-        }
-        .highlight-item { text-align: center; }
-        .highlight-item .icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-color); }
-        .highlight-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .spotlight {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 4rem;
-            background: #fff;
-            padding: 3rem;
-            border-radius: var(--border-radius-lg);
-        }
-        .spotlight:nth-child(even) .spotlight-image { order: -1; }
-        .spotlight img { border-radius: var(--border-radius-md); max-width: 100%; }
-        .spotlight h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-        .spotlight p { font-size: 1.1rem; line-height: 1.8; }
         
-        /* --- NEW: Style for Pros & Cons Container on Desktop --- */
-        .pros-cons-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+        /* Specs Table Section */
+        .specs-section { 
+            padding: 6rem 0; 
+            background: linear-gradient(to bottom, #0d0d0d 0%, #000000 100%);
         }
-        .pros-cons-container > div {
-            background: #fff;
-            padding: 2rem;
-            border-radius: var(--border-radius-md);
+        
+        .specs-section h2, .benchmark-section h2, .comparison-section h2 { 
+            font-family: var(--redmi-heading-font); 
+            text-align: center; 
+            font-size: 2.5rem; 
+            margin-bottom: 3rem; 
+            color: #fff; 
+            position: relative;
         }
-        .verdict-box {
-            background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
-            color: #fff;
-            padding: 3rem;
+        
+        .specs-section h2::after, .benchmark-section h2::after, .comparison-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--redmi-accent);
+            border-radius: 2px;
+        }
+        
+        .specs-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 2rem; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .spec-item { 
+            background-color: var(--redmi-card-bg); 
+            padding: 2rem; 
+            border-radius: var(--border-radius-md); 
+            border: 1px solid var(--redmi-subtle-border); 
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .spec-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--redmi-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .spec-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .spec-item h4 { 
+            font-family: var(--redmi-heading-font); 
+            font-size: 1.5rem; 
+            margin-bottom: 1.5rem; 
+            color: #fff; 
             text-align: center;
-            border-radius: var(--border-radius-lg);
-            margin-top: 3rem;
+        }
+        
+        .spec-item ul { 
+            list-style: none; 
+            padding: 0; 
+        }
+        
+        .spec-item li { 
+            padding: 0.8rem 0; 
+            border-bottom: 1px solid var(--redmi-subtle-border); 
+            display: flex; 
+            justify-content: space-between; 
+            color: var(--redmi-text);
+        }
+        
+        .spec-item li:last-child { 
+            border-bottom: none; 
+        }
+        
+        .spec-item .label { 
+            color: var(--redmi-text); 
+        }
+        
+        .spec-item .value { 
+            font-weight: 600; 
+            color: var(--redmi-accent);
         }
 
-        /* --- Specifications & Benchmark Styles (Mostly Unchanged) --- */
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 3rem 0;
-            background: #fff;
-            border-radius: var(--border-radius-lg);
-            margin: 2rem 0;
-        }
-        .spec-item {
-            padding: 1.5rem;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius-md);
-        }
-        .spec-item h4 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary-color); }
-        .spec-item ul { list-style: none; padding: 0; }
-        .spec-item li { margin-bottom: 0.5rem; display: flex; justify-content: space-between; }
-        .spec-item .label { color: #666; }
-        .spec-item .value { font-weight: 600; }
-        .benchmark-section {
-            background: #f8f9fa;
-            padding: 4rem 1rem;
+        /* Benchmark Section */
+        .benchmark-section { 
+            padding: 6rem 0; 
+            background: linear-gradient(to bottom, #1a1a1a 0%, #0d0d0d 100%);
             margin: 3rem 0;
         }
-        .benchmark-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        
+        .benchmark-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 2rem; 
+            margin-top: 2rem; 
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .benchmark-item { text-align: center; padding: 1.5rem; background: #fff; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); }
-        .benchmark-item .score { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin: 1rem 0; }
+        
+        .benchmark-item { 
+            text-align: center; 
+            padding: 2rem; 
+            background-color: var(--redmi-card-bg); 
+            border-radius: var(--border-radius-md); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--redmi-subtle-border);
+            transition: all 0.3s ease;
+        }
+        
+        .benchmark-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .benchmark-item h4 { 
+            font-family: var(--redmi-heading-font); 
+            font-size: 1.3rem; 
+            margin-bottom: 1rem; 
+            color: #fff;
+        }
+        
+        .benchmark-item .score { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            color: var(--redmi-accent); 
+            margin: 1rem 0; 
+        }
+        
+        .benchmark-item p { 
+            color: var(--redmi-text); 
+        }
 
-        /* --- Comparison Table Styles (Mostly Unchanged) --- */
-        .comparison-section { padding: 4rem 0; }
+        /* Comparison Section */
+        .comparison-section {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #0d0d0d 0%, #1a1a1a 100%);
+        }
+        
         .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: #fff;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--redmi-card-bg);
             border-radius: var(--border-radius-lg);
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            border: 1px solid var(--redmi-subtle-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-        .comparison-table th, .comparison-table td { padding: 1rem; text-align: right; border-bottom: 1px solid var(--border-color); }
-        .comparison-table th { background: var(--primary-color); color: #fff; }
-        .comparison-table tr:last-child td { border-bottom: none; }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--redmi-subtle-border);
+            transition: background-color 0.3s ease;
+        }
+        
+        .comparison-row:hover {
+            background-color: rgba(255, 103, 0, 0.05);
+        }
+        
+        .comparison-row.header {
+            background: linear-gradient(90deg, var(--redmi-accent), #ff8c42);
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-feature, .comparison-model, .comparison-value {
+            padding: 1.25rem 1rem;
+            color: var(--redmi-text);
+            font-weight: 500;
+        }
+        
+        .comparison-row.header .comparison-feature, 
+        .comparison-row.header .comparison-model, 
+        .comparison-row.header .comparison-value {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .comparison-feature {
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Pros & Cons Grid */
+        .pros-cons-section { 
+            padding: 6rem 0; 
+            background: linear-gradient(to bottom, #1a1a1a 0%, #0d0d0d 100%);
+        }
+        
+        .pros-cons-container { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 2rem; 
+            background: none; 
+            padding: 0; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pros-col, .cons-col { 
+            padding: 2rem; 
+            border-radius: var(--border-radius-md); 
+            transition: transform 0.3s ease;
+        }
+        
+        .pros-col:hover, .cons-col:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pros-col { 
+            background-color: rgba(255, 103, 0, 0.05); 
+            border: 1px solid rgba(255, 103, 0, 0.2); 
+        }
+        
+        .cons-col { 
+            background-color: rgba(255, 69, 58, 0.05); 
+            border: 1px solid rgba(255, 69, 58, 0.2); 
+        }
+        
+        .pros-col h4, .cons-col h4 { 
+            font-family: var(--redmi-heading-font); 
+            font-size: 1.5rem; 
+            margin-bottom: 1.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+        
+        .pros-col h4 { color: var(--redmi-accent); }
+        .cons-col h4 { color: #ff453a; }
+        
+        .pros-list li, .cons-list li { 
+            color: var(--redmi-text); 
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .pros-list li::before { 
+            color: var(--redmi-accent); 
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .cons-list li::before { 
+            color: #ff453a; 
+            content: '✗';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Final Verdict */
+        .final-verdict { 
+            padding: 6rem 0; 
+            text-align: center; 
+            background: linear-gradient(135deg, #111827 0%, #1c1c1e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-verdict::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--redmi-accent), transparent);
+        }
+        
+        .final-verdict h3 { 
+            font-size: 2.8rem; 
+            margin-bottom: 2rem; 
+            color: white;
+        }
+        
+        .final-verdict p { 
+            max-width: 700px; 
+            margin: auto; 
+            font-size: 1.2rem; 
+            line-height: 1.8; 
+            color: var(--redmi-text); 
+            margin-bottom: 2rem;
+        }
+
+        /* Interactive Elements */
+        .rating-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .rating-star {
+            font-size: 2rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .rating-star.active, .rating-star:hover {
+            color: var(--redmi-accent);
+            transform: scale(1.2);
+        }
+
+        /* --- Comparison Table Styles (Updated) --- */
+        .comparison-section { 
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #0d0d0d 0%, #1a1a1a 100%);
+        }
+        
+        .comparison-table {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--redmi-card-bg);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--redmi-subtle-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--redmi-subtle-border);
+            transition: background-color 0.3s ease;
+        }
+        
+        .comparison-row:hover {
+            background-color: rgba(255, 103, 0, 0.05);
+        }
+        
+        .comparison-row.header {
+            background: linear-gradient(90deg, var(--redmi-accent), #ff8c42);
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-feature, .comparison-model, .comparison-value {
+            padding: 1.25rem 1rem;
+            color: var(--redmi-text);
+            font-weight: 500;
+        }
+        
+        .comparison-row.header .comparison-feature, 
+        .comparison-row.header .comparison-model, 
+        .comparison-row.header .comparison-value {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .comparison-feature {
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
 
         /* --- RESPONSIVE STYLES for Mobile Devices --- */
-        @media (max-width: 768px) {
-            .hero-xiaomi h1 { font-size: 2.5rem; }
-            .hero-xiaomi p { font-size: 1.1rem; }
-            .highlights-section { 
-                grid-template-columns: 1fr 1fr;
-                padding: 2rem 1.5rem;
-                gap: 1rem;
-            }
-            .spotlight { 
-                grid-template-columns: 1fr; 
-                padding: 2rem 1.5rem;
-                gap: 1.5rem;
-            }
-            .spotlight:nth-child(even) .spotlight-image { 
-                order: initial;
-            }
-            .spotlight h2 { font-size: 1.8rem; }
-            .spotlight p { font-size: 1rem; }
-            .pros-cons-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .specs-grid { 
-                grid-template-columns: 1fr;
-                padding: 0;
-                background: transparent;
-            }
-            .benchmark-grid { 
-                grid-template-columns: 1fr 1fr;
-            }
-            .comparison-table { 
-                display: block; 
-                overflow-x: auto;
-            }
-            .comparison-table th, .comparison-table td {
-                white-space: nowrap;
-                padding: 0.8rem;
-            }
-            .verdict-box {
-                padding: 2rem 1.5rem;
-            }
+        @media (max-width: 992px) {
+            .hero-xiaomi .container, .spotlight { grid-template-columns: 1fr; text-align: center; }
+            .hero-xiaomi .hero-text p { margin: auto; max-width: 600px; }
+            .hero-xiaomi .hero-image { order: -1; margin-bottom: 2rem; }
+            .spotlight.reverse .spotlight-image { order: 0; }
+            .spotlight-text h2 { text-align: center; }
+            .hero-xiaomi .hero-text h1 { font-size: 3rem; }
+            .comparison-row { grid-template-columns: 1fr 1fr 1fr; }
+            .comparison-row.header .comparison-feature { display: none; }
         }
+        
+        @media (max-width: 768px) {
+            .hero-xiaomi .hero-text h1, .spotlight-text h2, .final-verdict h3 { font-size: 2.2rem; }
+            .pros-cons-container { grid-template-columns: 1fr; }
+            .spec-row { flex-direction: column; gap: 0.5rem; }
+            .spec-label, .spec-value { width: 100%; }
+            .features-grid { gap: 1.5rem; }
+            .feature-card { padding: 1.5rem; }
+            .comparison-row { grid-template-columns: 1fr 1fr; }
+            .comparison-row.header .comparison-feature { display: none; }
+            .comparison-row .comparison-feature { grid-column: span 2; background-color: rgba(255, 103, 0, 0.1); }
+        }
+        
         @media (max-width: 480px) {
-            .highlights-section {
-                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            }
-            .benchmark-grid { 
-                grid-template-columns: 1fr;
-            }
+            .hero-xiaomi { padding: 4rem 0; }
+            .hero-xiaomi .hero-text h1 { font-size: 2.5rem; }
+            .hero-xiaomi .hero-text p { font-size: 1.1rem; }
+            .features-showcase, .specs-section, .pros-cons-section, .comparison-section, .final-verdict { padding: 4rem 0; }
+            .features-grid { grid-template-columns: 1fr; }
+            .comparison-row { grid-template-columns: 1fr; }
+            .comparison-row .comparison-feature { grid-column: span 1; }
         }
     </style>
 </head>
@@ -217,35 +773,44 @@
     <main>
         <section class="hero-xiaomi">
             <div class="container">
-                <h1 data-translate-key="redmiNote10Title"></h1>
-                <p data-translate-key="redmiNote10Tagline"></p>
-                <img src="../../img/phones/Redmi-Note-10.webp" data-translate-alt="redmiNote10PhoneImageAlt" alt="صورة لهاتف Xiaomi Redmi Note 10">
+                <div class="hero-text">
+                    <h1 data-translate-key="redmiNote10Title"></h1>
+                    <p data-translate-key="redmiNote10Tagline"></p>
+                    <a href="#final-verdict" class="cta-button" data-translate-key="redmiNote10CTA">Check Our Verdict</a>
+                </div>
+                <div class="hero-image">
+                    <img src="../../img/phones/Redmi-Note-10.webp" data-translate-alt="redmiNote10PhoneImageAlt" alt="صورة لهاتف Xiaomi Redmi Note 10" loading="lazy">
+                </div>
             </div>
         </section>
 
-        <div class="container">
-            <section class="highlights-section">
-                <div class="highlight-item">
-                    <div class="icon">📸</div>
-                    <h3 data-translate-key="highlightRedmiNote10Camera"></h3>
+        <section class="features-showcase">
+            <div class="container">
+                <h2 data-translate-key="keyFeaturesTitle"></h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">📸</div>
+                        <h3 data-translate-key="highlightRedmiNote10Camera"></h3>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🖥️</div>
+                        <h3 data-translate-key="highlightRedmiNote10Display"></h3>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🔋</div>
+                        <h3 data-translate-key="highlightRedmiNote10Battery"></h3>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">⚙️</div>
+                        <h3 data-translate-key="highlightRedmiNote10Performance"></h3>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">💰</div>
+                        <h3 data-translate-key="highlightRedmiNote10Value"></h3>
+                    </div>
                 </div>
-                <div class="highlight-item">
-                    <div class="icon">🖥️</div>
-                    <h3 data-translate-key="highlightRedmiNote10Display"></h3>
-                </div>
-                <div class="highlight-item">
-                    <div class="icon">🔋</div>
-                    <h3 data-translate-key="highlightRedmiNote10Battery"></h3>
-                </div>
-                <div class="highlight-item">
-                    <div class="icon">⚙️</div>
-                    <h3 data-translate-key="highlightRedmiNote10Performance"></h3>
-                </div>
-                <div class="highlight-item">
-                    <div class="icon">💰</div>
-                    <h3 data-translate-key="highlightRedmiNote10Value"></h3>
-                </div>
-            </section>
+            </div>
+        </section>
 
             <section class="spotlight">
                 <div class="spotlight-text">
@@ -271,43 +836,30 @@
             <section class="specs-section">
                 <div class="container">
                     <h2 data-translate-key="specsRedmiNote10Title"></h2>
-                    <div class="specs-grid">
-                        <div class="spec-item">
-                            <h4 data-translate-key="specsRedmiNote10DisplayTitle"></h4>
-                            <ul>
-                                <li><span class="label" data-translate-key="specsRedmiNote10DisplaySize"></span><span class="value">6.43"</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10DisplayType"></span><span class="value">AMOLED</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10DisplayRes"></span><span class="value">2400 x 1080</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10DisplayRefresh"></span><span class="value">60Hz</span></li>
-                            </ul>
-                        </div>
-                        <div class="spec-item">
-                            <h4 data-translate-key="specsRedmiNote10PerformanceTitle"></h4>
-                            <ul>
-                                <li><span class="label" data-translate-key="specsRedmiNote10Chip"></span><span class="value">Snapdragon 678</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10RAM"></span><span class="value">4GB/6GB</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10Storage"></span><span class="value">64GB/128GB</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10OS"></span><span class="value">MIUI 12 (Android 11)</span></li>
-                            </ul>
-                        </div>
-                        <div class="spec-item">
-                            <h4 data-translate-key="specsRedmiNote10CameraTitle"></h4>
-                            <ul>
-                                <li><span class="label" data-translate-key="specsRedmiNote10MainCam"></span><span class="value">48MP f/1.79</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10UltraWide"></span><span class="value">8MP f/2.2</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10Macro"></span><span class="value">2MP f/2.4</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10Depth"></span><span class="value">2MP f/2.4</span></li>
-                            </ul>
-                        </div>
-                        <div class="spec-item">
-                            <h4 data-translate-key="specsRedmiNote10BatteryTitle"></h4>
-                            <ul>
-                                <li><span class="label" data-translate-key="specsRedmiNote10BatteryCapacity"></span><span class="value">5000mAh</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10Charging"></span><span class="value">33W Fast Charging</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10SIM"></span><span class="value">Dual SIM</span></li>
-                                <li><span class="label" data-translate-key="specsRedmiNote10Colors"></span><span class="value">Onyx Gray, Polar White</span></li>
-                            </ul>
-                        </div>
+                    <div class="specs-table">
+                        <div class="spec-category" data-translate-key="specCategoryDisplay"></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10DisplaySize"></div><div class="spec-value">6.43"</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10DisplayType"></div><div class="spec-value">AMOLED</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10DisplayRes"></div><div class="spec-value">2400 x 1080</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10DisplayRefresh"></div><div class="spec-value">60Hz</div></div>
+                        
+                        <div class="spec-category" data-translate-key="specCategoryPerformance"></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10Chip"></div><div class="spec-value">Snapdragon 678</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10RAM"></div><div class="spec-value">4GB/6GB</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10Storage"></div><div class="spec-value">64GB/128GB</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10OS"></div><div class="spec-value">MIUI 12 (Android 11)</div></div>
+                        
+                        <div class="spec-category" data-translate-key="specCategoryCamera"></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10MainCam"></div><div class="spec-value">48MP f/1.79</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10UltraWide"></div><div class="spec-value">8MP f/2.2</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10Macro"></div><div class="spec-value">2MP f/2.4</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10Depth"></div><div class="spec-value">2MP f/2.4</div></div>
+                        
+                        <div class="spec-category" data-translate-key="specCategoryBattery"></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10BatteryCapacity"></div><div class="spec-value">5000 mAh</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10Charging"></div><div class="spec-value">33W Fast Charging</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10SIM"></div><div class="spec-value">Dual SIM</div></div>
+                        <div class="spec-row"><div class="spec-label" data-translate-key="specsRedmiNote10Colors"></div><div class="spec-value">Onyx Gray, Polar White</div></div>
                     </div>
                 </div>
             </section>
@@ -345,42 +897,38 @@
             <section class="comparison-section">
                 <div class="container">
                     <h2 data-translate-key="comparisonRedmiNote10Title"></h2>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th data-translate-key="comparisonFeature"></th>
-                                <th data-translate-key="comparisonRedmiNote10"></th>
-                                <th data-translate-key="comparisonRedmiNote9Pro"></th>
-                                <th data-translate-key="comparisonGalaxyA55"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-translate-key="comparisonChip"></td>
-                                <td>Snapdragon 678</td>
-                                <td>Snapdragon 720G</td>
-                                <td>Exynos 1380</td>
-                            </tr>
-                            <tr>
-                                <td data-translate-key="comparisonDisplay"></td>
-                                <td>6.43" AMOLED</td>
-                                <td>6.67" LCD</td>
-                                <td>6.6" Super AMOLED</td>
-                            </tr>
-                            <tr>
-                                <td data-translate-key="comparisonBattery"></td>
-                                <td>5000mAh</td>
-                                <td>5020mAh</td>
-                                <td>5000mAh</td>
-                            </tr>
-                            <tr>
-                                <td data-translate-key="comparisonCamera"></td>
-                                <td>48MP</td>
-                                <td>64MP</td>
-                                <td>50MP</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="comparison-table">
+                        <div class="comparison-row header">
+                            <div class="comparison-feature" data-translate-key="comparisonFeature"></div>
+                            <div class="comparison-model" data-translate-key="comparisonRedmiNote10"></div>
+                            <div class="comparison-model" data-translate-key="comparisonRedmiNote9Pro"></div>
+                            <div class="comparison-model" data-translate-key="comparisonGalaxyA55"></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-feature" data-translate-key="comparisonChip"></div>
+                            <div class="comparison-value">Snapdragon 678</div>
+                            <div class="comparison-value">Snapdragon 720G</div>
+                            <div class="comparison-value">Exynos 1380</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-feature" data-translate-key="comparisonDisplay"></div>
+                            <div class="comparison-value">6.43\" AMOLED</div>
+                            <div class="comparison-value">6.67\" LCD</div>
+                            <div class="comparison-value">6.6\" Super AMOLED</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-feature" data-translate-key="comparisonBattery"></div>
+                            <div class="comparison-value">5000mAh</div>
+                            <div class="comparison-value">5020mAh</div>
+                            <div class="comparison-value">5000mAh</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="comparison-feature" data-translate-key="comparisonCamera"></div>
+                            <div class="comparison-value">48MP</div>
+                            <div class="comparison-value">64MP</div>
+                            <div class="comparison-value">50MP</div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -400,10 +948,20 @@
                 </div>
             </div>
 
-            <div class="verdict-box">
-                <h3 data-translate-key="reviewRedmiNote10VerdictTitle"></h3>
-                <p data-translate-key="reviewRedmiNote10VerdictP1"></p>
-            </div>
+            <section class="final-verdict" id="final-verdict">
+                <div class="container">
+                    <h3 data-translate-key="reviewRedmiNote10VerdictTitle"></h3>
+                    <p data-translate-key="reviewRedmiNote10VerdictP1"></p>
+                    <div class="rating-container">
+                        <div class="rating-star">★</div>
+                        <div class="rating-star">★</div>
+                        <div class="rating-star">★</div>
+                        <div class="rating-star">★</div>
+                        <div class="rating-star">★</div>
+                    </div>
+                    <p data-translate-key="overallRating">Overall Rating: 4/5</p>
+                </div>
+            </section>
         </div>
     </main>
     
@@ -446,6 +1004,7 @@
                 redmiNote10PhoneImageAlt: { ar: 'صورة لهاتف Xiaomi Redmi Note 10', en: 'Image of the Xiaomi Redmi Note 10 phone' },
                 redmiNote10Title: { ar: 'هاتف Xiaomi Redmi Note 10', en: 'Xiaomi Redmi Note 10' },
                 redmiNote10Tagline: { ar: 'قيمة ممتازة في فئة الهواتف الاقتصادية.', en: 'Excellent value in the budget smartphone category.' },
+                keyFeaturesTitle: { ar: 'أبرز الميزات', en: 'Key Features' },
                 highlightRedmiNote10Camera: { ar: 'نظام كاميرا رباعي 48MP', en: '48MP Quad Camera System' },
                 highlightRedmiNote10Display: { ar: 'شاشة AMOLED ممتازة', en: 'Excellent AMOLED Display' },
                 highlightRedmiNote10Battery: { ar: 'بطارية 5000mAh', en: '5000mAh Battery' },
@@ -506,7 +1065,23 @@
                 comparisonDisplay: { ar: 'الشاشة', en: 'Display' },
                 comparisonBattery: { ar: 'سعة البطارية', en: 'Battery Capacity' },
                 comparisonCamera: { ar: 'الكاميرا الرئيسية', en: 'Main Camera' },
+                overallRating: { ar: 'التقييم العام: 4/5', en: 'Overall Rating: 4/5' },
         };
+        
+        // Make rating stars interactive
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.rating-star');
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    // Remove active class from all stars
+                    stars.forEach(s => s.classList.remove('active'));
+                    // Add active class to clicked star and all previous stars
+                    for (let i = 0; i <= index; i++) {
+                        stars[i].classList.add('active');
+                    }
+                });
+            });
+        });
     </script>
     <script src="../../js/main.js"></script>
 </body>
