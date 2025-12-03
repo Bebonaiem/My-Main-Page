@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // --- Common Translations ---
     const commonTranslations = {
         siteName: { ar: 'learnfun.me', en: 'learnfun.me' },
@@ -14,7 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
         footerContactLink: { ar: 'اتصل بنا', en: 'Contact Us' },
         footerFollowTitle: { ar: 'تابعنا', en: 'Follow Us' },
         footerRights: { ar: 'جميع الحقوق محفوظة © 2025 لموقع learnfun.me', en: 'All Rights Reserved © 2025 learnfun.me' },
-        footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' }
+        footerDeveloper: { ar: 'تم التطوير والتصميم بواسطة بيبو نعيم', en: 'Developed and Designed by Bebo Naiem' },
+        // Cookie Consent Translations
+        cookieTitle: { ar: 'نحن نستخدم ملفات تعريف الارتباط', en: 'We Use Cookies' },
+        cookieMessage: { ar: 'نستخدم ملفات تعريف الارتباط (Cookies) لتحسين تجربتك على موقعنا، وتحليل حركة المرور، وتخصيص المحتوى. باستمرارك في استخدام موقعنا، فإنك توافق على استخدامنا لملفات تعريف الارتباط وفقًا لسياسة الخصوصية الخاصة بنا.', en: 'We use cookies to improve your experience on our site, analyze traffic, and personalize content. By continuing to use our site, you agree to our use of cookies in accordance with our Privacy Policy.' },
+        cookieAccept: { ar: 'موافق', en: 'Accept' },
+        cookieDecline: { ar: 'رفض', en: 'Decline' },
+        cookieLearnMore: { ar: 'معرفة المزيد', en: 'Learn More' }
     };
 
     // --- Merge Translations ---
@@ -23,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Language Switcher Logic ---
     const langSwitcher = document.getElementById('lang-switcher');
-    
+
     const setLanguage = (lang) => {
         localStorage.setItem('siteLanguage', lang);
         document.documentElement.lang = lang;
@@ -37,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 el.innerHTML = allTranslations[key][lang];
             }
         });
-        
+
         // Update Page Title and Meta Description
         const pageKey = document.body.dataset.pageKey;
         if (pageKey) {
@@ -64,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (langSwitcher) {
             document.querySelectorAll('#lang-switcher a').forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
         }
-        
+
         const currentNavKey = pageKey?.startsWith('techDetail') ? 'tech' : pageKey;
         document.querySelectorAll('.nav-links a').forEach(link => link.classList.toggle('active', link.dataset.navKey === currentNavKey));
     };
@@ -106,6 +112,73 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.add('scrolled');
         }
     }
+
+    // --- Cookie Consent Banner ---
+    const createCookieBanner = () => {
+        // Check if user has already made a choice
+        if (localStorage.getItem('cookieConsent')) {
+            return;
+        }
+
+        // Create cookie banner HTML
+        const banner = document.createElement('div');
+        banner.id = 'cookie-consent-banner';
+        banner.className = 'cookie-consent-banner';
+        banner.innerHTML = `
+            <div class="cookie-consent-content">
+                <div class="cookie-consent-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="8" cy="10" r="1.5" fill="currentColor"/>
+                        <circle cx="16" cy="10" r="1.5" fill="currentColor"/>
+                        <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+                        <circle cx="9" cy="13" r="1" fill="currentColor"/>
+                        <circle cx="15" cy="13" r="1" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="cookie-consent-text">
+                    <h3 data-translate-key="cookieTitle"></h3>
+                    <p data-translate-key="cookieMessage"></p>
+                </div>
+                <div class="cookie-consent-buttons">
+                    <button id="cookie-accept" class="btn btn-primary" data-translate-key="cookieAccept"></button>
+                    <button id="cookie-decline" class="btn btn-secondary-outline" data-translate-key="cookieDecline"></button>
+                    <a href="/privacy-policy/" class="cookie-learn-more" data-translate-key="cookieLearnMore"></a>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(banner);
+
+        // Update text based on current language
+        const currentLang = localStorage.getItem('siteLanguage') || 'ar';
+        banner.querySelectorAll('[data-translate-key]').forEach(el => {
+            const key = el.dataset.translateKey;
+            if (allTranslations[key] && allTranslations[key][currentLang]) {
+                el.textContent = allTranslations[key][currentLang];
+            }
+        });
+
+        // Handle accept button
+        document.getElementById('cookie-accept').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            banner.classList.add('fade-out');
+            setTimeout(() => banner.remove(), 300);
+        });
+
+        // Handle decline button
+        document.getElementById('cookie-decline').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            banner.classList.add('fade-out');
+            setTimeout(() => banner.remove(), 300);
+        });
+
+        // Show banner with animation
+        setTimeout(() => banner.classList.add('show'), 100);
+    };
+
+    // Initialize cookie banner
+    createCookieBanner();
 });
 
 
