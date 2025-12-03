@@ -179,4 +179,35 @@ const createCookieBanner = () => {
 // Initialize cookie banner
 createCookieBanner();
 
+// Lazy load background images
+const lazyBgElements = document.querySelectorAll('[data-lazy-bg]');
+
+const loadBackgroundImage = (element) => {
+    const imageUrl = element.dataset.lazyBg;
+    if (imageUrl) {
+        // Create a new image to preload
+        const img = new Image();
+        img.onload = function() {
+            // Apply the background image with gradient overlay
+            element.style.backgroundImage = `linear-gradient(rgba(17,24,39,0.8), rgba(17,24,39,0.8)), url('${imageUrl}')`;
+        };
+        img.src = imageUrl;
+    }
+};
+
+// Load background images when they are near the viewport
+const bgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            loadBackgroundImage(entry.target);
+            bgObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    rootMargin: '50px' // Start loading 50px before entering viewport
+});
+
+lazyBgElements.forEach(element => {
+    bgObserver.observe(element);
+});
 

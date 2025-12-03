@@ -611,7 +611,8 @@ img {
     text-align: center;
     background-color: var(--dark-color);
     color: #fff;
-    background-image: linear-gradient(rgba(17,24,39,0.8), rgba(17,24,39,0.8)), url('https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&auto=format&fit=crop');
+    /* Background image will be loaded via JavaScript for lazy loading */
+    /* background-image: linear-gradient(rgba(17,24,39,0.8), rgba(17,24,39,0.8)), url('https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&auto=format&fit=crop'); */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
