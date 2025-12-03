@@ -75,7 +75,6 @@ main {
 h1, h2, h3, h4 { 
     font-weight: 700; 
     line-height: 1.3; 
-    color: var(--dark-color); 
 }
 
 a { 
@@ -192,6 +191,102 @@ img {
 
 #lang-switcher a:not(.active):hover { 
     background-color: #f1f1f1; 
+}
+
+/* ================== Cookie Consent Banner ================== */
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    padding: 20px;
+    z-index: 1002;
+    border: 1px solid var(--border-color);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.rtl-layout .cookie-consent-banner {
+    left: 20px;
+    right: 20px;
+}
+
+.ltr-layout .cookie-consent-banner {
+    left: 20px;
+    right: 20px;
+}
+
+.cookie-consent-banner.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.cookie-consent-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cookie-consent-text {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.cookie-consent-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-link {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: none;
+    padding: 10px 20px;
+}
+
+.btn-link:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .cookie-consent-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .cookie-consent-buttons {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 767px) {
+    .cookie-consent-banner {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 15px;
+    }
+    
+    .cookie-consent-buttons {
+        flex-direction: column;
+    }
+    
+    .btn, .btn-link {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* ================== Header ================== */

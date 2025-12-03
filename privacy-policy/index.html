@@ -46,7 +46,6 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
     <link rel="stylesheet" href="../style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7696225868255842" crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-7696225868255842">
-    <!-- Removed unnecessary third-party scripts to improve performance -->
 </head>
 <body data-page-key="privacy">
     <div id="lang-switcher">
@@ -121,6 +120,18 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
         </div>
     </footer>
     
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-consent-banner">
+        <div class="cookie-consent-content">
+            <p class="cookie-consent-text" data-translate-key="cookieConsentText"></p>
+            <div class="cookie-consent-buttons">
+                <button id="acceptCookies" class="btn btn-primary" data-translate-key="acceptCookiesBtn"></button>
+                <button id="rejectCookies" class="btn btn-secondary" data-translate-key="rejectCookiesBtn"></button>
+                <a href="../privacy-policy/" class="btn btn-link" data-translate-key="learnMoreBtn"></a>
+            </div>
+        </div>
+    </div>
+
     <script>
         window.pageTranslations = {
                 privacyPageTitle: { ar: 'سياسة الخصوصية - Learn Fun', en: 'Privacy Policy - Learn Fun' },
@@ -139,6 +150,12 @@ cybersecurity, security, privacy, VPN, artificial intelligence, AI, machine lear
                 privacyDataP: { ar: 'قد نطلب منك بعض البيانات الشخصية مثل الاسم والبريد الإلكتروني عند استخدامك لنموذج الاتصال. نحن نستخدم هذه البيانات فقط للرد على استفساراتك ولا نشاركها مع أي طرف ثالث دون موافقتك.', en: 'We may ask you for some personal data such as name and email when you use the contact form. We use this data only to respond to your inquiries and do not share it with any third party without your consent.' },
                 privacyConsentH2: { ar: 'موافقتك', en: 'Your Consent' },
                 privacyConsentP: { ar: 'باستخدامك لموقعنا، فإنك توافق على سياسة الخصوصية الخاصة بنا وتوافق على شروطها.', en: 'By using our website, you hereby consent to our privacy policy and agree to its terms.' },
+
+                // --- Cookie Consent Banner ---
+                cookieConsentText: { ar: 'نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتحليل حركة المرور في موقعنا. يمكنك قبول أو رفض ملفات تعريف الارتباط الاختيارية.', en: 'We use cookies to improve your experience and analyze our site traffic. You can accept or reject optional cookies.' },
+                acceptCookiesBtn: { ar: 'قبول الكل', en: 'Accept All' },
+                rejectCookiesBtn: { ar: 'رفض الكل', en: 'Reject All' },
+                learnMoreBtn: { ar: 'معرفة المزيد', en: 'Learn More' }
         };
     </script>
     <script src="../js/main.js"></script>
