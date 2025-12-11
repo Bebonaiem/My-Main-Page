@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>امتحان البرمجة - Pro Version</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-card: #1E1E1E;
+            --primary-color: #BB86FC;
+            --primary-variant: #3700B3;
+            --secondary-color: #03DAC6;
+            --error-color: #CF6679;
+            --gold-color: #FFD700;
+            --text-high: #E0E0E0;
+            --text-med: #A0A0A0;
+            --border-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 10% 20%, rgba(187, 134, 252, 0.05) 0%, transparent 20%);
+            color: var(--text-high);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 90px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        /* --- شاشة البداية --- */
+        #start-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .glow-icon {
+            filter: drop-shadow(0 0 15px rgba(187, 134, 252, 0.5));
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .glow-icon:hover { transform: scale(1.1); }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(187, 134, 252, 0.3);
+        }
+
+        .high-score-badge {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--gold-color);
+            color: var(--gold-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+
+        /* --- أزرار الميديا --- */
+        .media-section {
+            width: 100%;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .media-title {
+            color: var(--text-med);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .media-btn-group {
+            margin-bottom: 10px;
+        }
+
+        .toggle-btn {
+            background: #2C2C2C;
+            color: var(--text-high);
+            border: 1px solid var(--border-color);
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn:hover { background: #333; }
+        .toggle-btn.active { border-color: var(--secondary-color); color: var(--secondary-color); }
+
+        .sub-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .sub-options.show {
+            max-height: 100px;
+            opacity: 1;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            text-decoration: none; /* لإزالة الخط من الرابط */
+        }
+
+        .btn-play { background: rgba(3, 218, 198, 0.2); color: var(--secondary-color); }
+        .btn-play:hover { background: rgba(3, 218, 198, 0.3); }
+
+        .btn-download { background: rgba(187, 134, 252, 0.2); color: var(--primary-color); }
+        .btn-download:hover { background: rgba(187, 134, 252, 0.3); }
+
+        /* --- Modal Player --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+        .modal-content {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px; right: 15px;
+            background: none;
+            border: none;
+            color: var(--error-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        audio, video { width: 100%; border-radius: 8px; margin-top: 15px; outline: none; }
+
+        /* --- الأزرار الأساسية --- */
+        .main-btn {
+            background: linear-gradient(135deg, var(--primary-variant), var(--primary-color));
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 18px;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(187, 134, 252, 0.4);
+            transition: transform 0.2s;
+            margin-top: 10px;
+        }
+
+        .main-btn:active { transform: scale(0.97); }
+        .main-btn:disabled {
+            background: #333;
+            color: #777;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        /* --- شاشة السؤال --- */
+        .progress-container { margin-bottom: 25px; }
+        .progress-track {
+            height: 6px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--secondary-color);
+            width: 0%;
+            transition: width 0.4s ease;
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+        
+        .question-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--text-high);
+        }
+
+        .option-btn {
+            background: #2C2C2C;
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            color: var(--text-high);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .option-btn.selected {
+            background: rgba(187, 134, 252, 0.15);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .option-btn.selected::after {
+            content: '●';
+            color: var(--primary-color);
+            position: absolute;
+            left: 20px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Footer --- */
+        .fixed-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            z-index: 100;
+            display: none;
+        }
+
+        /* --- النتيجة --- */
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            border: 5px solid var(--secondary-color);
+            box-shadow: 0 0 30px rgba(3, 218, 198, 0.3);
+        }
+
+        .new-record-msg {
+            color: var(--gold-color);
+            font-weight: bold;
+            margin-top: 10px;
+            animation: pulse 1s infinite;
+            display: none;
+        }
+
+        .review-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-right: 4px solid var(--error-color);
+        }
+        
+        .ans-box { padding: 10px; border-radius: 8px; margin-bottom: 6px; font-size: 0.95rem; }
+        .wrong-ans { background: rgba(207, 102, 121, 0.15); color: var(--error-color); }
+        .correct-ans { background: rgba(3, 218, 198, 0.15); color: var(--secondary-color); font-weight: bold; }
+        
+        .hidden { display: none !important; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+    </style>
+</head>
+<body>
+
+    <!-- 1. شاشة البداية -->
+    <div id="start-screen" class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920323.png" width="80" class="glow-icon" alt="Quiz">
+        <h1>اختبار البرمجة</h1>
+        
+        <div class="high-score-badge">
+            <span>🏆 أفضل نتيجة:</span>
+            <span id="best-score-display">0</span>
+        </div>
+
+        <!-- أزرار الميديا المطلوبة -->
+        <div class="media-section">
+            <div class="media-title">المراجعة والملخصات</div>
+            
+            <!-- زر الصوت -->
+            <div class="media-btn-group">
+                <button class="toggle-btn" onclick="toggleMedia('audio-ops', this)">
+                    <span>🎧 ملخص السكاشن (صوت)</span>
+                    <span>▼</span>
+                </button>
+                <div id="audio-ops" class="sub-options">
+                    <button class="action-btn btn-play" onclick="openMedia('audio', 'ملخص سكاشن مقدمة في البرمجة فويس.mp3')">
+                        ▶ استماع أونلاين
+                    </button>
+                    <!-- تعديل زر التحميل ليعمل بشكل مباشر -->
+                    <button class="action-btn btn-download" onclick="downloadFile('ملخص سكاشن مقدمة في البرمجة فويس.mp3')">
+                        ⬇ تحميل للجهاز
+                    </button>
+                </div>
+            </div>
+
+            <!-- زر الفيديو -->
+            <div class="media-btn-group">
+                <button class="toggle-btn" onclick="toggleMedia('video-ops', this)">
+                    <span>📺 ملخص السكاشن (فيديو)</span>
+                    <span>▼</span>
+                </button>
+                <div id="video-ops" class="sub-options">
+                    <button class="action-btn btn-play" onclick="openMedia('video', 'ملخص سكاشن مقدمة في البرمجة فيديو.mp4')">
+                        ▶ مشاهدة أونلاين
+                    </button>
+                    <!-- تعديل زر التحميل ليعمل بشكل مباشر -->
+                    <button class="action-btn btn-download" onclick="downloadFile('ملخص سكاشن مقدمة في البرمجة فيديو.mp4')">
+                        ⬇ تحميل للجهاز
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <button class="main-btn" onclick="startQuiz()">ابدأ الاختبار 🚀</button>
+    </div>
+
+    <!-- نافذة تشغيل الميديا (Modal) -->
+    <div id="media-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeMedia()">×</button>
+            <h3 id="modal-title" style="color:var(--secondary-color); margin-bottom:10px;">تشغيل الملف</h3>
+            <div id="player-container"></div>
+        </div>
+    </div>
+
+    <!-- 2. شاشة السؤال -->
+    <div id="quiz-screen" class="container hidden">
+        <div class="progress-container">
+            <div style="display:flex; justify-content:space-between; margin-bottom:10px; color:var(--text-med);">
+                <span id="q-idx">سؤال 1</span>
+                <span id="q-total">35</span>
+            </div>
+            <div class="progress-track">
+                <div id="p-bar" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div id="q-text" class="question-text">نص السؤال...</div>
+            <div id="options-container"></div>
+        </div>
+        <div style="height: 60px;"></div>
+    </div>
+
+    <!-- 3. زر عائم -->
+    <div id="footer" class="fixed-footer">
+        <button id="next-btn" class="main-btn" onclick="nextQuestion()" disabled>تأكيد وتالي ➜</button>
+    </div>
+
+    <!-- 4. النتيجة -->
+    <div id="result-screen" class="container hidden">
+        <div style="text-align:center; padding:30px 0;">
+            <div id="score-circle" class="score-circle">0%</div>
+            <h2 id="result-msg" style="margin-bottom:10px;">النتيجة</h2>
+            <div id="new-record-msg" class="new-record-msg">🌟 رقم قياسي جديد! 🌟</div>
+        </div>
+
+        <div id="review-area" style="margin-top:30px;" class="hidden">
+            <h3 style="color:var(--primary-color); margin-bottom:15px;">الأخطاء:</h3>
+            <div id="review-list"></div>
+        </div>
+
+        <button class="main-btn" onclick="restartQuiz()" style="margin-top:30px;">إعادة الاختبار 🔄</button>
+        <div style="height: 50px;"></div>
+    </div>
+
+    <script>
+        // --- دوال التحكم في الميديا والتحميل ---
+        
+        function toggleMedia(id, btn) {
+            const el = document.getElementById(id);
+            document.querySelectorAll('.sub-options').forEach(div => {
+                if (div.id !== id) div.classList.remove('show');
+            });
+            document.querySelectorAll('.toggle-btn').forEach(b => {
+                if (b !== btn) b.classList.remove('active');
+            });
+            el.classList.toggle('show');
+            btn.classList.toggle('active');
+        }
+
+        function openMedia(type, src) {
+            const modal = document.getElementById('media-modal');
+            const container = document.getElementById('player-container');
+            const title = document.getElementById('modal-title');
+            
+            modal.classList.add('active');
+            container.innerHTML = '';
+
+            if (type === 'audio') {
+                title.innerText = "🎧 استماع للملخص";
+                container.innerHTML = `
+                    <audio controls autoplay style="width:100%">
+                        <source src="${src}" type="audio/mp4">
+                        <source src="${src}" type="audio/mpeg">
+                        متصفحك لا يدعم تشغيل الصوت.
+                    </audio>
+                `;
+            } else {
+                title.innerText = "📺 مشاهدة الملخص";
+                container.innerHTML = `
+                    <video controls autoplay style="width:100%; max-height:60vh;">
+                        <source src="${src}" type="video/mp4">
+                        متصفحك لا يدعم تشغيل الفيديو.
+                    </video>
+                `;
+            }
+        }
+
+        function closeMedia() {
+            const modal = document.getElementById('media-modal');
+            modal.classList.remove('active');
+            document.getElementById('player-container').innerHTML = '';
+        }
+
+        // --- دالة التحميل المحدثة (تجبر التنزيل) ---
+        async function downloadFile(fileName) {
+            try {
+                // محاولة استخدام طريقة الـ Blob لإجبار التحميل
+                const response = await fetch(fileName);
+                if (!response.ok) throw new Error("Network error");
+                
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                
+                const link = document.createElement('a');
+                link.style.display = 'none';
+                link.href = url;
+                link.download = fileName; // هذا ما يحدد اسم الملف عند التنزيل
+                document.body.appendChild(link);
+                
+                link.click();
+                
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(link);
+            } catch (err) {
+                // طريقة بديلة في حالة الفشل (أو في حالة العمل بدون سيرفر)
+                console.log("Fallback download method");
+                const link = document.createElement('a');
+                link.href = fileName;
+                link.download = fileName;
+                link.target = "_blank";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+
+        // --- باقي كود التطبيق الأصلي ---
+        const sounds = {
+            click: new Audio('https://cdn.pixabay.com/audio/2022/03/10/audio_c8c8a73467.mp3'),
+            win: new Audio('https://cdn.pixabay.com/audio/2021/08/04/audio_12b0c7443c.mp3'),
+            lose: new Audio('https://cdn.pixabay.com/audio/2021/08/09/audio_9788fd890e.mp3')
+        };
+
+        function playSound(type) {
+            try {
+                sounds[type].currentTime = 0;
+                sounds[type].volume = 0.5;
+                sounds[type].play().catch(e => console.log("Audio blocked"));
+            } catch (err) { console.log(err); }
+        }
+
+        const STORAGE_KEY = 'vb_quiz_best_score_v1';
+        
+        function getHighScore() { return localStorage.getItem(STORAGE_KEY) || 0; }
+        function saveHighScore(newScore) { localStorage.setItem(STORAGE_KEY, newScore); }
+
+        const questions = [
+            { question: "ما هي الأداة التي تستخدم لإدخال نصوص يمكن التعديل عليها من قبل المستخدم؟", options: ["Label", "TextBox", "CommandButton", "Frame"], answer: 1 },
+            { question: "نوع المشروع الافتراضي عند فتح Visual Basic هو:", options: ["ActiveX DLL", "Standard EXE", "Data Project", "ActiveX Control"], answer: 1 },
+            { question: "الأداة التي تستخدم كحاوية (Container) لمجموعة من الأدوات هي:", options: ["Frame", "Label", "Timer", "Image"], answer: 0 },
+            { question: "أي أداة تستهلك موارد أقل لعرض الصور؟", options: ["PictureBox", "Image", "Frame", "TextBox"], answer: 1 },
+            { question: "لتغيير العنوان الظاهر على شريط النافذة أو الزر نستخدم الخاصية:", options: ["Name", "Text", "Caption", "Interval"], answer: 2 },
+            { question: "لتغيير لون النص (الكتابة) داخل الأداة نستخدم الخاصية:", options: ["BackColor", "ForeColor", "FillColor", "BorderColor"], answer: 1 },
+            { question: "للسماح بالكتابة على أكثر من سطر داخل TextBox نضبط الخاصية:", options: ["MultiLine = True", "MultiLine = False", "ScrollBars", "WordWrap"], answer: 0 },
+            { question: "لجعل اتجاه النص داخل الأداة من اليمين لليسار (للغة العربية) نستخدم الخاصية:", options: ["Alignment", "RightToLeft", "Visible", "Style"], answer: 1 },
+            { question: "لكي نتمكن من تلوين زر CommandButton يجب تغيير الخاصية Style إلى:", options: ["Standard", "Graphical", "3D", "Flat"], answer: 1 },
+            { question: "لإخفاء الأداة تماماً من النموذج نستخدم الخاصية:", options: ["Enabled = False", "Visible = False", "Delete", "Clear"], answer: 1 },
+            { question: "الكود الصحيح لتحويل النص داخل مربع النص إلى رقم لإجراء عملية جمع:", options: ["Text1 + Text2", "Val(Text1.Text) + Val(Text2.Text)", "Str(Text1) + Str(Text2)", "Text1 & Text2"], answer: 1 },
+            { question: "ناتج العملية الحسابية: 5 Mod 2 هو:", options: ["2.5", "2", "1", "0"], answer: 2 },
+            { question: "ناتج العملية: 10 Mod 3 هو:", options: ["3", "1", "3.33", "0"], answer: 1 },
+            { question: "الرمز `^` في لغة الفيجوال بيسك يرمز لعملية:", options: ["الضرب", "الأس (القوى)", "باقي القسمة", "الجمع"], answer: 1 },
+            { question: "ناتج العملية: 2 + 3 * 4 هو (حسب الأولويات):", options: ["20", "14", "10", "24"], answer: 1 },
+            { question: "قيمة Interval للأداة Timer لتعمل كل ثانية واحدة هي:", options: ["100", "10", "1000", "500"], answer: 2 },
+            { question: "الدالة التي تعيد التاريخ والوقت الحالي معاً هي:", options: ["Date", "Time", "Now", "Today"], answer: 2 },
+            { question: "الكود المستخدم لاستخراج 'الساعات' فقط من الوقت الحالي هو:", options: ["Minute(Now)", "Hour(Now)", "Second(Now)", "Time(Now)"], answer: 1 },
+            { question: "لتحويل نظام الوقت من 24 ساعة إلى 12 ساعة نستخدم المعادلة:", options: ["h = h + 12", "h = h - 12", "h = h * 12", "h = h / 12"], answer: 1 },
+            { question: "مفتاح اختصار فتح محرر القوائم (Menu Editor) هو:", options: ["Ctrl + C", "Ctrl + V", "Ctrl + E", "F5"], answer: 2 },
+            { question: "لعمل خط فاصل (Separator) في القائمة، نكتب في الـ Caption الرمز:", options: ["_", "-", "*", "/"], answer: 1 },
+            { question: "لإنشاء قائمة فرعية (Sub Menu) في محرر القوائم نستخدم زر:", options: ["السهم لليسار", "السهم لليمين", "Next", "Insert"], answer: 1 },
+            { question: "الخاصية Shortcut في محرر القوائم تستخدم لـ:", options: ["وضع مفتاح اختصار للقائمة", "تسمية القائمة", "إخفاء القائمة", "وضع علامة صح"], answer: 0 },
+            { question: "لتحريك أداة جهة اليمين (Right) نستخدم الكود:", options: ["Left = Left + 40", "Left = Left - 40", "Top = Top + 40", "Width = Width + 40"], answer: 0 },
+            { question: "لتحريك أداة إلى أعلى (Up) نستخدم الكود:", options: ["Top = Top + 40", "Top = Top - 40", "Left = Left + 40", "Height = Height + 40"], answer: 1 },
+            { question: "لعكس حالة الخط العريض (Bold) نستخدم الكود:", options: ["FontBold = True", "FontBold = False", "FontBold = Not (FontBold)", "FontBold = Val"], answer: 2 },
+            { question: "لوضع المؤشر (Cursor) داخل مربع النص برمجياً نستخدم الأمر:", options: ["SetFocus", "GetFocus", "Refresh", "Click"], answer: 0 },
+            { question: "الخاصية التي تعبر عن 'النص المحدد' داخل مربع النص هي:", options: ["Text", "SelText", "Caption", "Tag"], answer: 1 },
+            { question: "المتغير من النوع (String) يستخدم لتخزين:", options: ["الأرقام الصحيحة", "النصوص", "الأرقام العشرية", "التاريخ"], answer: 1 },
+            { question: "المتغير من النوع (Integer) يستخدم لتخزين:", options: ["الأرقام الصحيحة فقط", "الأرقام العشرية", "النصوص الطويلة", "الصور"], answer: 0 },
+            { question: "المتغير من النوع (Double) يستخدم لتخزين:", options: ["النصوص", "الأرقام التي تحتوى على كسور", "القيم المنطقية", "الوقت"], answer: 1 },
+            { question: "(صح أم خطأ) الخاصية Name تستخدم في كتابة الأكواد والتعامل مع الأداة برمجياً.", options: ["صح", "خطأ"], answer: 0 },
+            { question: "(صح أم خطأ) أداة Timer تظهر للمستخدم أثناء تشغيل البرنامج.", options: ["صح", "خطأ"], answer: 1 },
+            { question: "لإخفاء زر التكبير MaxButton نغير الخاصية MaxButton إلى:", options: ["True", "False", "Visible", "Enabled"], answer: 1 },
+            { question: "لإنهاء البرنامج وإغلاقه تماماً نستخدم الكود:", options: ["Stop", "Exit", "End", "Close"], answer: 2 }
+        ];
+
+        let currentIndex = 0;
+        let shuffledQ = [];
+        let userAnswers = [];
+
+        window.onload = function() {
+            const bestScore = getHighScore();
+            document.getElementById('best-score-display').innerText = `${bestScore}/${questions.length}`;
+        };
+
+        function shuffle(arr) { return arr.sort(() => Math.random() - 0.5); }
+
+        function startQuiz() {
+            playSound('click'); 
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            document.getElementById('footer').style.display = 'block';
+
+            shuffledQ = shuffle([...questions]);
+            userAnswers = new Array(shuffledQ.length).fill(null);
+            currentIndex = 0;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            window.scrollTo(0,0);
+            const q = shuffledQ[currentIndex];
+
+            document.getElementById('q-idx').innerText = `السؤال ${currentIndex + 1}`;
+            document.getElementById('q-total').innerText = shuffledQ.length;
+            document.getElementById('p-bar').style.width = `${((currentIndex) / shuffledQ.length) * 100}%`;
+
+            document.getElementById('q-text').innerText = q.question;
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.disabled = true;
+            nextBtn.innerText = (currentIndex === shuffledQ.length - 1) ? "إنهاء وعرض النتيجة" : "تأكيد وتالي ➜";
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('div');
+                btn.className = 'option-btn';
+                btn.innerText = opt;
+                
+                if (userAnswers[currentIndex] === idx) {
+                    btn.classList.add('selected');
+                    nextBtn.disabled = false;
+                }
+
+                btn.onclick = () => {
+                    playSound('click');
+                    document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    userAnswers[currentIndex] = idx;
+                    nextBtn.disabled = false;
+                    if (navigator.vibrate) navigator.vibrate(10);
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function nextQuestion() {
+            if (currentIndex < shuffledQ.length - 1) {
+                currentIndex++;
+                showQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function finishQuiz() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('footer').style.display = 'none';
+            document.getElementById('result-screen').classList.remove('hidden');
+
+            let score = 0;
+            let reviewHTML = '';
+            
+            shuffledQ.forEach((q, idx) => {
+                if (userAnswers[idx] === q.answer) {
+                    score++;
+                } else {
+                    const uAns = (userAnswers[idx] !== null) ? q.options[userAnswers[idx]] : "لا يوجد";
+                    const cAns = q.options[q.answer];
+                    reviewHTML += `
+                        <div class="review-card">
+                            <div class="review-q">${q.question}</div>
+                            <div class="ans-box wrong-ans">❌ إجابتك: ${uAns}</div>
+                            <div class="ans-box correct-ans">✅ الصحيح: ${cAns}</div>
+                        </div>
+                    `;
+                }
+            });
+
+            document.getElementById('score-circle').innerText = `${score}/${shuffledQ.length}`;
+            const pct = (score / shuffledQ.length) * 100;
+            const msg = document.getElementById('result-msg');
+            const newRecordMsg = document.getElementById('new-record-msg');
+
+            const currentHigh = parseInt(getHighScore());
+            if (score > currentHigh) {
+                saveHighScore(score);
+                newRecordMsg.style.display = 'block';
+                playSound('win');
+            } else {
+                newRecordMsg.style.display = 'none';
+                if (pct >= 50) playSound('win');
+                else playSound('lose');
+            }
+
+            if (pct >= 90) { msg.innerText = "أداء أسطوري! 🔥"; msg.style.color = "#03DAC6"; } 
+            else if (pct >= 70) { msg.innerText = "ممتاز جداً! ✨"; msg.style.color = "#BB86FC"; } 
+            else { msg.innerText = "حاول مرة أخرى 💪"; msg.style.color = "#CF6679"; }
+
+            if (score < shuffledQ.length) {
+                document.getElementById('review-area').classList.remove('hidden');
+                document.getElementById('review-list').innerHTML = reviewHTML;
+            } else {
+                document.getElementById('review-area').classList.add('hidden');
+            }
+        }
+
+        function restartQuiz() {
+            document.getElementById('result-screen').classList.add('hidden');
+            const bestScore = getHighScore();
+            document.getElementById('best-score-display').innerText = `${bestScore}/${questions.length}`;
+            startQuiz();
+        }
+    </script>
+</body>
+</html>
